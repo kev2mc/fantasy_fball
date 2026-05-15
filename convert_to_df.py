@@ -122,7 +122,7 @@ def load_matchups():
     """Load matchups JSON and convert to DataFrame."""
     with open(DATA_DIR / 'matchups_yfpy.json', 'r') as f:
         data = json.load(f)
-    
+
     # Flatten nested structure: season -> team_id -> matchups with nested matchup data
     records = []
     for season, teams in data.items():
@@ -135,9 +135,71 @@ def load_matchups():
                     }
                     matchup_record.update(matchup)
                     records.append(matchup_record)
-    
+
     matchups_df = pd.DataFrame(records)
     return matchups_df
+
+
+def load_scoreboard():
+    """Load scoreboard JSON and convert to a flat DataFrame.
+
+    Columns: season, week, team_key, team_points, projected_points,
+             is_winner, is_playoffs, is_consolation
+    """
+    filepath = DATA_DIR / 'scoreboard_yfpy.json'
+    if not filepath.exists():
+        return pd.DataFrame()
+
+    with open(filepath, 'r') as f:
+        data = json.load(f)
+
+    records = []
+    for season, weeks in data.items():
+        for week, teams in weeks.items():
+            for team_key, score_data in teams.items():
+                record = {
+                    'season':   season,
+                    'week':     week,
+                    'team_key': team_key,
+                }
+                record.update(score_data)
+                records.append(record)
+
+    return pd.DataFrame(records)
+
+def load_scoreboard_season_totals():
+    """Aggregate weekly scoreboard into per-team season totals.
+
+    Columns: season, team_key, total_points, total_projected_points,
+             wins, weeks_played
+    """
+    scoreboard_df = load_scoreboard()
+    if scoreboard_df.empty:
+        return pd.DataFrame()
+
+    scoreboard_df['season']            = scoreboard_df['season'].astype(int)
+    scoreboard_df['week']              = scoreboard_df['week'].astype(int)
+    scoreboard_df['team_points']       = pd.to_numeric(scoreboard_df['team_points'], errors='coerce')
+    scoreboard_df['projected_points']  = pd.to_numeric(scoreboard_df['projected_points'], errors='coerce')
+    scoreboard_df['is_winner']         = scoreboard_df['is_winner'].map({'True': 1, 'False': 0, True: 1, False: 0}).fillna(0).astype(int)
+
+    totals = (
+        scoreboard_df
+        .groupby(['season', 'team_key'])
+        .agg(
+            total_points       =('team_points',      'sum'),
+            total_projected    =('projected_points', 'sum'),
+            wins               =('is_winner',        'sum'),
+            weeks_played       =('week',             'count'),
+        )
+        .reset_index()
+    )
+
+    # Luck proxy: how much a team out- or under-performed projections
+    totals['points_vs_projected'] = totals['total_points'] - totals['total_projected']
+
+    return totals
+
 
 if __name__ == '__main__':
     print(f'Loading JSON files from {DATA_DIR}...\\n')
@@ -148,50 +210,46 @@ if __name__ == '__main__':
         exit(1)
     
     # Load all data
-    standings_df = load_standings()
-    rosters_df = load_rosters()
-    draft_results_df = load_draft_results()
-    matchups_df = load_matchups()
-    
+    standings_df          = load_standings()
+    rosters_df            = load_rosters()
+    draft_results_df      = load_draft_results()
+    matchups_df           = load_matchups()
+    scoreboard_df         = load_scoreboard()
+    scoreboard_totals_df  = load_scoreboard_season_totals()
+
     # Display info
-    print('✓ standings_df:', standings_df.shape)
-    print('  Columns:', list(standings_df.columns))
-    print()
-    
-    print('✓ rosters_df:', rosters_df.shape)
-    print('  Columns:', list(rosters_df.columns))
-    print()
-    
-    print('✓ draft_results_df:', draft_results_df.shape)
-    print('  Columns:', list(draft_results_df.columns))
-    print()
-    
-    print('✓ matchups_df:', matchups_df.shape)
-    print('  Columns:', list(matchups_df.columns))
-    print()
-    
-    # Save to CSV for convenience
+    for label, df in [
+        ('standings_df',         standings_df),
+        ('rosters_df',           rosters_df),
+        ('draft_results_df',     draft_results_df),
+        ('matchups_df',          matchups_df),
+        ('scoreboard_df',        scoreboard_df),
+        ('scoreboard_totals_df', scoreboard_totals_df),
+    ]:
+        print(f'✓ {label}: {df.shape}')
+        print(f'  Columns: {list(df.columns)}')
+        print()
+
+    # Save to CSV
     standings_df.to_csv(DATA_DIR / 'standings_df.csv', index=False)
     rosters_df.to_csv(DATA_DIR / 'rosters_df.csv', index=False)
     draft_results_df.to_csv(DATA_DIR / 'draft_results_df.csv', index=False)
     matchups_df.to_csv(DATA_DIR / 'matchups_df.csv', index=False)
-    
-    print('✓ All DataFrames saved to CSV:')
-    print('  - data/standings_df.csv')
-    print('  - data/rosters_df.csv')
-    print('  - data/draft_results_df.csv')
-    print('  - data/matchups_df.csv')
-    
-    # Save to pickle for Python usage
+    if not scoreboard_df.empty:
+        scoreboard_df.to_csv(DATA_DIR / 'scoreboard_df.csv', index=False)
+    if not scoreboard_totals_df.empty:
+        scoreboard_totals_df.to_csv(DATA_DIR / 'scoreboard_totals_df.csv', index=False)
+
+    print('✓ All DataFrames saved to CSV (data/*_df.csv)')
+
+    # Save to pickle
     standings_df.to_pickle(DATA_DIR / 'standings_df.pkl')
     rosters_df.to_pickle(DATA_DIR / 'rosters_df.pkl')
     draft_results_df.to_pickle(DATA_DIR / 'draft_results_df.pkl')
     matchups_df.to_pickle(DATA_DIR / 'matchups_df.pkl')
-    
-    # Save nested draft results JSON for direct nested structure inspection
-    print('\n✓ All DataFrames saved to pickle:')
-    print('  - data/standings_df.pkl')
-    print('  - data/rosters_df.pkl')
-    print('  - data/draft_results_df.pkl')
+    if not scoreboard_df.empty:
+        scoreboard_df.to_pickle(DATA_DIR / 'scoreboard_df.pkl')
+    if not scoreboard_totals_df.empty:
+        scoreboard_totals_df.to_pickle(DATA_DIR / 'scoreboard_totals_df.pkl')
 
-    print('  - data/matchups_df.pkl')
+    print('✓ All DataFrames saved to pickle (data/*_df.pkl)')
