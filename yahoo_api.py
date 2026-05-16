@@ -5,6 +5,8 @@ import os
 import logging
 import argparse
 import sys
+import time
+from datetime import datetime
 
 logging.basicConfig(level=logging.WARNING)
 
@@ -253,8 +255,8 @@ def get_team_roster_data(query, team_id, week=None):
     """Get roster with per-player actual fantasy points for a specific team.
 
     Uses get_team_roster_player_stats_by_week so player_points is populated.
-    Pass the last scored week of the season so points reflect final-week
-    production.
+    selected_position identifies whether a player was a starter ('QB', 'RB',
+    etc.) or on the bench ('BN') or injured reserve ('IR') that week.
 
     Note: player_projected_points is not included — Yahoo's v2 API does not
     expose historical per-player projected stats via any supported type
@@ -293,6 +295,9 @@ def get_team_roster_data(query, team_id, week=None):
 
             pp = getattr(player, 'player_points', None)
 
+            sp = getattr(player, 'selected_position', None)
+            selected_pos = str(sp.position) if sp and hasattr(sp, 'position') else ''
+
             raw_name = extract_player_name(player)
             position  = extract_player_position(player)
             if position == 'DEF' and raw_name in _NFL_CITY:
@@ -301,18 +306,19 @@ def get_team_roster_data(query, team_id, week=None):
                 full_name = raw_name
 
             player_data = {
-                'player_key':         player_key,
-                'player_id':          str(player.player_id) if hasattr(player, 'player_id') else '',
-                'name':               full_name,
-                'position':           position,
-                'eligible_positions': eligible_str,
-                'player_points':      str(pp.total) if pp and hasattr(pp, 'total') else '',
-                'status':             str(player.status) if hasattr(player, 'status') else '',
+                'player_key':          player_key,
+                'player_id':           str(player.player_id) if hasattr(player, 'player_id') else '',
+                'name':                full_name,
+                'position':            position,
+                'selected_position':   selected_pos,
+                'eligible_positions':  eligible_str,
+                'player_points':       str(pp.total) if pp and hasattr(pp, 'total') else '',
+                'status':              str(player.status) if hasattr(player, 'status') else '',
                 'status_last_updated': str(player.status_last_updated) if hasattr(player, 'status_last_updated') else '',
-                'bye_weeks':          bye_week,
-                'injury_note':        str(player.injury_note) if hasattr(player, 'injury_note') else '',
-                'nfl_team_id':        str(player.nfl_team_id) if hasattr(player, 'nfl_team_id') else '',
-                'coverage_type':      str(pp.coverage_type) if pp and hasattr(pp, 'coverage_type') else '',
+                'bye_weeks':           bye_week,
+                'injury_note':         str(player.injury_note) if hasattr(player, 'injury_note') else '',
+                'nfl_team_id':         str(player.nfl_team_id) if hasattr(player, 'nfl_team_id') else '',
+                'coverage_type':       str(pp.coverage_type) if pp and hasattr(pp, 'coverage_type') else '',
             }
             roster_data['players'].append(player_data)
 
@@ -424,8 +430,8 @@ def get_weekly_scoreboard(query, num_weeks=18):
                 for matchup in scoreboard.matchups:
                     if not hasattr(matchup, 'teams'):
                         continue
-                    winner_key   = str(getattr(matchup, 'winner_team_key', ''))
-                    is_playoffs  = str(getattr(matchup, 'is_playoffs', '0'))
+                    winner_key     = str(getattr(matchup, 'winner_team_key', ''))
+                    is_playoffs    = str(getattr(matchup, 'is_playoffs', '0'))
                     is_consolation = str(getattr(matchup, 'is_consolation', '0'))
 
                     for team in matchup.teams:
@@ -454,15 +460,123 @@ def get_weekly_scoreboard(query, num_weeks=18):
     return weekly_data
 
 
-def process_season(season, league_key, game_id):
+def get_regular_season_weeks(scoreboard_data):
+    """Return sorted list of week numbers where is_playoffs == '0'."""
+    reg = []
+    for w, teams in scoreboard_data.items():
+        if any(v.get('is_playoffs', '0') == '0' for v in teams.values()):
+            reg.append(int(w))
+    return sorted(reg)
+
+
+def _build_week_date_map(matchups_list):
+    """Build {week_num: (start_date, end_date)} from a team's matchup list."""
+    week_map = {}
+    for m in matchups_list:
+        week  = m.get('week', '')
+        start = m.get('week_start', '')
+        end   = m.get('week_end', '')
+        if week and start and end:
+            try:
+                week_map[int(week)] = (
+                    datetime.strptime(start, '%Y-%m-%d').date(),
+                    datetime.strptime(end,   '%Y-%m-%d').date(),
+                )
+            except ValueError:
+                pass
+    return week_map
+
+
+def get_all_weekly_rosters(query, team_id, regular_season_weeks, existing_weeks=None):
+    """Fetch roster + player stats for every regular-season week.
+
+    Skips weeks already present in existing_weeks (resume support).
+    Returns {week_str: [player_dicts]}.
+    Sleeps 0.3s between calls to avoid Yahoo rate limits.
+    """
+    existing_weeks = existing_weeks or set()
+    result = {}
+    for week in regular_season_weeks:
+        if str(week) in existing_weeks:
+            continue
+        roster = get_team_roster_data(query, team_id, week=week)
+        if roster:
+            result[str(week)] = roster.get('players', [])
+        time.sleep(0.3)
+    return result
+
+
+def get_league_trades(query, week_date_map=None):
+    """Fetch all trade transactions for the season.
+
+    Filters get_league_transactions() to type=='trade'.
+    Maps each trade's Unix timestamp to a week number using week_date_map.
+    Returns a list of trade dicts.
+    """
+    week_date_map = week_date_map or {}
+    try:
+        transactions = query.get_league_transactions()
+        trades = []
+        for txn in (transactions or []):
+            if str(getattr(txn, 'type', '')).lower() != 'trade':
+                continue
+
+            ts = getattr(txn, 'timestamp', None)
+            week_num = ''
+            if ts and week_date_map:
+                try:
+                    txn_date = datetime.fromtimestamp(int(ts)).date()
+                    for wk, (start, end) in week_date_map.items():
+                        if start <= txn_date <= end:
+                            week_num = str(wk)
+                            break
+                except (ValueError, OSError):
+                    pass
+
+            players_out = []
+            for player in getattr(txn, 'players', []):
+                td = getattr(player, 'transaction_data', None)
+                raw_name = extract_player_name(player)
+                position = extract_player_position(player)
+                if position == 'DEF' and raw_name in _NFL_CITY:
+                    full_name = f"{_NFL_CITY[raw_name]} {raw_name} D/ST"
+                else:
+                    full_name = raw_name
+                players_out.append({
+                    'player_key':           str(getattr(player, 'player_key', '')),
+                    'name':                 full_name,
+                    'position':             position,
+                    'source_team_key':      str(getattr(td, 'source_team_key', '')) if td else '',
+                    'destination_team_key': str(getattr(td, 'destination_team_key', '')) if td else '',
+                })
+
+            trades.append({
+                'transaction_key': str(getattr(txn, 'transaction_key', '')),
+                'transaction_id':  str(getattr(txn, 'transaction_id', '')),
+                'timestamp':       int(ts) if ts else None,
+                'week':            week_num,
+                'status':          str(getattr(txn, 'status', '')),
+                'trader_team_key': str(getattr(txn, 'trader_team_key', '')),
+                'tradee_team_key': str(getattr(txn, 'tradee_team_key', '')),
+                'players':         players_out,
+            })
+        return trades
+    except Exception as e:
+        print(f'  Error fetching transactions: {e}')
+        return []
+
+
+def process_season(season, league_key, game_id, existing_weekly_rosters=None):
     """Process all data for a single season using a single authenticated query."""
     print(f'\n=== Processing Season {season} ===')
     season_data = {
-        'standings':     [],
-        'rosters':       {},
-        'draft_results': {},
-        'matchups':      {},
-        'scoreboard':    {},
+        'standings':      [],
+        'rosters':        {},
+        'draft_results':  {},
+        'matchups':       {},
+        'scoreboard':     {},
+        'weekly_rosters': existing_weekly_rosters or {},
+        'trades':         [],
     }
 
     try:
@@ -477,31 +591,48 @@ def process_season(season, league_key, game_id):
         season_data['scoreboard'] = scoreboard
         print(f'✓ Scoreboard: {len(scoreboard)} weeks')
 
-        # Use the last scored week so player_points reflect final production
+        regular_season_weeks = get_regular_season_weeks(scoreboard)
+        print(f'  Regular season weeks: {regular_season_weeks}')
+
+        # Use the last scored week so end-of-season rosters reflect final production
         last_week = max((int(w) for w in scoreboard.keys()), default=17)
-        print(f'  Using week {last_week} for player stats...')
+        print(f'  Using week {last_week} for end-of-season player stats...')
 
         for team in standings:
             team_id  = team.get('team_id', '')
             team_key = team.get('team_key', '')
             if not team_id:
-                print(f'  ✗ Skipping team with missing team_id: {team}')
+                print(f'  Skipping team with missing team_id: {team}')
                 continue
+
+            key = team_key or str(team_id)
 
             roster = get_team_roster_data(query, team_id, week=last_week)
             if roster:
-                season_data['rosters'][team_key or str(team_id)] = roster
-                print(f'  ✓ Roster: {team_key or team_id} ({len(roster.get("players", []))} players)')
+                season_data['rosters'][key] = roster
+                print(f'  ✓ Roster: {key} ({len(roster.get("players", []))} players)')
 
             draft = get_team_draft_results(query, team_id)
             if draft:
-                season_data['draft_results'][team_key or str(team_id)] = draft
-                print(f'  ✓ Draft: {team_key or team_id} ({len(draft.get("picks", []))} picks)')
+                season_data['draft_results'][key] = draft
+                print(f'  ✓ Draft: {key} ({len(draft.get("picks", []))} picks)')
 
             matchups = get_team_matchups(query, team_id)
             if matchups:
-                season_data['matchups'][team_key or str(team_id)] = matchups
-                print(f'  ✓ Matchups: {team_key or team_id} ({len(matchups.get("matchups", []))} weeks)')
+                season_data['matchups'][key] = matchups
+                print(f'  ✓ Matchups: {key} ({len(matchups.get("matchups", []))} weeks)')
+
+            # Weekly rosters (skips already-fetched weeks for resume support)
+            existing_weeks = set(season_data['weekly_rosters'].get(key, {}).keys())
+            weekly = get_all_weekly_rosters(
+                query, team_id, regular_season_weeks, existing_weeks=existing_weeks
+            )
+            if weekly:
+                if key not in season_data['weekly_rosters']:
+                    season_data['weekly_rosters'][key] = {}
+                season_data['weekly_rosters'][key].update(weekly)
+            total_weeks = len(season_data['weekly_rosters'].get(key, {}))
+            print(f'  ✓ Weekly rosters: {key} ({total_weeks} weeks)')
 
         # --- Draft player name resolution (runs after all teams are collected) ---
         # Pass 1: batch-fetch regular players via league/players;player_keys=...
@@ -540,11 +671,18 @@ def process_season(season, league_key, game_id):
                         pick['player']['name']     = def_lookup[pk]['name']
                         pick['player']['position'] = def_lookup[pk]['position']
 
+        # --- Trade transactions ---
+        first_matchup_data = next(iter(season_data['matchups'].values()), {})
+        week_date_map = _build_week_date_map(first_matchup_data.get('matchups', []))
+        trades = get_league_trades(query, week_date_map)
+        season_data['trades'] = trades
+        print(f'✓ Trades: {len(trades)} trade transactions')
+
         return season_data
 
     except Exception as e:
         import traceback
-        print(f'✗ Error for {season}: {e}')
+        print(f'Error for {season}: {e}')
         print(f'  Details: {traceback.format_exc()}')
         return None
 
@@ -555,11 +693,13 @@ def save_season_data(season, data):
         return
 
     for filename, key in [
-        (f'standings_{season}.json',    'standings'),
-        (f'rosters_{season}.json',      'rosters'),
-        (f'draft_results_{season}.json','draft_results'),
-        (f'matchups_{season}.json',     'matchups'),
-        (f'scoreboard_{season}.json',   'scoreboard'),
+        (f'standings_{season}.json',      'standings'),
+        (f'rosters_{season}.json',        'rosters'),
+        (f'draft_results_{season}.json',  'draft_results'),
+        (f'matchups_{season}.json',       'matchups'),
+        (f'scoreboard_{season}.json',     'scoreboard'),
+        (f'weekly_rosters_{season}.json', 'weekly_rosters'),
+        (f'trades_{season}.json',         'trades'),
     ]:
         filepath = DATA_DIR / filename
         with open(filepath, 'w') as f:
@@ -567,27 +707,39 @@ def save_season_data(season, data):
         print(f'✓ Saved {filepath}')
 
 
-def add_season_to_datasets(season):
+def add_season_to_datasets(season, resume=False):
     """Upsert a single season into the consolidated per-type JSON datasets."""
     if season not in seasons:
         print(f"Error: Season {season} not available. Available seasons: {seasons}")
         return
 
-    season_idx  = seasons.index(season)
-    league_key  = league_keys[season_idx]
-    game_id     = game_ids[season_idx]
+    season_idx = seasons.index(season)
+    league_key = league_keys[season_idx]
+    game_id    = game_ids[season_idx]
 
-    data = process_season(season, league_key, game_id)
+    existing_weekly_rosters = {}
+    if resume:
+        wr_path = DATA_DIR / 'weekly_rosters_yfpy.json'
+        if wr_path.exists():
+            with open(wr_path) as f:
+                all_wr = json.load(f)
+            existing_weekly_rosters = all_wr.get(str(season), {})
+            print(f'  Resuming: found {len(existing_weekly_rosters)} teams with existing weekly roster data')
+
+    data = process_season(season, league_key, game_id,
+                          existing_weekly_rosters=existing_weekly_rosters)
     if not data:
         print(f"Failed to process season {season}")
         return
 
     datasets = [
-        ('standings_yfpy.json',    'standings'),
-        ('rosters_yfpy.json',      'rosters'),
-        ('draft_results_yfpy.json','draft_results'),
-        ('matchups_yfpy.json',     'matchups'),
-        ('scoreboard_yfpy.json',   'scoreboard'),
+        ('standings_yfpy.json',      'standings'),
+        ('rosters_yfpy.json',        'rosters'),
+        ('draft_results_yfpy.json',  'draft_results'),
+        ('matchups_yfpy.json',       'matchups'),
+        ('scoreboard_yfpy.json',     'scoreboard'),
+        ('weekly_rosters_yfpy.json', 'weekly_rosters'),
+        ('trades_yfpy.json',         'trades'),
     ]
 
     for filename, key in datasets:
@@ -611,12 +763,104 @@ def add_season_to_datasets(season):
     print(f"\n=== Season {season} added to datasets ===")
 
 
+def discover_game_id(year):
+    """Query Yahoo's API to find the game_id for the given NFL season year.
+
+    Uses the most recent known authenticated query to call the games resource.
+    Returns the integer game_id, or None if not found.
+    """
+    try:
+        auth_query = create_query(league_keys[-1], game_ids[-1])
+        url = (f"https://fantasysports.yahooapis.com/fantasy/v2/"
+               f"games;game_codes=nfl;seasons={year}")
+        result = auth_query.query(url, ["games"])
+        if not result:
+            return None
+        # yfpy returns a dict wrapper: {'game': Game(...)} or a list/object
+        if isinstance(result, dict):
+            result = result.get('game') or result.get('games') or result
+        games = result if isinstance(result, list) else [result]
+        for g in games:
+            gid = getattr(g, 'game_id', None)
+            if gid:
+                return int(gid)
+    except Exception as e:
+        print(f"  Error discovering game_id for {year}: {e}")
+    return None
+
+
+def scout_league(league_id, year, game_id):
+    """Connect to a league and report what data is currently available.
+
+    Useful for pre-season or keeper leagues before the full season begins.
+    Prints team names, managers, and current roster contents (keepers).
+    """
+    print(f"\n=== Scouting league {league_id} for {year} (game_id={game_id}) ===")
+    try:
+        query = create_query(str(league_id), game_id)
+
+        print("\n-- League settings --")
+        try:
+            settings = query.get_league_settings()
+            print(f"  Name:          {getattr(settings, 'name', 'N/A')}")
+            print(f"  Num teams:     {getattr(settings, 'num_teams', 'N/A')}")
+            print(f"  Scoring type:  {getattr(settings, 'scoring_type', 'N/A')}")
+            print(f"  Draft type:    {getattr(settings, 'draft_type', 'N/A')}")
+            print(f"  Is keeper:     {getattr(settings, 'uses_keeper_scoring', 'N/A')}")
+        except Exception as e:
+            print(f"  (settings unavailable: {e})")
+
+        print("\n-- Teams / managers --")
+        try:
+            standings = get_league_standings_yfpy(query)
+            for t in standings:
+                print(f"  [{t.get('team_id','?')}] {t.get('name','?')} "
+                      f"— manager: {t.get('manager_nickname','?')} "
+                      f"(id {t.get('manager_id','?')})")
+        except Exception as e:
+            print(f"  (standings unavailable: {e})")
+            standings = []
+
+        print("\n-- Current rosters (keepers + any pre-draft additions) --")
+        for team in standings:
+            team_id  = team.get('team_id', '')
+            team_key = team.get('team_key', '')
+            name     = team.get('name', team_key)
+            if not team_id:
+                continue
+            try:
+                roster = get_team_roster_data(query, team_id, week=None)
+                players = roster.get('players', []) if roster else []
+                if players:
+                    print(f"\n  {name}:")
+                    for p in players:
+                        pos    = p.get('position', '?')
+                        sel    = p.get('selected_position', '')
+                        pname  = p.get('name', p.get('player_key', '?'))
+                        keeper = ' [KEEPER]' if sel not in ('BN', 'IR', '') else ''
+                        print(f"    {pos:6s} {pname}{keeper}")
+                else:
+                    print(f"\n  {name}: (no players on roster)")
+            except Exception as e:
+                print(f"\n  {name}: roster error — {e}")
+
+    except Exception as e:
+        import traceback
+        print(f"Failed to connect to league {league_id}: {e}")
+        print(traceback.format_exc())
+
+
 def main():
     parser = argparse.ArgumentParser(description='Extract Yahoo Fantasy Sports data using yfpy')
     parser.add_argument('--season',     type=int, help='Specific season to process (e.g., 2023)')
     parser.add_argument('--all',        action='store_true', help='Process all seasons (2008-2025)')
     parser.add_argument('--list',       action='store_true', help='List available seasons')
     parser.add_argument('--add-season', type=int, help='Upsert a single season into the consolidated datasets')
+    parser.add_argument('--resume',     action='store_true', help='Skip already-fetched weekly roster data')
+    parser.add_argument('--scout',      type=int, metavar='LEAGUE_ID',
+                        help='Scout a new league: auto-discover game_id and show available data')
+    parser.add_argument('--year',       type=int, default=2026,
+                        help='Season year for --scout (default: 2026)')
 
     args = parser.parse_args()
 
@@ -624,8 +868,21 @@ def main():
         print(f"Available seasons: {seasons[0]}-{seasons[-1]}")
         return
 
+    if args.scout:
+        year = args.year
+        print(f"Discovering game_id for NFL {year}...")
+        game_id = discover_game_id(year)
+        if game_id:
+            print(f"  Found game_id={game_id} for {year}")
+        else:
+            print(f"  Could not auto-discover game_id for {year}.")
+            print(f"  The {year} season may not be open on Yahoo yet.")
+            return
+        scout_league(args.scout, year, game_id)
+        return
+
     if args.add_season:
-        add_season_to_datasets(args.add_season)
+        add_season_to_datasets(args.add_season, resume=args.resume)
         return
 
     if args.season:
@@ -634,7 +891,17 @@ def main():
             sys.exit(1)
 
         season_idx = seasons.index(args.season)
-        data = process_season(args.season, league_keys[season_idx], game_ids[season_idx])
+
+        existing_weekly_rosters = {}
+        if args.resume:
+            wr_path = DATA_DIR / 'weekly_rosters_yfpy.json'
+            if wr_path.exists():
+                with open(wr_path) as f:
+                    all_wr = json.load(f)
+                existing_weekly_rosters = all_wr.get(str(args.season), {})
+
+        data = process_season(args.season, league_keys[season_idx], game_ids[season_idx],
+                              existing_weekly_rosters=existing_weekly_rosters)
         if data:
             save_season_data(args.season, data)
             print(f'\n=== Season {args.season} complete ===')
@@ -643,10 +910,22 @@ def main():
             sys.exit(1)
 
     elif args.all:
-        all_data = {k: {} for k in ('standings', 'rosters', 'draft_results', 'matchups', 'scoreboard')}
+        all_data = {k: {} for k in (
+            'standings', 'rosters', 'draft_results', 'matchups',
+            'scoreboard', 'weekly_rosters', 'trades'
+        )}
+
+        if args.resume:
+            wr_path = DATA_DIR / 'weekly_rosters_yfpy.json'
+            if wr_path.exists():
+                with open(wr_path) as f:
+                    all_data['weekly_rosters'] = json.load(f)
+                print(f'Resuming: loaded existing weekly roster data for '
+                      f'{len(all_data["weekly_rosters"])} seasons')
 
         for season, gid, lid in zip(seasons, game_ids, league_keys):
-            data = process_season(season, lid, gid)
+            existing_wr = all_data['weekly_rosters'].get(str(season), {})
+            data = process_season(season, lid, gid, existing_weekly_rosters=existing_wr)
             if data:
                 for key in all_data:
                     all_data[key][str(season)] = data[key]
@@ -655,11 +934,13 @@ def main():
 
         print('\n=== Saving All Data ===')
         for filename, key in [
-            ('standings_yfpy.json',    'standings'),
-            ('rosters_yfpy.json',      'rosters'),
-            ('draft_results_yfpy.json','draft_results'),
-            ('matchups_yfpy.json',     'matchups'),
-            ('scoreboard_yfpy.json',   'scoreboard'),
+            ('standings_yfpy.json',      'standings'),
+            ('rosters_yfpy.json',        'rosters'),
+            ('draft_results_yfpy.json',  'draft_results'),
+            ('matchups_yfpy.json',       'matchups'),
+            ('scoreboard_yfpy.json',     'scoreboard'),
+            ('weekly_rosters_yfpy.json', 'weekly_rosters'),
+            ('trades_yfpy.json',         'trades'),
         ]:
             with open(DATA_DIR / filename, 'w') as f:
                 json.dump(all_data[key], f, indent=4)

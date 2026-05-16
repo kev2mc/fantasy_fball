@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('data_science.py'\\).read\\(\\)\\); ast.parse\\(open\\('convert_to_df.py'\\).read\\(\\)\\); print\\('Both files parse OK'\\)\")",
+      "Bash(python -c \"from scipy.optimize import linear_sum_assignment; print\\('scipy available'\\)\")",
+      "Bash(pip install *)",
+      "Bash(python -c \"from scipy.optimize import linear_sum_assignment; print\\('scipy OK'\\)\")",
+      "Bash(python -c \"from convert_to_df import *; from data_science import *; print\\('Both files import OK'\\)\")",
+      "Bash(python -c \"import sys; print\\(sys.executable\\)\")",
+      "Bash(pip show *)",
+      "Bash(python -m pip install pandas)",
+      "Bash(python -c \"import pandas; import data_science; import convert_to_df; print\\('Both files import OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('yahoo_api.py'\\).read\\(\\)\\); print\\('yahoo_api.py parses OK'\\)\")",
+      "Bash(python yahoo_api.py --scout 44874 --year 2026)",
+      "Bash(python -c \"import xgboost; print\\('xgboost', xgboost.__version__\\)\")",
+      "Bash(python predict_2026.py)",
+      "Bash(Sort-Object Name)",
+      "Bash(where python *)",
+      "Bash(pip list *)",
+      "Bash(\"C:\\\\Users\\\\kevin\\\\OneDrive\\\\Documents\\\\Git\\\\fantasy_fball\\\\.venv\\\\Scripts\\\\python.exe\" -m pip list --format=freeze)",
+      "Bash(\"C:\\\\Users\\\\kevin\\\\OneDrive\\\\Documents\\\\Git\\\\fantasy_fball\\\\.venv\\\\Scripts\\\\python.exe\" -m pip install scikit-learn scipy xgboost)",
+      "Bash(.venv\\\\Scripts\\\\python.exe predict_2026.py)",
+      "Bash(\"C:\\\\Users\\\\kevin\\\\OneDrive\\\\Documents\\\\Git\\\\fantasy_fball\\\\.venv\\\\Scripts\\\\python.exe\" predict_2026.py)",
+      "Bash('C:\\\\Users\\\\kevin\\\\OneDrive\\\\Documents\\\\Git\\\\fantasy_fball\\\\.venv\\\\Scripts\\\\python.exe' -c ' *)",
+      "Bash(\"C:\\\\Users\\\\kevin\\\\OneDrive\\\\Documents\\\\Git\\\\fantasy_fball\\\\.venv\\\\Scripts\\\\python.exe\" convert_to_df.py)",
+      "Bash(\"C:\\\\Users\\\\kevin\\\\OneDrive\\\\Documents\\\\Git\\\\fantasy_fball\\\\.venv\\\\Scripts\\\\python.exe\" data_science.py)",
+      "Bash(python data_science.py)",
+      "Bash(python -)"
+    ]
+  }
+}
