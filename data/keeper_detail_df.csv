@@ -1,0 +1,1390 @@
+season,manager,player,pos,rd,pos_rank,pts,benchmark,value,is_kept,is_optimal,is_ineligible
+2016,Bennett,David Johnson,RB,12,47,268.9,40.8,228.1,True,True,False
+2016,Bennett,DeMarco Murray,RB,2,8,213.7,163.8,49.9,False,True,False
+2016,Bennett,Giovani Bernard,RB,10,39,85.3,59.9,25.4,False,True,False
+2016,Bennett,T.Y. Hilton,WR,3,13,146.8,121.5,25.3,True,False,False
+2016,Bennett,Greg Olsen,TE,5,4,106.0,103.6,2.4,False,False,False
+2016,Bennett,Chris Johnson,RB,13,49,11.6,35.9,-24.3,False,False,False
+2016,Bennett,Ronnie Hillman,RB,14,53,0.0,24.3,-24.3,False,False,False
+2016,Bennett,Jeremy Maclin,WR,6,24,49.5,99.6,-50.1,False,False,False
+2016,Bennett,Terrance Williams,WR,11,45,0.0,50.8,-50.8,False,False,False
+2016,Bennett,John Brown,WR,9,36,8.7,68.8,-60.1,False,False,False
+2016,Bennett,Andrew Luck,QB,1,1,272.4,335.6,-63.1,True,False,False
+2016,Bennett,Alfred Morris,RB,4,17,35.9,125.2,-89.3,False,False,False
+2016,Bennett,Ryan Tannehill,QB,9,11,0.0,231.3,-231.3,False,False,False
+2016,Branden,Mike Evans,WR,3,13,177.8,121.5,56.3,True,True,False
+2016,Branden,Theo Riddick,RB,9,35,108.8,64.0,44.8,False,True,False
+2016,Branden,Ben Roethlisberger,QB,6,9,262.9,249.8,13.0,False,True,False
+2016,Branden,Jarvis Landry,WR,8,30,99.7,87.0,12.7,False,False,False
+2016,Branden,Tyler Eifert,TE,9,9,53.7,60.3,-6.6,False,False,False
+2016,Branden,DeAndre Hopkins,WR,4,18,92.8,105.4,-12.6,True,False,False
+2016,Branden,Doug Martin,RB,7,30,52.8,72.0,-19.2,True,False,False
+2016,Branden,Jeremy Hill,RB,2,8,125.2,163.8,-38.6,False,False,False
+2016,Branden,Sammy Watkins,WR,9,36,18.1,68.8,-50.7,False,False,False
+2016,Branden,Jacob Tamme,TE,9,9,0.0,60.3,-60.3,False,False,False
+2016,Branden,Austin Seferian-Jenkins,TE,9,9,0.0,60.3,-60.3,False,False,False
+2016,Branden,Javorius Allen,RB,9,35,0.0,64.0,-64.0,False,False,False
+2016,Branden,Shaun Draughn,RB,9,35,0.0,64.0,-64.0,False,False,False
+2016,Branden,Andy Dalton,QB,9,11,150.8,231.3,-80.6,False,False,False
+2016,Derek,Larry Fitzgerald,WR,9,36,120.5,68.8,51.7,False,True,False
+2016,Derek,Aaron Rodgers,QB,2,2,320.2,320.2,0.0,True,True,False
+2016,Derek,Gary Barnidge,TE,9,9,45.4,60.3,-14.9,False,True,False
+2016,Derek,Jordan Matthews,WR,4,18,88.6,105.4,-16.8,True,False,False
+2016,Derek,Chris Ivory,RB,9,35,46.0,64.0,-18.0,False,False,False
+2016,Derek,Tavon Austin,WR,9,36,40.6,68.8,-28.2,False,False,False
+2016,Derek,Jason Witten,TE,8,9,29.1,60.3,-31.2,False,False,False
+2016,Derek,Charles Sims,RB,9,35,32.8,64.0,-31.2,False,False,False
+2016,Derek,DeSean Jackson,WR,6,24,49.6,99.6,-50.0,False,False,False
+2016,Derek,Brandon Bolden,RB,9,35,0.0,64.0,-64.0,False,False,False
+2016,Derek,Danny Amendola,WR,9,36,0.0,68.8,-68.8,False,False,False
+2016,Derek,James Jones,WR,9,36,0.0,68.8,-68.8,False,False,False
+2016,Derek,Justin Forsett,RB,3,13,13.9,140.9,-127.0,False,False,False
+2016,Derek,Jamaal Charles,RB,1,4,11.4,213.7,-202.3,True,False,False
+2016,Endler,Philip Rivers,QB,15,16,252.1,153.7,98.4,False,True,False
+2016,Endler,LeGarrette Blount,RB,6,25,182.8,93.4,89.4,False,True,False
+2016,Endler,Drew Brees,QB,4,7,335.6,262.0,73.6,False,True,False
+2016,Endler,Matt Jones,RB,13,49,71.3,35.9,35.4,False,False,False
+2016,Endler,Amari Cooper,WR,5,21,134.1,102.2,31.9,False,False,False
+2016,Endler,Matthew Stafford,QB,9,11,262.0,231.3,30.7,False,False,False
+2016,Endler,LeSean McCoy,RB,2,8,190.5,163.8,26.7,True,False,False
+2016,Endler,A.J. Green,WR,3,13,128.4,121.5,6.9,True,False,False
+2016,Endler,Brandon Marshall,WR,8,30,93.1,87.0,6.1,False,False,False
+2016,Endler,Martellus Bennett,TE,9,9,60.3,60.3,0.0,False,False,False
+2016,Endler,Crockett Gillmore,TE,9,9,0.0,60.3,-60.3,False,False,False
+2016,Endler,Scott Chandler,TE,9,9,0.0,60.3,-60.3,False,False,False
+2016,Endler,Martavis Bryant,WR,10,40,0.0,65.7,-65.7,False,False,False
+2016,Endler,Adrian Peterson,RB,1,4,5.7,213.7,-208.0,True,False,False
+2016,Erik,Michael Crabtree,WR,9,36,128.5,68.8,59.7,False,True,False
+2016,Erik,Jay Ajayi,RB,9,35,100.6,64.0,36.6,False,True,False
+2016,Erik,Stefon Diggs,WR,9,36,99.6,68.8,30.8,False,True,False
+2016,Erik,Duke Johnson,RB,9,35,72.1,64.0,8.1,False,False,False
+2016,Erik,Donte Moncrief,WR,9,36,63.6,68.8,-5.2,False,False,False
+2016,Erik,Eric Ebron,TE,9,9,53.1,60.3,-7.2,False,False,False
+2016,Erik,Carson Palmer,QB,9,11,223.9,231.3,-7.4,True,False,False
+2016,Erik,Julius Thomas,TE,9,9,40.4,60.3,-19.9,False,False,False
+2016,Erik,Golden Tate,WR,4,18,68.7,105.4,-36.7,False,False,False
+2016,Erik,Randall Cobb,WR,2,12,87.0,123.9,-36.9,True,False,False
+2016,Erik,Dion Lewis,RB,9,35,14.5,64.0,-49.5,False,False,False
+2016,Erik,Le'Veon Bell,RB,1,4,163.8,213.7,-49.9,True,False,False
+2016,Erik,Ameer Abdullah,RB,3,13,21.8,140.9,-119.1,False,False,False
+2016,Erik,Brock Osweiler,QB,9,11,0.0,231.3,-231.3,False,False,False
+2016,Gucker,Melvin Gordon III,RB,5,22,215.1,100.8,114.3,False,True,False
+2016,Gucker,Jordy Nelson,WR,9,36,151.2,68.8,82.4,True,True,False
+2016,Gucker,DeVante Parker,WR,14,52,80.3,33.1,47.2,False,True,False
+2016,Gucker,Delanie Walker,TE,9,9,104.0,60.3,43.7,False,False,False
+2016,Gucker,Emmanuel Sanders,WR,4,18,114.2,105.4,8.8,False,False,False
+2016,Gucker,Matt Ryan,QB,7,9,249.8,249.8,0.0,False,False,False
+2016,Gucker,Matt Forte,RB,2,8,154.0,163.8,-9.8,False,False,False
+2016,Gucker,Julian Edelman,WR,6,24,86.9,99.6,-12.7,False,False,False
+2016,Gucker,Jeremy Langford,RB,9,35,24.3,64.0,-39.7,False,False,False
+2016,Gucker,Alshon Jeffery,WR,3,13,71.0,121.5,-50.5,True,False,False
+2016,Gucker,Arian Foster,RB,9,35,13.3,64.0,-50.7,False,False,False
+2016,Gucker,Brandon LaFell,WR,9,36,0.0,68.8,-68.8,False,False,False
+2016,Gucker,Devin Funchess,WR,8,30,8.8,87.0,-78.2,False,False,False
+2016,Gucker,Eddie Lacy,RB,1,4,40.8,213.7,-172.9,True,False,False
+2016,Jacob,Devonta Freeman,RB,9,35,166.3,64.0,102.3,True,True,False
+2016,Jacob,Antonio Brown,WR,1,8,180.1,131.3,48.8,True,True,False
+2016,Jacob,Jordan Reed,TE,9,9,93.0,60.3,32.7,False,True,False
+2016,Jacob,Travis Kelce,TE,6,6,109.0,80.9,28.1,False,False,False
+2016,Jacob,Carlos Hyde,RB,4,17,125.2,125.2,0.0,False,False,False
+2016,Jacob,DeAngelo Williams,RB,9,35,62.6,64.0,-1.4,False,False,False
+2016,Jacob,Frank Gore,RB,3,13,139.3,140.9,-1.6,False,False,False
+2016,Jacob,Thomas Rawls,RB,9,35,45.0,64.0,-19.0,False,False,False
+2016,Jacob,Darren McFadden,RB,12,47,0.0,40.8,-40.8,False,False,False
+2016,Jacob,Tom Brady,QB,5,7,220.5,262.0,-41.5,True,False,False
+2016,Jacob,Marshawn Lynch,RB,9,35,0.0,64.0,-64.0,False,False,False
+2016,Jacob,Vincent Jackson,WR,8,30,6.2,87.0,-80.8,False,False,False
+2016,Jacob,Calvin Johnson,WR,2,12,0.0,123.9,-123.9,False,False,False
+2016,John Stockton,Spencer Ware,RB,9,35,140.9,64.0,76.9,False,True,False
+2016,John Stockton,Davante Adams,WR,9,36,131.3,68.8,62.5,False,True,False
+2016,John Stockton,Julio Jones,WR,2,12,171.3,123.9,47.4,True,True,False
+2016,John Stockton,Brandin Cooks,WR,4,18,123.9,105.4,18.5,False,False,False
+2016,John Stockton,Rashad Jennings,RB,8,32,77.1,68.4,8.7,False,False,False
+2016,John Stockton,Cam Newton,QB,9,11,235.3,231.3,4.0,False,False,False
+2016,John Stockton,Lamar Miller,RB,3,13,133.0,140.9,-7.9,True,False,False
+2016,John Stockton,James Starks,RB,9,35,34.4,64.0,-29.6,False,False,False
+2016,John Stockton,Rob Gronkowski,TE,1,1,78.0,109.0,-31.0,True,False,False
+2016,John Stockton,Eric Decker,WR,9,36,33.4,68.8,-35.4,False,False,False
+2016,John Stockton,Benjamin Watson,TE,9,9,0.0,60.3,-60.3,False,False,False
+2016,John Stockton,Andre Ellington,RB,5,22,0.0,100.8,-100.8,False,False,False
+2016,John Stockton,Danny Woodhead,RB,16,1,21.1,268.9,-247.8,False,False,False
+2016,John Stockton,Peyton Manning,QB,6,9,0.0,249.8,-249.8,False,False,False
+2016,K&E,Mark Ingram II,RB,3,13,146.2,140.9,5.3,True,True,False
+2016,K&E,Michael Floyd,WR,9,36,68.8,68.8,0.0,False,True,False
+2016,K&E,Jimmy Graham,TE,4,2,103.6,106.0,-2.4,False,True,False
+2016,K&E,Shane Vereen,RB,15,56,13.5,21.1,-7.6,False,False,False
+2016,K&E,Demaryius Thomas,WR,1,8,109.9,131.3,-21.4,True,False,False
+2016,K&E,Kyle Rudolph,TE,9,9,35.1,60.3,-25.2,False,False,False
+2016,K&E,Alfred Blue,RB,12,47,4.1,40.8,-36.7,False,False,False
+2016,K&E,Antonio Andrews,RB,9,35,0.0,64.0,-64.0,False,False,False
+2016,K&E,Steve Johnson,WR,9,36,0.0,68.8,-68.8,False,False,False
+2016,K&E,Kamar Aiken,WR,9,36,0.0,68.8,-68.8,False,False,False
+2016,K&E,C.J. Anderson,RB,2,8,88.5,163.8,-75.3,False,False,False
+2016,K&E,Keenan Allen,WR,5,21,6.3,102.2,-95.9,True,False,False
+2016,K&E,Tyrod Taylor,QB,9,11,53.5,231.3,-177.8,False,False,False
+2016,K&E,Brian Hoyer,QB,9,11,0.0,231.3,-231.3,False,False,False
+2016,kevin mc,Derek Carr,QB,9,11,281.1,231.3,49.8,False,True,False
+2016,kevin mc,Tevin Coleman,RB,10,39,106.6,59.9,46.7,False,True,False
+2016,kevin mc,Todd Gurley,RB,7,30,114.9,72.0,42.9,True,True,False
+2016,kevin mc,Odell Beckham Jr.,WR,2,12,155.5,123.9,31.6,True,False,False
+2016,kevin mc,Latavius Murray,RB,4,17,146.1,125.2,20.9,False,False,False
+2016,kevin mc,Allen Robinson,WR,8,30,102.2,87.0,15.2,False,False,False
+2016,kevin mc,Allen Hurns,WR,9,36,65.7,68.8,-3.1,False,False,False
+2016,kevin mc,Jonathan Stewart,RB,5,22,93.4,100.8,-7.4,False,False,False
+2016,kevin mc,Antonio Gates,TE,12,11,40.6,53.7,-13.1,False,False,False
+2016,kevin mc,T.J. Yeldon,RB,6,25,72.0,93.4,-21.4,False,False,False
+2016,kevin mc,Dez Bryant,WR,1,8,105.4,131.3,-25.9,False,False,False
+2016,kevin mc,Russell Wilson,QB,3,6,231.3,262.9,-31.6,True,False,False
+2016,kevin mc,Charcandrick West,RB,9,35,8.4,64.0,-55.6,False,False,False
+2016,kevin mc,Richard Rodgers,TE,9,9,0.0,60.3,-60.3,False,False,False
+2017,Bennett,Davante Adams,WR,11,42,118.4,47.4,71.0,False,True,False
+2017,Bennett,Marvin Jones Jr.,WR,7,28,136.1,77.0,59.1,False,True,False
+2017,Bennett,Ezekiel Elliott,RB,4,18,159.3,105.3,54.0,False,False,False
+2017,Bennett,Travis Kelce,TE,6,6,135.8,84.1,51.7,True,False,False
+2017,Bennett,Andy Dalton,QB,9,12,199.5,204.1,-4.6,False,False,False
+2017,Bennett,Alfred Morris,RB,12,45,43.8,54.8,-11.0,False,False,False
+2017,Bennett,T.Y. Hilton,WR,2,8,107.1,127.2,-20.1,False,False,False
+2017,Bennett,Allen Hurns,WR,9,36,10.0,59.7,-49.7,False,False,False
+2017,Bennett,Eddie Royal,WR,9,36,0.0,59.7,-59.7,False,False,False
+2017,Bennett,Matt Asiata,RB,9,35,0.0,70.1,-70.1,False,False,False
+2017,Bennett,Julian Edelman,WR,5,23,0.0,88.2,-88.2,False,False,False
+2017,Bennett,David Johnson,RB,1,6,7.0,165.7,-158.7,True,False,False
+2017,Bennett,Andrew Luck,QB,3,4,0.0,270.6,-270.6,False,False,False
+2017,Branden,Tyreek Hill,WR,9,36,143.1,59.7,83.4,False,True,False
+2017,Branden,Matthew Stafford,QB,8,11,250.1,213.2,36.9,False,True,False
+2017,Branden,Stefon Diggs,WR,9,36,96.1,59.7,36.4,False,False,False
+2017,Branden,Brandin Cooks,WR,4,20,127.2,95.3,31.9,False,False,False
+2017,Branden,DeAndre Hopkins,WR,1,5,172.4,140.6,31.8,False,False,False
+2017,Branden,Dak Prescott,QB,9,12,226.5,204.1,22.4,False,False,False
+2017,Branden,DeMarco Murray,RB,6,24,111.6,96.4,15.2,True,False,False
+2017,Branden,Dion Lewis,RB,9,35,73.5,70.1,3.4,False,False,False
+2017,Branden,Mike Evans,WR,2,8,97.5,127.2,-29.7,True,False,False
+2017,Branden,Terrelle Pryor Sr.,WR,9,36,28.3,59.7,-31.4,False,False,False
+2017,Branden,Antonio Gates,TE,9,11,0.0,39.1,-39.1,False,False,False
+2017,Branden,Doug Martin,RB,3,14,57.6,116.4,-58.8,False,False,False
+2017,Branden,Jonathan Stewart,RB,5,19,33.1,102.4,-69.3,False,False,False
+2017,Branden,Colin Kaepernick,QB,9,12,0.0,204.1,-204.1,False,False,False
+2017,Derek,Melvin Gordon III,RB,7,26,165.7,89.5,76.2,True,True,False
+2017,Derek,Jarvis Landry,WR,6,25,103.2,84.3,18.9,False,True,False
+2017,Derek,Matt Ryan,QB,9,12,213.2,204.1,9.1,False,False,False
+2017,Derek,Pierre Garcon,WR,9,36,52.0,59.7,-7.7,False,False,False
+2017,Derek,Christine Michael,RB,15,55,0.0,26.5,-26.5,False,False,False
+2017,Derek,Rob Kelley,RB,9,35,39.2,70.1,-30.9,False,False,False
+2017,Derek,Eric Ebron,TE,9,11,6.0,39.1,-33.1,False,False,False
+2017,Derek,Matt Forte,RB,5,19,52.8,102.4,-49.6,False,False,False
+2017,Derek,Wendell Smallwood,RB,9,35,19.2,70.1,-50.9,False,False,False
+2017,Derek,Willie Snead IV,WR,9,36,1.1,59.7,-58.6,False,False,False
+2017,Derek,Dontrelle Inman,WR,9,36,0.0,59.7,-59.7,False,False,False
+2017,Derek,Taylor Gabriel,WR,9,36,0.0,59.7,-59.7,False,False,False
+2017,Derek,Brandon Marshall,WR,4,20,2.7,95.3,-92.6,False,False,False
+2017,Derek,Aaron Rodgers,QB,2,3,130.6,296.6,-166.0,True,False,False
+2017,Endler,LeSean McCoy,RB,3,14,149.5,116.4,33.1,True,True,False
+2017,Endler,Jerick McKinnon,RB,9,35,98.3,70.1,28.2,False,True,False
+2017,Endler,Emmanuel Sanders,WR,10,40,61.1,50.9,10.2,False,False,False
+2017,Endler,A.J. Green,WR,1,5,140.6,140.6,0.0,True,False,False
+2017,Endler,Mike Wallace,WR,16,58,5.4,15.0,-9.6,False,False,False
+2017,Endler,Cam Newton,QB,4,4,258.6,270.6,-11.9,False,False,False
+2017,Endler,Mike Gillislee,RB,9,35,57.5,70.1,-12.6,False,False,False
+2017,Endler,C.J. Fiedorowicz,TE,9,11,7.1,39.1,-32.0,False,False,False
+2017,Endler,T.J. Yeldon,RB,9,35,12.9,70.1,-57.2,False,False,False
+2017,Endler,Tyler Boyd,WR,9,36,0.0,59.7,-59.7,False,False,False
+2017,Endler,Anquan Boldin,WR,9,36,0.0,59.7,-59.7,False,False,False
+2017,Endler,Jordan Reed,TE,5,5,33.1,92.9,-59.8,False,False,False
+2017,Endler,Adrian Peterson,RB,2,11,71.9,133.1,-61.2,False,False,False
+2017,Endler,Kenneth Dixon,RB,9,35,0.0,70.1,-70.1,False,False,False
+2017,Erik,Bilal Powell,RB,14,51,84.2,38.7,45.5,False,True,False
+2017,Erik,Le'Veon Bell,RB,1,6,195.9,165.7,30.2,True,True,False
+2017,Erik,Hunter Henry,TE,9,11,68.1,39.1,29.0,False,False,False
+2017,Erik,Michael Crabtree,WR,9,36,88.2,59.7,28.5,False,False,False
+2017,Erik,Frank Gore,RB,8,31,98.1,78.4,19.7,False,False,False
+2017,Erik,Will Fuller V,WR,9,36,61.6,59.7,1.9,False,False,False
+2017,Erik,Marcus Mariota,QB,9,12,194.4,204.1,-9.6,False,False,False
+2017,Erik,Cole Beasley,WR,9,36,0.0,59.7,-59.7,False,False,False
+2017,Erik,Steve Smith,WR,9,36,0.0,59.7,-59.7,False,False,False
+2017,Erik,Devontae Booker,RB,9,35,0.0,70.1,-70.1,False,False,False
+2017,Erik,Michael Floyd,WR,7,28,0.0,77.0,-77.0,False,False,False
+2017,Erik,Greg Olsen,TE,5,5,3.8,92.9,-89.1,True,False,False
+2017,Erik,Randall Cobb,WR,2,8,33.1,127.2,-94.1,False,False,False
+2017,Erik,Carson Palmer,QB,3,4,69.3,270.6,-201.2,False,False,False
+2017,Gucker,Larry Fitzgerald,WR,10,40,123.8,50.9,72.9,False,True,False
+2017,Gucker,Derek Carr,QB,13,16,204.1,158.4,45.7,False,True,False
+2017,Gucker,Cameron Brate,TE,9,11,84.1,39.1,45.0,False,False,False
+2017,Gucker,Delanie Walker,TE,8,10,83.4,41.5,41.9,False,False,False
+2017,Gucker,LeGarrette Blount,RB,12,45,90.9,54.8,36.1,True,False,False
+2017,Gucker,Ben Roethlisberger,QB,6,9,238.2,238.2,0.0,False,False,False
+2017,Gucker,Dez Bryant,WR,4,20,93.9,95.3,-1.4,False,False,False
+2017,Gucker,Tyrell Williams,WR,9,36,44.2,59.7,-15.5,False,False,False
+2017,Gucker,Alshon Jeffery,WR,1,5,116.0,140.6,-24.6,False,False,False
+2017,Gucker,Jordy Nelson,WR,2,8,77.0,127.2,-50.2,True,False,False
+2017,Gucker,C.J. Prosise,RB,9,35,10.7,70.1,-59.4,False,False,False
+2017,Gucker,Rashad Jennings,RB,7,26,0.0,89.5,-89.5,False,False,False
+2017,Gucker,Eddie Lacy,RB,3,14,16.0,116.4,-100.4,False,False,False
+2017,Gucker,Ryan Mathews,RB,5,19,0.0,102.4,-102.4,False,False,False
+2017,Jacob,Tevin Coleman,RB,11,43,122.6,56.4,66.2,False,True,False
+2017,Jacob,Antonio Brown,WR,1,5,199.6,140.6,59.0,True,True,False
+2017,Jacob,Philip Rivers,QB,10,14,248.9,194.4,54.5,False,False,False
+2017,Jacob,Doug Baldwin,WR,9,36,107.4,59.7,47.7,False,False,False
+2017,Jacob,Tom Brady,QB,3,4,299.0,270.6,28.4,False,False,False
+2017,Jacob,Jay Ajayi,RB,9,35,86.9,70.1,16.8,False,False,False
+2017,Jacob,Duke Johnson,RB,7,26,97.3,89.5,7.8,False,False,False
+2017,Jacob,Corey Coleman,WR,12,47,26.6,35.3,-8.7,False,False,False
+2017,Jacob,Spencer Ware,RB,15,55,0.0,26.5,-26.5,False,False,False
+2017,Jacob,Devonta Freeman,RB,2,11,105.3,133.1,-27.8,True,False,False
+2017,Jacob,Donte Moncrief,WR,5,23,51.1,88.2,-37.1,False,False,False
+2017,Jacob,Kenny Britt,WR,9,36,18.1,59.7,-41.6,False,False,False
+2017,Jacob,Coby Fleener,TE,6,6,0.0,84.1,-84.1,False,False,False
+2017,Jacob,Thomas Rawls,RB,4,18,7.8,105.3,-97.5,False,False,False
+2017,John Stockton,Jordan Howard,RB,9,35,133.1,70.1,63.0,True,True,False
+2017,John Stockton,Rishard Matthews,WR,9,36,82.3,59.7,22.6,False,True,False
+2017,John Stockton,Lamar Miller,RB,3,14,138.0,116.4,21.6,False,False,False
+2017,John Stockton,Carlos Hyde,RB,4,18,126.0,105.3,20.7,False,False,False
+2017,John Stockton,Sterling Shepard,WR,11,42,63.5,47.4,16.1,False,False,False
+2017,John Stockton,Kelvin Benjamin,WR,9,36,67.7,59.7,8.0,False,False,False
+2017,John Stockton,Drew Brees,QB,6,9,245.2,238.2,7.0,False,False,False
+2017,John Stockton,Rob Gronkowski,TE,2,2,130.9,130.9,0.0,False,False,False
+2017,John Stockton,Julio Jones,WR,1,5,133.8,140.6,-6.8,True,False,False
+2017,John Stockton,Martellus Bennett,TE,9,11,23.3,39.1,-15.8,False,False,False
+2017,John Stockton,Darren Sproles,RB,9,35,11.4,70.1,-58.7,False,False,False
+2017,John Stockton,James Starks,RB,9,35,0.0,70.1,-70.1,False,False,False
+2017,John Stockton,Tyrod Taylor,QB,9,12,114.3,204.1,-89.8,False,False,False
+2017,K&E,Mark Ingram II,RB,2,11,173.7,133.1,40.6,False,True,False
+2017,K&E,Golden Tate,WR,9,36,98.9,59.7,39.2,False,True,False
+2017,K&E,Theo Riddick,RB,11,43,69.5,56.4,13.1,True,False,False
+2017,K&E,Keenan Allen,WR,1,5,144.1,140.6,3.5,False,False,False
+2017,K&E,Demaryius Thomas,WR,3,14,85.8,107.4,-21.6,False,False,False
+2017,K&E,Tyler Eifert,TE,8,10,4.6,41.5,-36.9,False,False,False
+2017,K&E,Jacquizz Rodgers,RB,9,35,26.5,70.1,-43.6,False,False,False
+2017,K&E,Jameis Winston,QB,9,12,158.4,204.1,-45.7,False,False,False
+2017,K&E,Jamison Crowder,WR,9,36,11.3,59.7,-48.4,False,False,False
+2017,K&E,Chris Ivory,RB,9,35,0.0,70.1,-70.1,False,False,False
+2017,K&E,Jeremy Hill,RB,5,19,13.2,102.4,-89.2,False,False,False
+2017,K&E,Allen Robinson,WR,4,20,1.7,95.3,-93.6,False,False,False
+2017,K&E,Matt Jones,RB,6,24,0.0,96.4,-96.4,False,False,False
+2017,K&E,Eli Manning,QB,9,12,43.2,204.1,-160.8,False,False,False
+2017,kevin mc,Todd Gurley,RB,2,11,220.2,133.1,87.1,True,True,False
+2017,kevin mc,Michael Thomas,WR,13,51,107.5,26.6,80.9,True,True,False
+2017,kevin mc,Zach Ertz,TE,12,14,108.3,31.6,76.7,False,False,False
+2017,kevin mc,Kirk Cousins,QB,9,12,270.6,204.1,66.5,False,False,False
+2017,kevin mc,Jimmy Graham,TE,9,11,103.3,39.1,64.2,False,False,False
+2017,kevin mc,Russell Wilson,QB,3,4,326.0,270.6,55.4,False,False,False
+2017,kevin mc,Isaiah Crowell,RB,11,43,89.5,56.4,33.1,False,False,False
+2017,kevin mc,Sammy Watkins,WR,9,36,90.8,59.7,31.1,False,False,False
+2017,kevin mc,DeVante Parker,WR,10,40,47.4,50.9,-3.5,False,False,False
+2017,kevin mc,Amari Cooper,WR,4,20,84.3,95.3,-11.0,False,False,False
+2017,kevin mc,Latavius Murray,RB,5,19,78.4,102.4,-24.0,False,False,False
+2017,kevin mc,Tim Hightower,RB,9,35,0.0,70.1,-70.1,False,False,False
+2017,kevin mc,Jordan Matthews,WR,6,25,9.1,84.3,-75.2,False,False,False
+2017,kevin mc,Odell Beckham Jr.,WR,1,5,49.0,140.6,-91.6,False,False,False
+2018,Bennett,David Johnson,RB,12,44,154.9,44.1,110.8,False,False,True
+2018,Bennett,Travis Kelce,TE,6,7,170.2,77.0,93.2,True,True,False
+2018,Bennett,Robert Woods,WR,9,34,145.3,82.0,63.3,False,True,False
+2018,Bennett,Marvin Jones Jr.,WR,14,54,82.8,29.4,53.4,False,False,False
+2018,Bennett,Stefon Diggs,WR,7,29,134.7,86.0,48.7,True,False,False
+2018,Bennett,Alex Collins,RB,9,38,93.6,67.3,26.3,False,False,False
+2018,Bennett,Austin Hooper,TE,9,11,59.4,59.4,0.0,False,False,False
+2018,Bennett,Chris Hogan,WR,9,34,52.0,82.0,-30.0,False,False,False
+2018,Bennett,Larry Fitzgerald,WR,5,20,67.4,107.4,-40.0,False,False,False
+2018,Bennett,Amari Cooper,WR,1,5,99.4,164.4,-65.0,False,False,False
+2018,Bennett,J.D. McKissic,RB,9,38,0.0,67.3,-67.3,False,False,False
+2018,Bennett,Tom Brady,QB,2,2,254.9,335.6,-80.7,False,False,False
+2018,Bennett,Andy Dalton,QB,15,17,37.3,122.5,-85.2,False,False,False
+2018,Bennett,Ty Montgomery II,RB,3,17,2.8,130.0,-127.2,False,False,False
+2018,Bennett,Ameer Abdullah,RB,4,18,0.0,129.3,-129.3,False,False,False
+2018,Branden,Tyreek Hill,WR,4,19,205.7,107.8,97.9,True,True,False
+2018,Branden,Christian McCaffrey,RB,2,11,226.6,154.9,71.7,False,True,False
+2018,Branden,Corey Davis,WR,12,47,107.8,55.5,52.3,False,False,False
+2018,Branden,Chris Carson,RB,9,38,109.1,67.3,41.8,False,False,False
+2018,Branden,Mike Evans,WR,3,13,158.1,140.7,17.4,False,False,True
+2018,Branden,Evan Engram,TE,15,17,38.7,24.2,14.5,True,False,False
+2018,Branden,Jamaal Williams,RB,9,38,30.1,67.3,-37.2,False,False,False
+2018,Branden,Jimmy Graham,TE,5,4,67.6,114.3,-46.7,False,False,False
+2018,Branden,Matthew Stafford,QB,10,12,211.9,264.2,-52.3,False,False,False
+2018,Branden,Rex Burkhead,RB,9,38,11.7,67.3,-55.6,False,False,False
+2018,Branden,DeVante Parker,WR,8,32,4.0,83.3,-79.3,False,False,False
+2018,Branden,DeMarco Murray,RB,6,24,0.0,103.9,-103.9,False,False,False
+2018,Branden,Rob Gronkowski,TE,1,1,65.0,170.2,-105.2,False,False,False
+2018,Branden,Jameis Winston,QB,7,9,122.5,289.0,-166.4,False,False,False
+2018,Branden,Josh McCown,QB,9,11,0.0,275.1,-275.1,False,False,False
+2018,Derek,Melvin Gordon III,RB,7,28,215.5,96.0,119.5,True,True,False
+2018,Derek,Adrian Peterson,RB,9,38,151.3,67.3,84.0,False,True,False
+2018,Derek,Jared Goff,QB,9,11,327.3,275.1,52.2,False,False,False
+2018,Derek,Tyler Lockett,WR,9,34,133.1,82.0,51.1,False,False,False
+2018,Derek,Austin Ekeler,RB,9,38,67.3,67.3,0.0,False,False,False
+2018,Derek,Michael Crabtree,WR,4,19,71.6,107.8,-36.2,False,False,False
+2018,Derek,Jack Doyle,TE,9,11,21.5,59.4,-37.9,False,False,False
+2018,Derek,Derrick Henry,RB,8,32,44.1,87.3,-43.2,False,False,False
+2018,Derek,Aaron Rodgers,QB,2,2,289.0,335.6,-46.6,False,False,True
+2018,Derek,Marquise Goodwin,WR,9,34,33.7,82.0,-48.3,True,False,False
+2018,Derek,Javorius Allen,RB,9,38,10.1,67.3,-57.2,False,False,False
+2018,Derek,Hunter Henry,TE,9,11,0.0,59.4,-59.4,False,False,False
+2018,Derek,Jermaine Kearse,WR,9,34,0.0,82.0,-82.0,False,False,False
+2018,Derek,Kelvin Benjamin,WR,5,20,11.8,107.4,-95.6,False,False,False
+2018,Derek,Dalvin Cook,RB,1,7,52.6,215.5,-162.9,False,False,False
+2018,Derek,Tyrod Taylor,QB,9,11,0.0,275.1,-275.1,False,False,False
+2018,Endler,Davante Adams,WR,4,19,185.5,107.8,77.7,True,True,False
+2018,Endler,JuJu Smith-Schuster,WR,9,34,149.7,82.0,67.7,False,True,False
+2018,Endler,Dion Lewis,RB,15,55,87.3,30.2,57.1,True,False,False
+2018,Endler,Cam Newton,QB,7,9,305.9,289.0,16.9,False,False,False
+2018,Endler,Will Fuller V,WR,9,34,80.3,82.0,-1.7,False,False,False
+2018,Endler,Nelson Agholor,WR,9,34,55.5,82.0,-26.5,False,False,False
+2018,Endler,A.J. Green,WR,3,13,107.4,140.7,-33.3,False,False,True
+2018,Endler,Julius Thomas,TE,9,11,0.0,59.4,-59.4,False,False,False
+2018,Endler,Jason Witten,TE,9,11,0.0,59.4,-59.4,False,False,False
+2018,Endler,Samaje Perine,RB,9,38,0.0,67.3,-67.3,False,False,False
+2018,Endler,LeSean McCoy,RB,2,11,82.8,154.9,-72.1,False,False,True
+2018,Endler,Jamison Crowder,WR,9,34,6.9,82.0,-75.1,False,False,False
+2018,Endler,Corey Coleman,WR,9,34,0.0,82.0,-82.0,False,False,False
+2018,Endler,Dak Prescott,QB,9,11,135.9,275.1,-139.1,False,False,False
+2018,Endler,Jay Ajayi,RB,1,7,38.4,215.5,-177.1,False,False,False
+2018,Erik,Adam Thielen,WR,12,47,190.6,55.5,135.1,False,True,False
+2018,Erik,James White,RB,11,42,158.8,49.3,109.5,False,True,False
+2018,Erik,Andrew Luck,QB,10,12,302.6,264.2,38.4,False,False,False
+2018,Erik,Keenan Allen,WR,4,19,143.1,107.8,35.3,True,False,False
+2018,Erik,Cooper Kupp,WR,9,34,97.1,82.0,15.1,False,False,False
+2018,Erik,Chris Thompson,RB,15,55,40.3,30.2,10.1,False,False,False
+2018,Erik,Devin Funchess,WR,9,34,76.6,82.0,-5.4,False,False,False
+2018,Erik,Drew Brees,QB,3,2,319.8,335.6,-15.8,False,False,False
+2018,Erik,Jerick McKinnon,RB,16,60,0.0,20.4,-20.4,True,False,False
+2018,Erik,Dede Westbrook,WR,9,34,50.3,82.0,-31.7,False,False,False
+2018,Erik,C.J. Fiedorowicz,TE,9,11,0.0,59.4,-59.4,False,False,False
+2018,Erik,Ed Dickson,TE,9,11,0.0,59.4,-59.4,False,False,False
+2018,Erik,Robbie Chosen,WR,9,34,9.9,82.0,-72.1,False,False,False
+2018,Erik,Doug Baldwin,WR,2,10,50.8,149.7,-98.9,False,False,False
+2018,Erik,Le'Veon Bell,RB,1,7,0.0,215.5,-215.5,False,False,True
+2018,Gucker,Matt Ryan,QB,5,7,324.8,302.6,22.2,False,True,False
+2018,Gucker,Duke Johnson,RB,11,42,71.3,49.3,22.0,False,True,False
+2018,Gucker,Josh Gordon,WR,9,34,90.2,82.0,8.2,True,False,False
+2018,Gucker,Jarvis Landry,WR,7,29,93.3,86.0,7.3,False,False,False
+2018,Gucker,LeGarrette Blount,RB,12,44,46.2,44.1,2.1,False,False,False
+2018,Gucker,Kyle Rudolph,TE,8,10,58.3,65.0,-6.7,False,False,False
+2018,Gucker,Brandin Cooks,WR,2,10,140.7,149.7,-9.0,False,False,False
+2018,Gucker,Jordy Nelson,WR,10,39,57.3,71.6,-14.3,False,False,True
+2018,Gucker,Allen Robinson,WR,4,19,83.3,107.8,-24.5,False,False,False
+2018,Gucker,Bilal Powell,RB,6,24,49.3,103.9,-54.6,False,False,False
+2018,Gucker,Marshawn Lynch,RB,3,17,66.0,130.0,-64.0,False,False,False
+2018,Gucker,Ted Ginn Jr.,WR,9,34,0.0,82.0,-82.0,False,False,False
+2018,Gucker,Leonard Fournette,RB,1,7,74.8,215.5,-140.7,False,False,False
+2018,Gucker,Cameron Brate,TE,16,1,21.3,170.2,-148.9,False,False,False
+2018,Gucker,Alex Smith,QB,9,11,0.0,275.1,-275.1,False,False,False
+2018,Jacob,Kenyan Drake,RB,14,51,121.0,38.4,82.6,True,True,False
+2018,Jacob,Kareem Hunt,RB,2,11,208.2,154.9,53.3,False,True,False
+2018,Jacob,Philip Rivers,QB,11,13,298.8,254.9,43.9,False,False,False
+2018,Jacob,Ben Roethlisberger,QB,6,8,335.6,298.8,36.8,False,False,False
+2018,Jacob,Antonio Brown,WR,1,5,182.8,164.4,18.4,False,False,True
+2018,Jacob,Tevin Coleman,RB,5,23,122.5,109.1,13.4,False,False,False
+2018,Jacob,Joe Mixon,RB,4,18,139.1,129.3,9.8,False,False,False
+2018,Jacob,Doug Martin,RB,8,32,52.7,87.3,-34.6,False,False,False
+2018,Jacob,Demaryius Thomas,WR,3,13,85.3,140.7,-55.4,False,False,False
+2018,Jacob,Devonta Freeman,RB,9,38,9.1,67.3,-58.2,False,False,True
+2018,Jacob,Tyler Kroft,TE,9,11,0.0,59.4,-59.4,False,False,False
+2018,Jacob,Charcandrick West,RB,9,38,0.0,67.3,-67.3,False,False,False
+2018,Jacob,Martavis Bryant,WR,9,34,4.6,82.0,-77.4,False,False,False
+2018,Jacob,Danny Amendola,WR,9,34,0.0,82.0,-82.0,False,False,False
+2018,Jacob,Jacoby Brissett,QB,9,11,0.0,275.1,-275.1,False,False,False
+2018,John Stockton,Tarik Cohen,RB,9,38,137.4,67.3,70.1,False,True,False
+2018,John Stockton,Emmanuel Sanders,WR,6,25,133.5,96.7,36.8,False,True,False
+2018,John Stockton,Jordan Howard,RB,10,39,99.8,66.0,33.8,True,False,False
+2018,John Stockton,Jared Cook,TE,9,11,92.9,59.4,33.5,False,False,False
+2018,John Stockton,Latavius Murray,RB,9,38,94.1,67.3,26.8,False,False,False
+2018,John Stockton,Julio Jones,WR,2,10,163.5,149.7,13.8,False,False,True
+2018,John Stockton,Lamar Miller,RB,3,17,132.0,130.0,2.0,False,False,False
+2018,John Stockton,Deshaun Watson,QB,9,11,275.1,275.1,0.0,True,False,False
+2018,John Stockton,Alshon Jeffery,WR,4,19,75.2,107.8,-32.6,False,False,False
+2018,John Stockton,Delanie Walker,TE,7,8,5.2,67.6,-62.4,False,False,False
+2018,John Stockton,Orleans Darkwa,RB,9,38,0.0,67.3,-67.3,False,False,False
+2018,John Stockton,Rishard Matthews,WR,9,34,0.8,82.0,-81.2,False,False,False
+2018,John Stockton,Dez Bryant,WR,1,5,0.0,164.4,-164.4,False,False,False
+2018,John Stockton,Derek Carr,QB,11,13,0.0,254.9,-254.9,False,False,False
+2018,John Stockton,Marcus Mariota,QB,5,7,2.6,302.6,-300.0,False,False,False
+2018,K&E,T.J. Yeldon,RB,9,38,102.4,67.3,35.1,False,True,False
+2018,K&E,Odell Beckham Jr.,WR,1,5,164.4,164.4,0.0,False,True,False
+2018,K&E,Sammy Watkins,WR,7,29,79.1,86.0,-6.9,False,False,False
+2018,K&E,Theo Riddick,RB,11,42,41.2,49.3,-8.1,True,False,False
+2018,K&E,DeSean Jackson,WR,10,39,57.7,71.6,-13.9,False,False,False
+2018,K&E,Kirk Cousins,QB,6,8,283.7,298.8,-15.1,False,False,False
+2018,K&E,T.Y. Hilton,WR,3,13,120.7,140.7,-20.0,False,False,False
+2018,K&E,Mark Ingram II,RB,4,18,92.2,129.3,-37.1,False,False,False
+2018,K&E,Jordan Reed,TE,5,4,65.8,114.3,-48.5,False,False,False
+2018,K&E,Frank Gore,RB,8,32,36.0,87.3,-51.3,False,False,False
+2018,K&E,Donte Moncrief,WR,12,47,0.0,55.5,-55.5,False,False,False
+2018,K&E,Austin Seferian-Jenkins,TE,9,11,2.5,59.4,-56.9,True,False,False
+2018,K&E,Carlos Hyde,RB,2,11,82.1,154.9,-72.8,False,False,False
+2018,K&E,Jaron Brown,WR,9,34,0.0,82.0,-82.0,False,False,False
+2018,K&E,Zay Jones,WR,9,34,0.0,82.0,-82.0,False,False,False
+2018,kevin mc,Alvin Kamara,RB,16,60,229.7,20.4,209.3,True,True,False
+2018,kevin mc,Todd Gurley,RB,7,28,296.9,96.0,200.9,False,False,True
+2018,kevin mc,Michael Thomas,WR,13,51,164.0,41.7,122.3,True,True,False
+2018,kevin mc,Carson Wentz,QB,15,17,217.3,122.5,94.8,False,False,False
+2018,kevin mc,Zach Ertz,TE,10,13,141.8,56.7,85.1,False,False,False
+2018,kevin mc,DeAndre Hopkins,WR,3,13,162.8,140.7,22.1,False,False,False
+2018,kevin mc,Golden Tate,WR,6,25,103.3,96.7,6.6,False,False,False
+2018,kevin mc,Ezekiel Elliott,RB,1,7,221.2,215.5,5.7,False,False,False
+2018,kevin mc,Sterling Shepard,WR,9,34,82.0,82.0,0.0,False,False,False
+2018,kevin mc,Isaiah Crowell,RB,2,11,125.0,154.9,-29.9,False,False,False
+2018,kevin mc,Russell Wilson,QB,5,7,264.2,302.6,-38.4,False,False,False
+2018,kevin mc,Alfred Morris,RB,9,38,24.3,67.3,-43.0,False,False,False
+2018,kevin mc,Vernon Davis,TE,9,11,0.0,59.4,-59.4,False,False,False
+2018,kevin mc,C.J. Anderson,RB,4,18,6.6,129.3,-122.7,False,False,False
+2019,Bennett,Chris Carson,RB,8,32,164.8,85.7,79.1,False,True,False
+2019,Bennett,Stefon Diggs,WR,7,33,130.2,81.2,49.0,False,True,False
+2019,Bennett,Mike Williams,WR,12,46,82.0,40.9,41.1,False,False,False
+2019,Bennett,Travis Kelce,TE,6,6,118.3,92.2,26.1,False,False,True
+2019,Bennett,Matt Ryan,QB,10,10,212.4,202.5,10.0,False,False,False
+2019,Bennett,Russell Wilson,QB,4,2,275.5,275.5,0.0,False,False,False
+2019,Bennett,Carlos Hyde,RB,5,20,94.5,105.9,-11.4,False,False,False
+2019,Bennett,Leonard Fournette,RB,1,7,167.3,178.9,-11.6,True,False,False
+2019,Bennett,DJ Moore,WR,14,1,129.0,178.9,-49.9,False,False,False
+2019,Bennett,Duke Johnson,RB,9,37,14.5,67.2,-52.7,False,False,False
+2019,Bennett,JuJu Smith-Schuster,WR,3,15,70.4,124.4,-54.0,True,False,False
+2019,Bennett,Gus Edwards,RB,9,37,0.0,67.2,-67.2,False,False,False
+2019,Bennett,Theo Riddick,RB,9,37,0.0,67.2,-67.2,False,False,False
+2019,Bennett,C.J. Uzomah,TE,9,9,0.0,69.4,-69.4,False,False,False
+2019,Bennett,A.J. Green,WR,2,11,0.0,127.7,-127.7,False,False,False
+2019,Branden,Lamar Jackson,QB,9,9,339.0,204.4,134.6,False,True,False
+2019,Branden,Christian McCaffrey,RB,2,10,293.1,167.3,125.8,True,True,False
+2019,Branden,Julian Edelman,WR,10,41,133.3,65.9,67.4,False,False,False
+2019,Branden,Tyler Boyd,WR,9,37,97.4,71.9,25.5,False,False,False
+2019,Branden,Carson Wentz,QB,8,9,204.4,204.4,0.0,False,False,False
+2019,Branden,Tyreek Hill,WR,4,21,95.2,98.7,-3.5,False,False,False
+2019,Branden,Brandin Cooks,WR,6,29,59.0,84.9,-25.9,False,False,False
+2019,Branden,Kerryon Johnson,RB,5,20,61.4,105.9,-44.5,False,False,False
+2019,Branden,Evan Engram,TE,15,1,69.4,118.3,-48.9,False,False,False
+2019,Branden,Odell Beckham Jr.,WR,1,5,96.3,149.1,-52.8,False,False,False
+2019,Branden,David Njoku,TE,9,9,9.7,69.4,-59.7,False,False,False
+2019,Branden,Josh Adams,RB,9,37,0.0,67.2,-67.2,False,False,False
+2019,Branden,Cameron Brate,TE,9,9,0.0,69.4,-69.4,False,False,False
+2019,Branden,Patrick Mahomes,QB,16,1,229.9,339.0,-109.1,True,False,False
+2019,Derek,George Kittle,TE,9,9,92.2,69.4,22.8,True,True,False
+2019,Derek,Amari Cooper,WR,2,11,149.1,127.7,21.4,False,True,False
+2019,Derek,Allen Robinson,WR,4,21,119.0,98.7,20.3,False,False,False
+2019,Derek,Jared Cook,TE,9,9,69.9,69.4,0.5,False,False,False
+2019,Derek,Joe Mixon,RB,3,15,115.3,123.2,-7.9,True,False,False
+2019,Derek,Melvin Gordon III,RB,7,25,89.1,99.2,-10.1,False,False,True
+2019,Derek,Tyler Lockett,WR,15,1,124.6,178.9,-54.3,False,False,False
+2019,Derek,Le'Veon Bell,RB,1,7,123.2,178.9,-55.7,False,False,False
+2019,Derek,Marquise Goodwin,WR,10,41,0.0,65.9,-65.9,False,False,False
+2019,Derek,Doug Martin,RB,9,37,0.0,67.2,-67.2,False,False,False
+2019,Derek,Michael Crabtree,WR,6,29,0.0,84.9,-84.9,False,False,False
+2019,Derek,Isaiah Crowell,RB,8,32,0.0,85.7,-85.7,False,False,False
+2019,Derek,Matthew Stafford,QB,5,4,54.2,235.2,-181.0,False,False,False
+2019,Derek,Mitchell Trubisky,QB,9,9,0.0,204.4,-204.4,False,False,False
+2019,Endler,Chris Godwin Jr.,WR,12,46,178.9,40.9,138.0,False,True,False
+2019,Endler,James White,RB,13,50,98.0,23.2,74.8,False,True,False
+2019,Endler,Phillip Lindsay,RB,9,37,126.9,67.2,59.7,False,False,False
+2019,Endler,Calvin Ridley,WR,9,37,124.4,71.9,52.5,False,False,False
+2019,Endler,Sony Michel,RB,9,37,105.9,67.2,38.7,False,False,False
+2019,Endler,Robert Woods,WR,7,33,100.6,81.2,19.4,False,False,False
+2019,Endler,Ezekiel Elliott,RB,1,7,185.6,178.9,6.7,True,False,False
+2019,Endler,Zach Ertz,TE,5,5,93.6,93.6,0.0,False,False,False
+2019,Endler,Davante Adams,WR,4,21,90.4,98.7,-8.3,True,False,False
+2019,Endler,T.Y. Hilton,WR,2,11,67.8,127.7,-59.9,False,False,False
+2019,Endler,Josh Reynolds,WR,9,37,0.0,71.9,-71.9,False,False,False
+2019,Endler,Jay Ajayi,RB,3,15,0.0,123.2,-123.2,False,False,False
+2019,Endler,Kirk Cousins,QB,6,5,94.1,229.9,-135.8,False,False,False
+2019,Endler,Dion Lewis,RB,15,1,0.0,293.1,-293.1,False,False,False
+2019,Erik,John Brown,WR,9,37,127.7,71.9,55.8,False,True,False
+2019,Erik,James Conner,RB,9,37,99.2,67.2,32.0,True,True,False
+2019,Erik,Keenan Allen,WR,4,21,122.5,98.7,23.8,False,False,False
+2019,Erik,Frank Gore,RB,9,37,61.3,67.2,-5.9,False,False,False
+2019,Erik,Adam Thielen,WR,3,15,83.2,124.4,-41.2,False,False,False
+2019,Erik,Justin Jackson,RB,9,37,15.5,67.2,-51.7,False,False,False
+2019,Erik,Mohamed Sanu,WR,9,37,3.5,71.9,-68.4,False,False,False
+2019,Erik,Kyle Rudolph,TE,6,6,23.7,92.2,-68.5,False,False,False
+2019,Erik,Jordan Reed,TE,8,8,0.0,69.9,-69.9,False,False,False
+2019,Erik,Maurice Harris,WR,9,37,0.0,71.9,-71.9,False,False,False
+2019,Erik,Saquon Barkley,RB,1,7,105.5,178.9,-73.4,True,False,False
+2019,Erik,Philip Rivers,QB,12,13,11.8,94.1,-82.3,False,False,False
+2019,Erik,Aaron Rodgers,QB,2,1,235.2,339.0,-103.8,False,False,False
+2019,Erik,Chris Ivory,RB,15,1,0.0,293.1,-293.1,False,False,False
+2019,Gucker,Kenny Golladay,WR,12,46,157.0,40.9,116.1,True,True,False
+2019,Gucker,Mike Evans,WR,2,11,159.6,127.7,31.9,False,True,False
+2019,Gucker,Dak Prescott,QB,9,9,212.7,204.4,8.3,False,False,False
+2019,Gucker,Eric Ebron,TE,14,14,33.2,27.8,5.4,False,False,False
+2019,Gucker,Golden Tate,WR,6,29,70.6,84.9,-14.3,False,False,False
+2019,Gucker,Josh Gordon,WR,10,41,34.8,65.9,-31.1,False,False,False
+2019,Gucker,LeSean McCoy,RB,3,15,84.7,123.2,-38.5,False,False,False
+2019,Gucker,Rashaad Penny,RB,9,37,25.9,67.2,-41.3,False,False,False
+2019,Gucker,O.J. Howard,TE,9,9,15.6,69.4,-53.8,False,False,False
+2019,Gucker,Greg Olsen,TE,5,5,33.1,93.6,-60.5,False,False,False
+2019,Gucker,Chris Thompson,RB,9,37,3.8,67.2,-63.4,False,False,False
+2019,Gucker,Devin Funchess,WR,7,33,0.0,81.2,-81.2,False,False,False
+2019,Gucker,Tom Brady,QB,4,2,190.3,275.5,-85.2,False,False,False
+2019,Gucker,David Johnson,RB,1,7,92.9,178.9,-86.0,False,False,False
+2019,Gucker,Nick Chubb,RB,15,1,188.0,293.1,-105.1,True,False,False
+2019,Jacob,Aaron Jones Sr.,RB,11,45,189.2,36.3,152.9,True,True,False
+2019,Jacob,Kenyan Drake,RB,14,56,76.2,15.5,60.7,False,True,False
+2019,Jacob,Marlon Mack,RB,9,37,125.8,67.2,58.6,True,False,False
+2019,Jacob,Tevin Coleman,RB,7,25,106.7,99.2,7.5,False,False,False
+2019,Jacob,Jarvis Landry,WR,3,15,126.9,124.4,2.5,False,False,False
+2019,Jacob,Adrian Peterson,RB,9,37,67.2,67.2,0.0,False,False,False
+2019,Jacob,Christian Kirk,WR,9,37,71.9,71.9,0.0,False,False,False
+2019,Jacob,Corey Davis,WR,12,46,0.9,40.9,-40.0,False,False,False
+2019,Jacob,Trey Burton,TE,8,8,0.0,69.9,-69.9,False,False,False
+2019,Jacob,Devonta Freeman,RB,2,10,85.7,167.3,-81.6,False,False,False
+2019,Jacob,Chris Hogan,WR,6,29,0.0,84.9,-84.9,False,False,False
+2019,Jacob,Antonio Brown,WR,1,5,12.1,149.1,-137.0,False,False,False
+2019,Jacob,Derrius Guice,RB,16,1,48.2,293.1,-244.9,False,False,False
+2019,Jacob,Cam Newton,QB,4,2,18.7,275.5,-256.8,False,False,False
+2019,Jacob,Ben Roethlisberger,QB,15,1,0.0,339.0,-339.0,False,False,False
+2019,John Stockton,Austin Ekeler,RB,9,37,169.8,67.2,102.6,False,True,False
+2019,John Stockton,Deshaun Watson,QB,11,11,273.9,190.3,83.6,True,True,False
+2019,John Stockton,Dalvin Cook,RB,2,10,231.6,167.3,64.3,False,False,False
+2019,John Stockton,Jordan Howard,RB,10,38,101.4,61.4,40.0,False,False,True
+2019,John Stockton,Larry Fitzgerald,WR,9,37,84.9,71.9,13.0,False,False,False
+2019,John Stockton,Alshon Jeffery,WR,8,35,81.2,77.2,4.0,False,False,False
+2019,John Stockton,Latavius Murray,RB,7,25,99.5,99.2,0.3,False,False,False
+2019,John Stockton,DeAndre Hopkins,WR,1,5,137.1,149.1,-12.0,True,False,False
+2019,John Stockton,Tarik Cohen,RB,9,37,43.2,67.2,-24.0,False,False,False
+2019,John Stockton,Gerald Everett,TE,9,9,24.5,69.4,-44.9,False,False,False
+2019,John Stockton,Jimmy Graham,TE,6,6,38.3,92.2,-53.9,False,False,False
+2019,John Stockton,T.J. Yeldon,RB,9,37,0.0,67.2,-67.2,False,False,False
+2019,John Stockton,Chris Herndon,TE,9,9,0.7,69.4,-68.7,False,False,False
+2019,John Stockton,Alex Collins,RB,3,15,0.0,123.2,-123.2,False,False,False
+2019,John Stockton,Jared Goff,QB,15,1,83.3,339.0,-255.7,False,False,False
+2019,K&E,Derrick Henry,RB,9,37,214.0,67.2,146.8,True,True,False
+2019,K&E,Cooper Kupp,WR,9,37,142.9,71.9,71.0,False,True,False
+2019,K&E,Emmanuel Sanders,WR,6,29,91.7,84.9,6.8,False,False,False
+2019,K&E,Tyrell Williams,WR,9,37,65.8,71.9,-6.1,False,False,False
+2019,K&E,Sammy Watkins,WR,7,33,73.0,81.2,-8.2,False,False,False
+2019,K&E,Dede Westbrook,WR,9,37,47.3,71.9,-24.6,False,False,False
+2019,K&E,Royce Freeman,RB,4,17,77.3,115.3,-38.0,False,False,False
+2019,K&E,Nyheim Miller-Hines,RB,9,37,26.1,67.2,-41.1,False,False,False
+2019,K&E,Todd Gurley,RB,1,7,127.6,178.9,-51.3,True,False,False
+2019,K&E,LeGarrette Blount,RB,9,37,0.0,67.2,-67.2,False,False,False
+2019,K&E,Benjamin Watson,TE,9,9,1.8,69.4,-67.6,False,False,False
+2019,K&E,Tre'Quan Smith,WR,9,37,0.0,71.9,-71.9,False,False,False
+2019,K&E,Kenneth Barber,RB,8,32,13.4,85.7,-72.3,False,False,False
+2019,K&E,Rob Gronkowski,TE,3,3,0.0,102.8,-102.8,False,False,False
+2019,K&E,Drew Brees,QB,5,4,117.5,235.2,-117.7,False,False,False
+2019,kevin mc,Michael Thomas,WR,13,50,178.1,29.7,148.4,False,False,True
+2019,kevin mc,Mark Ingram II,RB,6,24,178.9,99.5,79.4,False,True,False
+2019,kevin mc,Matt Breida,RB,12,47,81.2,26.1,55.1,False,True,False
+2019,kevin mc,Courtland Sutton,WR,9,37,115.6,71.9,43.7,False,False,False
+2019,kevin mc,Austin Hooper,TE,9,9,102.8,69.4,33.4,False,False,False
+2019,kevin mc,Julio Jones,WR,1,5,126.7,149.1,-22.4,True,False,False
+2019,kevin mc,Vance McDonald,TE,9,9,21.3,69.4,-48.1,True,False,False
+2019,kevin mc,Spencer Ware,RB,9,37,0.0,67.2,-67.2,False,False,False
+2019,kevin mc,Demaryius Thomas,WR,5,25,0.0,95.2,-95.2,False,False,False
+2019,kevin mc,Doug Baldwin,WR,4,21,0.0,98.7,-98.7,False,False,False
+2019,kevin mc,Lamar Miller,RB,3,15,0.0,123.2,-123.2,False,False,False
+2019,kevin mc,Kareem Hunt,RB,2,10,36.3,167.3,-131.0,False,False,False
+2019,kevin mc,Alvin Kamara,RB,16,1,115.6,293.1,-177.5,False,False,False
+2019,kevin mc,Andrew Luck,QB,9,9,0.0,204.4,-204.4,False,False,False
+2019,kevin mc,D'Onta Foreman,RB,15,1,0.0,293.1,-293.1,False,False,False
+2020,Bennett,Tom Brady,QB,9,10,246.7,199.2,47.5,False,True,False
+2020,Bennett,Travis Kelce,TE,2,2,167.6,120.2,47.4,True,True,False
+2020,Bennett,Marvin Jones Jr.,WR,9,38,99.9,70.4,29.5,False,False,False
+2020,Bennett,John Brown,WR,13,48,50.6,37.2,13.4,False,False,False
+2020,Bennett,Noah Fant,TE,9,11,63.2,59.3,3.9,False,False,False
+2020,Bennett,Christian Kirk,WR,9,38,72.4,70.4,2.0,False,False,False
+2020,Bennett,Sammy Watkins,WR,10,40,21.5,63.8,-42.3,False,False,False
+2020,Bennett,Frank Gore,RB,9,34,21.8,65.8,-44.0,False,False,False
+2020,Bennett,Leonard Fournette,RB,3,16,64.2,118.0,-53.8,False,False,False
+2020,Bennett,JuJu Smith-Schuster,WR,1,4,98.0,153.6,-55.6,False,False,False
+2020,Bennett,Mark Ingram II,RB,4,20,43.0,100.1,-57.1,True,False,False
+2020,Bennett,James White,RB,7,28,8.7,81.3,-72.6,False,False,False
+2020,Bennett,Matt Ryan,QB,5,5,212.7,291.9,-79.2,False,False,False
+2020,Branden,Patrick Mahomes,QB,14,18,330.1,49.1,281.0,True,True,False
+2020,Branden,Will Fuller V,WR,9,38,145.9,70.4,75.5,False,True,False
+2020,Branden,Darren Waller,TE,9,11,120.2,59.3,60.9,False,False,False
+2020,Branden,Calvin Ridley,WR,5,22,145.9,101.1,44.8,False,False,False
+2020,Branden,Josh Jacobs,RB,3,16,149.7,118.0,31.7,False,False,False
+2020,Branden,Devin Singletary,RB,8,30,81.3,80.5,0.8,False,False,False
+2020,Branden,Jarvis Landry,WR,7,31,72.1,79.2,-7.1,False,False,False
+2020,Branden,Jamaal Williams,RB,9,34,36.6,65.8,-29.2,False,False,False
+2020,Branden,T.Y. Hilton,WR,9,38,25.1,70.4,-45.3,False,False,False
+2020,Branden,Christian McCaffrey,RB,2,11,73.4,137.4,-64.0,True,False,False
+2020,Branden,Golden Tate,WR,9,38,0.0,70.4,-70.4,False,False,False
+2020,Branden,Michael Thomas,WR,1,4,39.5,153.6,-114.1,False,False,False
+2020,Branden,Sam Darnold,QB,9,10,0.0,199.2,-199.2,False,False,False
+2020,Derek,Dalvin Cook,RB,1,8,254.4,141.8,112.6,True,True,False
+2020,Derek,Jamison Crowder,WR,12,45,86.3,45.1,41.2,False,True,False
+2020,Derek,Melvin Gordon III,RB,5,23,116.3,93.8,22.5,False,False,False
+2020,Derek,George Kittle,TE,9,11,65.1,59.3,5.8,True,False,False
+2020,Derek,Keenan Allen,WR,2,10,140.3,135.7,4.6,False,False,False
+2020,Derek,Tyler Boyd,WR,4,19,112.1,112.1,0.0,False,False,False
+2020,Derek,Michael Gallup,WR,10,40,45.1,63.8,-18.7,False,False,False
+2020,Derek,Joe Mixon,RB,3,16,80.6,118.0,-37.4,False,False,False
+2020,Derek,Kyle Rudolph,TE,9,11,0.0,59.3,-59.3,False,False,False
+2020,Derek,Jonathan Williams,RB,9,34,0.0,65.8,-65.8,False,False,False
+2020,Derek,Royce Freeman,RB,8,30,0.0,80.5,-80.5,False,False,False
+2020,Derek,Carson Wentz,QB,7,7,64.2,246.7,-182.5,False,False,False
+2020,Derek,Jameis Winston,QB,9,10,0.0,199.2,-199.2,False,False,False
+2020,Endler,Kareem Hunt,RB,14,53,141.4,27.6,113.8,False,True,False
+2020,Endler,Davante Adams,WR,4,19,188.9,112.1,76.8,False,False,True
+2020,Endler,Tyreek Hill,WR,2,10,208.9,135.7,73.2,False,True,False
+2020,Endler,Kenyan Drake,RB,9,34,136.1,65.8,70.3,True,False,False
+2020,Endler,Robert Woods,WR,3,14,131.9,125.6,6.3,False,False,False
+2020,Endler,Ezekiel Elliott,RB,1,8,141.8,141.8,0.0,True,False,False
+2020,Endler,Carlos Hyde,RB,9,34,18.4,65.8,-47.4,False,False,False
+2020,Endler,Ryan Griffin,TE,9,11,0.0,59.3,-59.3,False,False,False
+2020,Endler,Courtland Sutton,WR,9,38,6.6,70.4,-63.8,False,False,False
+2020,Endler,Tyrell Williams,WR,9,38,0.0,70.4,-70.4,False,False,False
+2020,Endler,Matthew Stafford,QB,9,10,50.8,199.2,-148.4,False,False,False
+2020,Endler,Kirk Cousins,QB,9,10,0.0,199.2,-199.2,False,False,False
+2020,Erik,Ronald Jones,RB,9,34,138.1,65.8,72.3,False,True,False
+2020,Erik,James Conner,RB,9,34,115.0,65.8,49.2,True,True,False
+2020,Erik,Mark Andrews,TE,10,12,81.4,55.1,26.3,False,False,False
+2020,Erik,DJ Chark,WR,9,38,83.5,70.4,13.1,False,False,False
+2020,Erik,Darius Slayton,WR,9,38,70.4,70.4,0.0,False,False,False
+2020,Erik,Aaron Rodgers,QB,4,2,291.9,314.0,-22.1,False,False,False
+2020,Erik,Larry Fitzgerald,WR,12,45,0.0,45.1,-45.1,False,False,False
+2020,Erik,Benny Snell Jr.,RB,9,34,9.5,65.8,-56.3,False,False,False
+2020,Erik,Kalen Ballage,RB,9,34,7.1,65.8,-58.7,False,False,False
+2020,Erik,Jaylen Samuels,RB,9,34,0.0,65.8,-65.8,False,False,False
+2020,Erik,Zach Ertz,TE,3,3,25.6,93.4,-67.8,False,False,False
+2020,Erik,Matt Breida,RB,8,30,2.2,80.5,-78.3,False,False,False
+2020,Erik,Saquon Barkley,RB,1,8,9.4,141.8,-132.4,True,False,False
+2020,Gucker,Nick Chubb,RB,14,53,137.4,27.6,109.8,True,True,False
+2020,Gucker,Lamar Jackson,QB,12,14,225.1,146.2,78.9,True,True,False
+2020,Gucker,Kenny Golladay,WR,13,48,49.8,37.2,12.6,False,False,False
+2020,Gucker,Stefon Diggs,WR,3,14,135.7,125.6,10.1,False,False,False
+2020,Gucker,Dallas Goedert,TE,9,11,28.6,59.3,-30.7,False,False,False
+2020,Gucker,Emmanuel Sanders,WR,10,40,30.2,63.8,-33.6,False,False,False
+2020,Gucker,Dak Prescott,QB,9,10,146.6,199.2,-52.6,False,False,False
+2020,Gucker,Jacob Hollister,TE,9,11,0.0,59.3,-59.3,False,False,False
+2020,Gucker,Julian Edelman,WR,4,19,37.2,112.1,-74.9,False,False,False
+2020,Gucker,Tevin Coleman,RB,6,25,2.4,89.3,-86.9,False,False,False
+2020,Gucker,Devonta Freeman,RB,2,11,29.0,137.4,-108.4,False,False,False
+2020,Gucker,Le'Veon Bell,RB,1,8,32.1,141.8,-109.7,False,False,False
+2020,Jacob,Aaron Jones Sr.,RB,11,41,161.3,53.4,107.9,True,True,False
+2020,Jacob,Allen Robinson,WR,5,22,124.3,101.1,23.2,True,True,False
+2020,Jacob,Adam Thielen,WR,2,10,153.6,135.7,17.9,False,False,False
+2020,Jacob,Russell Wilson,QB,6,5,297.6,291.9,5.7,False,False,False
+2020,Jacob,Amari Cooper,WR,3,14,123.2,125.6,-2.4,False,False,False
+2020,Jacob,Deebo Samuel,WR,9,38,48.8,70.4,-21.6,False,False,False
+2020,Jacob,Mike Williams,WR,4,19,76.4,112.1,-35.7,False,False,False
+2020,Jacob,David Johnson,RB,1,8,89.3,141.8,-52.5,False,False,False
+2020,Jacob,Jack Doyle,TE,9,11,0.0,59.3,-59.3,False,False,False
+2020,Jacob,Marlon Mack,RB,9,34,5.6,65.8,-60.2,False,False,False
+2020,Jacob,David Njoku,TE,8,10,0.0,63.2,-63.2,False,False,False
+2020,Jacob,Derrius Guice,RB,9,34,0.0,65.8,-65.8,False,False,False
+2020,Jacob,Curtis Samuel,WR,7,31,7.7,79.2,-71.5,False,False,False
+2020,Jacob,Jimmy Garoppolo,QB,9,10,0.0,199.2,-199.2,False,False,False
+2020,John Stockton,Deshaun Watson,QB,11,12,290.8,146.6,144.1,False,False,True
+2020,John Stockton,DK Metcalf,WR,9,38,173.9,70.4,103.5,False,True,False
+2020,John Stockton,Miles Sanders,RB,9,34,95.4,65.8,29.6,True,True,False
+2020,John Stockton,Tyler Lockett,WR,4,19,137.4,112.1,25.3,False,False,False
+2020,John Stockton,Latavius Murray,RB,8,30,96.0,80.5,15.5,False,False,False
+2020,John Stockton,Jared Cook,TE,9,11,59.3,59.3,0.0,False,False,False
+2020,John Stockton,DeAndre Hopkins,WR,1,4,139.9,153.6,-13.7,False,False,False
+2020,John Stockton,Evan Engram,TE,5,4,64.9,81.4,-16.5,False,False,False
+2020,John Stockton,Austin Ekeler,RB,6,25,64.9,89.3,-24.4,True,False,False
+2020,John Stockton,Jordan Howard,RB,9,34,13.1,65.8,-52.7,False,False,False
+2020,John Stockton,Drew Brees,QB,9,10,146.3,199.2,-52.9,False,False,False
+2020,John Stockton,Bo Scarbrough,RB,9,34,0.0,65.8,-65.8,False,False,False
+2020,John Stockton,Alshon Jeffery,WR,7,31,0.0,79.2,-79.2,False,False,False
+2020,John Stockton,Sony Michel,RB,3,16,27.6,118.0,-90.4,False,False,False
+2020,K&E,Derrick Henry,RB,9,34,227.9,65.8,162.1,True,True,False
+2020,K&E,Josh Allen,QB,9,10,303.5,199.2,104.3,False,True,False
+2020,K&E,Robbie Chosen,WR,9,38,77.2,70.4,6.8,False,False,False
+2020,K&E,Hunter Henry,TE,6,7,68.7,65.1,3.6,False,False,False
+2020,K&E,Mike Evans,WR,2,10,131.3,135.7,-4.4,False,False,False
+2020,K&E,Todd Gurley,RB,1,8,127.2,141.8,-14.6,False,False,False
+2020,K&E,Brandin Cooks,WR,3,14,98.4,125.6,-27.2,False,False,False
+2020,K&E,Chris Godwin Jr.,WR,4,19,74.2,112.1,-37.9,True,False,False
+2020,K&E,Phillip Lindsay,RB,5,23,48.8,93.8,-45.0,False,False,False
+2020,K&E,LeSean McCoy,RB,10,39,0.0,58.7,-58.7,False,False,False
+2020,K&E,Greg Olsen,TE,9,11,0.0,59.3,-59.3,False,False,False
+2020,K&E,Dede Westbrook,WR,9,38,0.0,70.4,-70.4,False,False,False
+2020,K&E,John Ross,WR,9,38,0.0,70.4,-70.4,False,False,False
+2020,K&E,Austin Hooper,TE,14,1,0.0,167.6,-167.6,False,False,False
+2020,kevin mc,Alvin Kamara,RB,14,53,212.8,27.6,185.2,False,True,False
+2020,kevin mc,Kyler Murray,QB,9,10,314.0,199.2,114.8,False,True,False
+2020,kevin mc,Terry McLaurin,WR,9,38,122.7,70.4,52.3,False,False,False
+2020,kevin mc,DJ Moore,WR,6,27,122.5,95.7,26.8,True,False,False
+2020,kevin mc,David Montgomery,RB,4,20,125.8,100.1,25.7,False,False,False
+2020,kevin mc,Cooper Kupp,WR,5,22,102.9,101.1,1.8,False,False,False
+2020,kevin mc,Chris Carson,RB,3,16,111.9,118.0,-6.1,False,False,False
+2020,kevin mc,Mike Gesicki,TE,9,11,50.4,59.3,-8.9,False,False,False
+2020,kevin mc,Kerryon Johnson,RB,9,34,18.6,65.8,-47.2,False,False,False
+2020,kevin mc,A.J. Green,WR,8,34,22.0,74.2,-52.2,False,False,False
+2020,kevin mc,Julio Jones,WR,1,4,101.1,153.6,-52.5,False,False,False
+2020,kevin mc,Damien Williams,RB,9,34,0.0,65.8,-65.8,False,False,False
+2020,kevin mc,Odell Beckham Jr.,WR,2,10,63.8,135.7,-71.9,False,False,False
+2020,kevin mc,Derek Carr,QB,9,10,34.3,199.2,-164.9,False,False,False
+2021,Bennett,Darrell Henderson Jr.,RB,9,38,130.0,61.1,68.9,False,True,False
+2021,Bennett,Mike Williams,WR,9,37,128.5,60.7,67.8,False,True,False
+2021,Bennett,Myles Gaskin,RB,9,38,114.3,61.1,53.2,False,False,False
+2021,Bennett,Travis Kelce,TE,2,4,127.9,87.8,40.1,True,False,False
+2021,Bennett,Hollywood Brown,WR,7,29,96.4,89.4,7.0,False,False,False
+2021,Bennett,Aaron Rodgers,QB,8,7,262.0,258.7,3.3,False,False,False
+2021,Bennett,Jarvis Landry,WR,9,37,59.1,60.7,-1.6,False,False,False
+2021,Bennett,Jerry Jeudy,WR,12,52,38.0,40.4,-2.4,False,False,False
+2021,Bennett,A.J. Brown,WR,3,11,84.5,144.3,-59.8,True,False,False
+2021,Bennett,John Brown,WR,9,37,0.0,60.7,-60.7,False,False,False
+2021,Bennett,J.K. Dobbins,RB,9,38,0.0,61.1,-61.1,False,False,False
+2021,Bennett,Clyde Edwards-Helaire,RB,1,10,86.5,152.5,-66.0,False,False,False
+2021,Bennett,Mark Ingram II,RB,4,20,34.7,117.8,-83.1,False,False,False
+2021,Branden,Patrick Mahomes,QB,14,13,272.7,83.7,189.0,False,False,True
+2021,Branden,Justin Jefferson,WR,9,37,187.2,60.7,126.5,True,True,False
+2021,Branden,CeeDee Lamb,WR,10,42,138.8,52.1,86.7,True,True,False
+2021,Branden,Stefon Diggs,WR,6,24,143.2,106.2,37.0,False,False,False
+2021,Branden,Dallas Goedert,TE,9,10,87.6,62.5,25.1,False,False,False
+2021,Branden,Corey Davis,WR,9,37,71.7,60.7,11.0,False,False,False
+2021,Branden,Jamaal Williams,RB,9,38,61.1,61.1,0.0,False,False,False
+2021,Branden,Brandon Aiyuk,WR,9,37,42.8,60.7,-17.9,False,False,False
+2021,Branden,Jonnu Smith,TE,9,10,15.4,62.5,-47.1,False,False,False
+2021,Branden,Christian McCaffrey,RB,2,13,90.5,143.7,-53.2,False,False,True
+2021,Branden,Giovani Bernard,RB,9,38,0.0,61.1,-61.1,False,False,False
+2021,Branden,DeAndre Hopkins,WR,1,2,105.2,196.8,-91.6,False,False,False
+2021,Branden,Raheem Mostert,RB,3,17,2.0,136.4,-134.4,False,False,False
+2021,Derek,Antonio Gibson,RB,8,33,143.7,81.5,62.2,True,True,False
+2021,Derek,George Kittle,TE,9,10,117.1,62.5,54.6,False,False,True
+2021,Derek,Tee Higgins,WR,9,37,89.4,60.7,28.7,False,True,False
+2021,Derek,Dalvin Cook,RB,1,10,163.7,152.5,11.2,True,False,False
+2021,Derek,Keenan Allen,WR,5,19,126.9,125.3,1.6,False,False,False
+2021,Derek,Christian Kirk,WR,9,37,52.1,60.7,-8.6,False,False,False
+2021,Derek,Robert Woods,WR,6,24,94.2,106.2,-12.0,False,False,False
+2021,Derek,Logan Thomas,TE,9,10,24.8,62.5,-37.7,False,False,False
+2021,Derek,Robert Tonyan,TE,9,10,14.2,62.5,-48.3,False,False,False
+2021,Derek,Allen Lazard,WR,9,37,0.0,60.7,-60.7,False,False,False
+2021,Derek,Travis Fulgham,WR,9,37,0.0,60.7,-60.7,False,False,False
+2021,Derek,Benny Snell Jr.,RB,9,38,0.0,61.1,-61.1,False,False,False
+2021,Derek,Chris Carson,RB,2,13,42.1,143.7,-101.6,False,False,False
+2021,Derek,Deshaun Watson,QB,4,3,0.0,293.0,-293.0,False,False,False
+2021,Endler,Deebo Samuel,WR,11,47,196.8,43.2,153.6,False,True,False
+2021,Endler,Justin Herbert,QB,9,9,309.7,234.0,75.7,True,True,False
+2021,Endler,Michael Pittman Jr.,WR,9,37,126.3,60.7,65.6,False,False,False
+2021,Endler,Chase Edmonds,RB,12,46,70.1,43.0,27.1,False,False,False
+2021,Endler,T.J. Hockenson,TE,9,10,84.3,62.5,21.8,True,False,False
+2021,Endler,Tyler Lockett,WR,4,16,144.3,126.9,17.4,False,False,False
+2021,Endler,Ezekiel Elliott,RB,1,10,167.7,152.5,15.2,False,False,True
+2021,Endler,Zack Moss,RB,9,38,74.4,61.1,13.3,False,False,False
+2021,Endler,Mike Evans,WR,2,6,159.5,160.2,-0.7,False,False,False
+2021,Endler,Jakobi Meyers,WR,9,37,56.2,60.7,-4.5,False,False,False
+2021,Endler,Kenyan Drake,RB,10,41,35.4,55.7,-20.3,False,False,False
+2021,Endler,Nyheim Miller-Hines,RB,9,38,27.4,61.1,-33.7,False,False,False
+2021,Endler,Zach Ertz,TE,5,6,50.5,87.0,-36.5,False,False,False
+2021,Endler,Odell Beckham Jr.,WR,3,11,60.7,144.3,-83.6,False,False,False
+2021,Erik,James Conner,RB,9,38,192.4,61.1,131.3,False,False,True
+2021,Erik,Cooper Kupp,WR,3,11,238.4,144.3,94.1,True,True,False
+2021,Erik,Rob Gronkowski,TE,9,10,87.8,62.5,25.3,False,True,False
+2021,Erik,Antonio Brown,WR,9,37,70.4,60.7,9.7,False,False,False
+2021,Erik,Devontae Booker,RB,9,38,54.3,61.1,-6.8,False,False,False
+2021,Erik,Adam Thielen,WR,2,6,130.8,160.2,-29.4,False,False,False
+2021,Erik,Jamison Crowder,WR,13,55,1.9,38.9,-37.0,False,False,False
+2021,Erik,Nelson Agholor,WR,9,37,17.0,60.7,-43.7,False,False,False
+2021,Erik,Darius Slayton,WR,9,37,6.3,60.7,-54.4,False,False,False
+2021,Erik,Frank Gore,RB,9,38,0.0,61.1,-61.1,False,False,False
+2021,Erik,Trey Burton,TE,9,10,0.0,62.5,-62.5,False,False,False
+2021,Erik,Saquon Barkley,RB,1,10,84.3,152.5,-68.2,False,False,True
+2021,Erik,Ronald Jones,RB,7,31,4.1,84.3,-80.2,True,False,False
+2021,Erik,DJ Chark,WR,4,16,27.4,126.9,-99.5,False,False,False
+2021,Erik,Taysom Hill,QB,9,9,0.0,234.0,-234.0,False,False,False
+2021,Gucker,Nick Chubb,RB,14,50,151.8,29.0,122.8,False,False,True
+2021,Gucker,Lamar Jackson,QB,12,12,232.4,134.2,98.1,True,True,False
+2021,Gucker,Diontae Johnson,WR,9,37,145.3,60.7,84.6,False,True,False
+2021,Gucker,Leonard Fournette,RB,4,20,183.9,117.8,66.1,False,False,False
+2021,Gucker,Davante Adams,WR,2,6,176.4,160.2,16.2,True,False,False
+2021,Gucker,David Montgomery,RB,5,25,108.1,106.1,2.0,False,False,False
+2021,Gucker,Darren Waller,TE,6,6,80.3,87.0,-6.7,False,False,False
+2021,Gucker,Robbie Chosen,WR,9,37,32.7,60.7,-28.0,False,False,False
+2021,Gucker,Tyreek Hill,WR,1,2,160.2,196.8,-36.6,False,False,False
+2021,Gucker,Amari Cooper,WR,3,11,107.5,144.3,-36.8,False,False,False
+2021,Gucker,Marlon Mack,RB,10,41,1.6,55.7,-54.1,False,False,False
+2021,Gucker,Justin Jackson,RB,9,38,0.0,61.1,-61.1,False,False,False
+2021,Gucker,Jerick McKinnon,RB,9,38,0.0,61.1,-61.1,False,False,False
+2021,Gucker,Joe Burrow,QB,9,9,83.7,234.0,-150.3,False,False,False
+2021,Gucker,Derek Carr,QB,9,9,40.9,234.0,-193.0,False,False,False
+2021,Jacob,Jonathan Taylor,RB,2,13,288.4,143.7,144.7,True,True,False
+2021,Jacob,Damien Harris,RB,13,47,141.8,42.1,99.7,False,True,False
+2021,Jacob,Aaron Jones Sr.,RB,11,43,146.7,53.6,93.1,False,False,True
+2021,Jacob,Josh Allen,QB,10,10,318.1,232.4,85.7,True,False,False
+2021,Jacob,James Robinson,RB,9,38,127.6,61.1,66.5,False,False,False
+2021,Jacob,Marvin Jones Jr.,WR,9,37,81.0,60.7,20.3,False,False,False
+2021,Jacob,Melvin Gordon III,RB,3,17,142.2,136.4,5.8,False,False,False
+2021,Jacob,Terry McLaurin,WR,4,16,120.0,126.9,-6.9,False,False,False
+2021,Jacob,Hunter Henry,TE,6,6,47.8,87.0,-39.2,False,False,False
+2021,Jacob,Salvon Ahmed,RB,9,38,0.0,61.1,-61.1,False,False,False
+2021,Jacob,Allen Robinson,WR,5,19,39.9,125.3,-85.4,False,False,False
+2021,Jacob,Michael Thomas,WR,1,2,0.0,196.8,-196.8,False,False,False
+2021,Jacob,Cam Newton,QB,7,6,13.8,262.0,-248.1,False,False,False
+2021,John Stockton,Austin Ekeler,RB,6,30,220.5,85.2,135.3,True,True,False
+2021,John Stockton,D'Andre Swift,RB,9,38,136.4,61.1,75.3,False,True,False
+2021,John Stockton,Noah Fant,TE,13,16,62.2,33.9,28.3,False,False,False
+2021,John Stockton,Miles Sanders,RB,9,38,73.8,61.1,12.7,False,False,False
+2021,John Stockton,Alvin Kamara,RB,1,10,152.5,152.5,0.0,True,False,False
+2021,John Stockton,DK Metcalf,WR,4,16,125.3,126.9,-1.6,False,False,False
+2021,John Stockton,Latavius Murray,RB,9,38,47.7,61.1,-13.4,False,False,False
+2021,John Stockton,Tyler Boyd,WR,7,29,55.6,89.4,-33.8,False,False,False
+2021,John Stockton,Tim Patrick,WR,9,37,14.1,60.7,-46.6,False,False,False
+2021,John Stockton,Evan Engram,TE,8,10,4.5,62.5,-58.0,False,False,False
+2021,John Stockton,Preston Williams,WR,9,37,0.0,60.7,-60.7,False,False,False
+2021,John Stockton,Todd Gurley,RB,3,17,0.0,136.4,-136.4,False,False,False
+2021,John Stockton,JuJu Smith-Schuster,WR,2,6,19.8,160.2,-140.4,False,False,False
+2021,John Stockton,Russell Wilson,QB,5,4,134.2,287.8,-153.6,False,False,False
+2021,K&E,Derrick Henry,RB,9,38,185.3,61.1,124.2,False,False,True
+2021,K&E,Brandin Cooks,WR,10,42,110.4,52.1,58.3,True,True,False
+2021,K&E,Mark Andrews,TE,3,4,138.6,87.8,50.8,False,True,False
+2021,K&E,Tom Brady,QB,8,7,293.0,258.7,34.3,False,False,False
+2021,K&E,Chris Godwin Jr.,WR,4,16,149.5,126.9,22.6,False,False,False
+2021,K&E,Boston Scott,RB,14,50,27.5,29.0,-1.5,False,False,False
+2021,K&E,Devin Singletary,RB,7,31,82.2,84.3,-2.1,False,False,False
+2021,K&E,Jared Cook,TE,9,10,33.9,62.5,-28.6,False,False,False
+2021,K&E,Josh Jacobs,RB,1,10,117.8,152.5,-34.7,False,False,False
+2021,K&E,Jeff Wilson Jr.,RB,9,38,12.1,61.1,-49.0,False,False,False
+2021,K&E,Kyler Murray,QB,5,4,234.0,287.8,-53.8,False,False,False
+2021,K&E,DeVante Parker,WR,6,24,44.9,106.2,-61.3,True,False,False
+2021,K&E,Julio Jones,WR,2,6,38.9,160.2,-121.3,False,False,False
+2021,kevin mc,Joe Mixon,RB,1,10,211.8,152.5,59.3,False,True,False
+2021,kevin mc,Chase Claypool,WR,9,37,88.9,60.7,28.2,False,True,False
+2021,kevin mc,DJ Moore,WR,6,24,125.3,106.2,19.1,True,False,False
+2021,kevin mc,Devonta Freeman,RB,9,38,58.6,61.1,-2.5,False,False,False
+2021,kevin mc,Calvin Ridley,WR,9,37,40.1,60.7,-20.6,True,False,False
+2021,kevin mc,Kareem Hunt,RB,4,20,88.0,117.8,-29.8,False,False,False
+2021,kevin mc,Sammy Watkins,WR,9,37,0.0,60.7,-60.7,False,False,False
+2021,kevin mc,Cam Akers,RB,9,38,0.0,61.1,-61.1,False,False,False
+2021,kevin mc,Wayne Gallman,RB,9,38,0.0,61.1,-61.1,False,False,False
+2021,kevin mc,Hayden Hurst,TE,10,11,0.0,62.2,-62.2,False,False,False
+2021,kevin mc,Will Fuller V,WR,8,34,0.0,79.9,-79.9,False,False,False
+2021,kevin mc,David Johnson,RB,3,17,26.7,136.4,-109.7,False,False,False
+2021,kevin mc,Kenny Golladay,WR,2,6,41.6,160.2,-118.6,False,False,False
+2021,kevin mc,Matt Ryan,QB,7,6,19.4,262.0,-242.5,False,False,False
+2022,Bennett,Josh Jacobs,RB,4,19,252.8,126.4,126.4,False,True,False
+2022,Bennett,Travis Kelce,TE,2,2,184.4,103.9,80.5,False,False,True
+2022,Bennett,A.J. Brown,WR,3,14,164.0,122.9,41.1,False,True,False
+2022,Bennett,Devin Singletary,RB,9,37,113.2,79.2,34.0,True,False,False
+2022,Bennett,DeVonta Smith,WR,9,36,109.5,76.5,33.0,True,False,False
+2022,Bennett,Tyler Lockett,WR,5,20,139.6,109.5,30.1,False,False,False
+2022,Bennett,Kareem Hunt,RB,6,26,84.2,102.8,-18.6,False,False,False
+2022,Bennett,Rob Gronkowski,TE,11,11,0.0,38.6,-38.6,False,False,False
+2022,Bennett,Najee Harris,RB,1,9,127.1,166.0,-38.9,False,False,False
+2022,Bennett,Marvin Jones Jr.,WR,12,50,0.0,40.1,-40.1,False,False,False
+2022,Bennett,Kirk Cousins,QB,9,11,94.2,150.4,-56.2,False,False,False
+2022,Bennett,Kadarius Toney,WR,9,36,18.5,76.5,-58.0,False,False,False
+2022,Bennett,Cole Beasley,WR,9,36,0.0,76.5,-76.5,False,False,False
+2022,Branden,Justin Jefferson,WR,9,36,215.8,76.5,139.3,True,True,False
+2022,Branden,CeeDee Lamb,WR,10,44,140.7,51.1,89.6,True,True,False
+2022,Branden,Miles Sanders,RB,3,15,187.3,134.5,52.8,False,False,False
+2022,Branden,Dallas Goedert,TE,12,14,72.4,32.4,40.0,False,False,False
+2022,Branden,Hollywood Brown,WR,9,36,76.5,76.5,0.0,False,False,False
+2022,Branden,Aaron Jones Sr.,RB,1,9,161.5,166.0,-4.5,False,False,False
+2022,Branden,Dawson Knox,TE,9,10,15.8,42.7,-26.9,False,False,False
+2022,Branden,Clyde Edwards-Helaire,RB,2,14,80.4,140.4,-60.0,False,False,False
+2022,Branden,Dontrell Hilliard,RB,9,37,1.8,79.2,-77.4,False,False,False
+2022,Branden,Sony Michel,RB,9,37,1.3,79.2,-77.9,False,False,False
+2022,Branden,Kyler Murray,QB,4,4,206.5,300.8,-94.3,False,False,False
+2022,Branden,Myles Gaskin,RB,6,26,0.0,102.8,-102.8,False,False,False
+2022,Derek,Mark Andrews,TE,5,6,103.9,72.0,31.9,True,True,False
+2022,Derek,Antonio Gibson,RB,8,32,114.1,84.2,29.9,True,True,False
+2022,Derek,Alexander Mattison,RB,14,52,49.1,33.0,16.1,False,False,False
+2022,Derek,Michael Gallup,WR,12,50,51.7,40.1,11.6,False,False,False
+2022,Derek,D'Onta Foreman,RB,9,37,80.1,79.2,0.9,False,False,False
+2022,Derek,Jerry Jeudy,WR,6,23,96.8,96.8,0.0,False,False,False
+2022,Derek,Patrick Mahomes,QB,3,2,340.4,340.4,0.0,False,False,False
+2022,Derek,Dalvin Cook,RB,1,9,166.0,166.0,0.0,False,False,True
+2022,Derek,DK Metcalf,WR,2,7,122.9,142.7,-19.8,False,False,False
+2022,Derek,Hunter Renfrow,WR,9,36,14.6,76.5,-61.9,False,False,False
+2022,Derek,Kendrick Bourne,WR,9,36,0.0,76.5,-76.5,False,False,False
+2022,Derek,David Johnson,RB,9,37,0.0,79.2,-79.2,False,False,False
+2022,Derek,Zack Moss,RB,9,37,0.0,79.2,-79.2,False,False,False
+2022,Endler,Travis Etienne Jr.,RB,14,52,130.8,33.0,97.8,True,True,False
+2022,Endler,Justin Herbert,QB,9,11,237.5,150.4,87.1,False,True,False
+2022,Endler,Leonard Fournette,RB,11,42,126.4,51.2,75.2,False,False,False
+2022,Endler,T.J. Hockenson,TE,10,10,95.7,42.7,53.0,False,False,False
+2022,Endler,Brandon Aiyuk,WR,9,36,116.2,76.5,39.7,False,False,False
+2022,Endler,Terry McLaurin,WR,3,14,122.2,122.9,-0.7,False,False,False
+2022,Endler,Adam Thielen,WR,6,23,90.5,96.8,-6.3,False,False,False
+2022,Endler,Melvin Gordon III,RB,9,37,62.1,79.2,-17.1,False,False,False
+2022,Endler,Ezekiel Elliott,RB,1,9,132.9,166.0,-33.1,True,False,False
+2022,Endler,Foster Moreau,TE,9,10,3.2,42.7,-39.5,False,False,False
+2022,Endler,Robert Woods,WR,9,36,26.4,76.5,-50.1,False,False,False
+2022,Endler,Emmanuel Sanders,WR,9,36,0.0,76.5,-76.5,False,False,False
+2022,Endler,Darren Waller,TE,2,2,23.5,103.9,-80.4,False,False,False
+2022,Endler,Darrell Henderson Jr.,RB,5,21,30.5,114.1,-83.6,False,False,False
+2022,Erik,Tony Pollard,RB,12,46,197.3,47.7,149.6,False,True,False
+2022,Erik,Derrick Henry,RB,1,9,232.1,166.0,66.1,True,True,False
+2022,Erik,Cordarrelle Patterson,WR,9,36,101.1,76.5,24.6,False,False,False
+2022,Erik,Cooper Kupp,WR,3,14,136.4,122.9,13.5,True,False,False
+2022,Erik,Dalton Schultz,TE,9,10,42.7,42.7,0.0,False,False,False
+2022,Erik,Jarvis Landry,WR,13,54,0.0,27.7,-27.7,False,False,False
+2022,Erik,George Kittle,TE,2,2,72.0,103.9,-31.9,False,False,False
+2022,Erik,Matthew Stafford,QB,11,12,90.8,127.3,-36.5,False,False,False
+2022,Erik,Diontae Johnson,WR,4,18,69.0,112.7,-43.7,False,False,False
+2022,Erik,Elijah Moore,WR,9,36,19.9,76.5,-56.6,False,False,False
+2022,Erik,Chase Edmonds,RB,6,26,35.1,102.8,-67.7,False,False,False
+2022,Erik,Jamison Crowder,WR,9,36,0.0,76.5,-76.5,False,False,False
+2022,Erik,Devonta Freeman,RB,9,37,0.0,79.2,-79.2,False,False,False
+2022,Erik,Dak Prescott,QB,5,7,127.3,206.5,-79.2,False,False,False
+2022,Erik,Antonio Brown,WR,8,32,0.0,85.2,-85.2,False,False,False
+2022,Gucker,Lamar Jackson,QB,12,13,242.1,125.6,116.4,False,False,True
+2022,Gucker,Jaylen Waddle,WR,10,44,144.0,51.1,92.9,False,True,False
+2022,Gucker,Davante Adams,WR,2,7,210.6,142.7,67.9,False,True,False
+2022,Gucker,Mike Williams,WR,11,49,94.6,40.5,54.1,False,False,False
+2022,Gucker,Pat Freiermuth,TE,9,10,75.0,42.7,32.3,False,False,False
+2022,Gucker,Deebo Samuel,WR,8,32,112.0,85.2,26.8,True,False,False
+2022,Gucker,Tee Higgins,WR,6,23,122.1,96.8,25.3,False,False,False
+2022,Gucker,Jeff Wilson Jr.,RB,9,37,95.8,79.2,16.6,False,False,False
+2022,Gucker,Tyreek Hill,WR,1,3,203.0,203.0,0.0,False,False,False
+2022,Gucker,D'Andre Swift,RB,4,19,102.8,126.4,-23.6,True,False,False
+2022,Gucker,Noah Fant,TE,7,9,0.0,47.6,-47.6,False,False,False
+2022,Gucker,James Robinson,RB,3,15,79.6,134.5,-54.9,False,False,False
+2022,Gucker,Darrel Williams,RB,9,37,0.0,79.2,-79.2,False,False,False
+2022,Jacob,Josh Allen,QB,10,11,328.9,150.4,178.5,False,True,False
+2022,Jacob,Jamaal Williams,RB,9,37,164.3,79.2,85.1,False,True,False
+2022,Jacob,Christian McCaffrey,RB,1,9,206.6,166.0,40.6,True,False,False
+2022,Jacob,AJ Dillon,RB,8,32,79.2,84.2,-5.0,False,False,False
+2022,Jacob,Jonathan Taylor,RB,2,14,121.1,140.4,-19.3,True,False,False
+2022,Jacob,Jakobi Meyers,WR,9,36,43.4,76.5,-33.1,False,False,False
+2022,Jacob,Hunter Henry,TE,9,10,7.0,42.7,-35.7,False,False,False
+2022,Jacob,Rashod Bateman,WR,9,36,40.5,76.5,-36.0,False,False,False
+2022,Jacob,Kyle Pitts Sr.,TE,4,3,47.6,95.7,-48.1,False,False,False
+2022,Jacob,Van Jefferson,WR,9,36,0.0,76.5,-76.5,False,False,False
+2022,Jacob,Chuba Hubbard,RB,9,37,0.0,79.2,-79.2,False,False,False
+2022,Jacob,Chase Claypool,WR,7,27,13.4,93.2,-79.8,False,False,False
+2022,Jacob,Keenan Allen,WR,3,14,42.6,122.9,-80.3,False,False,False
+2022,Jacob,Julio Jones,WR,5,20,8.6,109.5,-100.9,False,False,False
+2022,John Stockton,Austin Ekeler,RB,6,26,201.7,102.8,98.9,False,False,True
+2022,John Stockton,Rhamondre Stevenson,RB,9,37,144.7,79.2,65.5,True,True,False
+2022,John Stockton,Tom Brady,QB,9,11,204.7,150.4,54.3,False,True,False
+2022,John Stockton,Ja'Marr Chase,WR,7,27,130.9,93.2,37.7,True,False,False
+2022,John Stockton,Mike Evans,WR,4,18,102.5,112.7,-10.2,False,False,False
+2022,John Stockton,Gerald Everett,TE,9,10,32.4,42.7,-10.3,False,False,False
+2022,John Stockton,David Montgomery,RB,3,15,112.5,134.5,-22.0,False,False,False
+2022,John Stockton,Mike Gesicki,TE,9,10,0.0,42.7,-42.7,False,False,False
+2022,John Stockton,Damien Harris,RB,5,21,63.8,114.1,-50.3,False,False,False
+2022,John Stockton,Alvin Kamara,RB,1,9,110.3,166.0,-55.7,False,False,False
+2022,John Stockton,DeAndre Hopkins,WR,2,7,85.3,142.7,-57.4,False,False,False
+2022,John Stockton,Odell Beckham Jr.,WR,9,36,0.0,76.5,-76.5,False,False,False
+2022,John Stockton,Mark Ingram II,RB,9,37,0.0,79.2,-79.2,False,False,False
+2022,K&E,Jalen Hurts,QB,7,8,342.9,204.7,138.2,False,True,False
+2022,K&E,Michael Pittman Jr.,WR,11,49,89.5,40.5,49.0,False,True,False
+2022,K&E,James Conner,RB,9,37,112.1,79.2,32.9,True,False,False
+2022,K&E,Saquon Barkley,RB,1,9,192.4,166.0,26.4,False,False,False
+2022,K&E,Joe Mixon,RB,2,14,152.5,140.4,12.1,True,False,False
+2022,K&E,Darnell Mooney,WR,12,50,38.2,40.1,-1.9,False,False,False
+2022,K&E,Brandin Cooks,WR,10,44,45.6,51.1,-5.5,False,False,False
+2022,K&E,Tyler Higbee,TE,8,10,34.5,42.7,-8.2,False,False,False
+2022,K&E,Raheem Mostert,RB,5,21,99.6,114.1,-14.5,False,False,False
+2022,K&E,Chris Godwin Jr.,WR,4,18,84.7,112.7,-28.0,False,False,False
+2022,K&E,DeVante Parker,WR,6,23,40.1,96.8,-56.7,False,False,False
+2022,K&E,A.J. Green,WR,9,36,0.0,76.5,-76.5,False,False,False
+2022,K&E,Boston Scott,RB,9,37,0.0,79.2,-79.2,False,False,False
+2022,K&E,Cam Newton,QB,9,11,0.0,150.4,-150.4,False,False,False
+2022,kevin mc,Christian Kirk,WR,9,36,134.1,76.5,57.6,False,True,False
+2022,kevin mc,Stefon Diggs,WR,2,7,195.9,142.7,53.2,False,True,False
+2022,kevin mc,Nick Chubb,RB,1,9,216.5,166.0,50.5,False,False,False
+2022,kevin mc,Zach Ertz,TE,9,10,68.6,42.7,25.9,False,False,False
+2022,kevin mc,Amari Cooper,WR,4,18,135.4,112.7,22.7,False,False,False
+2022,kevin mc,Michael Carter,RB,10,39,68.5,68.5,0.0,False,False,False
+2022,kevin mc,DJ Moore,WR,6,23,93.0,96.8,-3.8,False,False,True
+2022,kevin mc,Aaron Rodgers,QB,8,10,125.6,151.7,-26.1,False,False,False
+2022,kevin mc,J.K. Dobbins,RB,9,37,48.2,79.2,-31.0,False,False,False
+2022,kevin mc,Elijah Mitchell,RB,9,37,23.1,79.2,-56.1,True,False,False
+2022,kevin mc,Calvin Ridley,WR,9,36,0.0,76.5,-76.5,False,False,True
+2022,kevin mc,Kenny Golladay,WR,9,36,0.0,76.5,-76.5,False,False,False
+2022,kevin mc,Jermar Jefferson,RB,9,37,0.0,79.2,-79.2,False,False,False
+2022,kevin mc,Javonte Williams,RB,5,21,26.0,114.1,-88.1,True,False,False
+2023,Bennett,Tyreek Hill,WR,2,10,243.7,150.4,93.3,True,True,False
+2023,Bennett,Chris Olave,WR,11,44,123.8,57.6,66.2,False,True,False
+2023,Bennett,Brandon Aiyuk,WR,8,33,149.3,87.4,61.9,False,False,False
+2023,Bennett,DeVonta Smith,WR,9,36,128.7,85.2,43.5,False,False,False
+2023,Bennett,DJ Moore,WR,3,14,165.2,132.7,32.5,False,False,False
+2023,Bennett,Patrick Mahomes,QB,5,7,243.8,231.4,12.4,True,False,False
+2023,Bennett,Devin Singletary,RB,10,39,67.6,60.5,7.1,False,False,False
+2023,Bennett,Stefon Diggs,WR,1,5,157.3,168.0,-10.7,False,False,False
+2023,Bennett,Tyler Higbee,TE,9,10,4.9,55.6,-50.7,False,False,False
+2023,Bennett,Miles Sanders,RB,6,26,36.2,107.8,-71.6,False,False,False
+2023,Bennett,Dameon Pierce,RB,4,20,59.7,134.3,-74.6,False,False,False
+2023,Bennett,Rashod Bateman,WR,9,36,0.0,85.2,-85.2,False,False,False
+2023,Bennett,Rashaad Penny,RB,7,29,1.4,97.4,-96.0,False,False,False
+2023,Bennett,Matthew Stafford,QB,9,11,0.0,166.2,-166.2,False,False,False
+2023,Branden,CeeDee Lamb,WR,10,40,199.7,71.8,127.9,False,False,True
+2023,Branden,Keenan Allen,WR,9,36,182.9,85.2,97.7,False,True,False
+2023,Branden,Rachaad White,RB,9,37,160.4,71.2,89.2,False,True,False
+2023,Branden,Josh Jacobs,RB,5,24,148.1,116.1,32.0,True,False,False
+2023,Branden,David Njoku,TE,9,10,75.0,55.6,19.4,False,False,False
+2023,Branden,Mike Evans,WR,2,10,168.0,150.4,17.6,False,False,False
+2023,Branden,D'Onta Foreman,RB,9,37,71.2,71.2,0.0,False,False,False
+2023,Branden,Justin Jefferson,WR,9,36,81.8,85.2,-3.4,False,False,True
+2023,Branden,Darren Waller,TE,9,10,44.4,55.6,-11.2,False,False,False
+2023,Branden,Pat Freiermuth,TE,9,10,20.9,55.6,-34.7,False,False,False
+2023,Branden,Terry McLaurin,WR,3,14,87.4,132.7,-45.3,False,False,False
+2023,Branden,J.K. Dobbins,RB,9,37,9.7,71.2,-61.5,False,False,False
+2023,Branden,Joe Burrow,QB,6,9,153.2,220.1,-66.9,False,False,False
+2023,Branden,Dalvin Cook,RB,1,7,13.5,157.5,-144.0,False,False,False
+2023,Derek,Brian Robinson,RB,12,46,149.0,35.3,113.7,False,True,False
+2023,Derek,Alexander Mattison,RB,11,44,97.4,36.2,61.2,True,True,False
+2023,Derek,Jared Goff,QB,9,11,220.1,166.2,53.9,False,False,False
+2023,Derek,Tony Pollard,RB,6,26,140.1,107.8,32.3,True,False,False
+2023,Derek,Adam Thielen,WR,7,27,115.3,102.0,13.3,False,False,False
+2023,Derek,Mark Andrews,TE,5,4,90.4,112.6,-22.2,False,False,False
+2023,Derek,Lamar Jackson,QB,4,3,259.8,282.7,-22.9,False,False,False
+2023,Derek,Cam Akers,RB,9,37,35.7,71.2,-35.5,False,False,False
+2023,Derek,Courtland Sutton,WR,3,14,85.6,132.7,-47.1,False,False,False
+2023,Derek,Najee Harris,RB,1,7,107.9,157.5,-49.6,False,False,False
+2023,Derek,Antonio Gibson,RB,8,32,11.4,85.1,-73.7,False,False,True
+2023,Derek,Curtis Samuel,WR,9,36,4.7,85.2,-80.5,False,False,False
+2023,Derek,Tee Higgins,WR,2,10,57.6,150.4,-92.8,False,False,False
+2023,Endler,Raheem Mostert,RB,13,48,219.4,27.6,191.8,False,True,False
+2023,Endler,Isiah Pacheco,RB,9,37,144.8,71.2,73.6,False,True,False
+2023,Endler,James Cook III,RB,9,37,144.0,71.2,72.8,False,False,False
+2023,Endler,Austin Ekeler,RB,9,37,116.1,71.2,44.9,True,False,False
+2023,Endler,Josh Allen,QB,3,2,315.3,297.7,17.6,False,False,False
+2023,Endler,George Pickens,WR,9,36,102.2,85.2,17.0,False,False,False
+2023,Endler,Travis Kelce,TE,2,2,121.6,121.3,0.3,True,False,False
+2023,Endler,Hollywood Brown,WR,8,33,83.7,87.4,-3.7,False,False,False
+2023,Endler,Jerry Jeudy,WR,5,19,56.7,115.7,-59.0,False,False,False
+2023,Endler,Joshua Palmer,WR,9,36,23.7,85.2,-61.5,False,False,False
+2023,Endler,Latavius Murray,RB,9,37,0.0,71.2,-71.2,False,False,False
+2023,Endler,Bam Knight,RB,9,37,0.0,71.2,-71.2,False,False,False
+2023,Endler,Ezekiel Elliott,RB,1,7,32.6,157.5,-124.9,False,False,False
+2023,Erik,T.J. Hockenson,TE,7,8,113.9,64.3,49.6,True,True,False
+2023,Erik,Tyler Lockett,WR,10,40,97.1,71.8,25.3,False,True,False
+2023,Erik,Derrick Henry,RB,1,7,177.8,157.5,20.3,True,False,False
+2023,Erik,Kareem Hunt,RB,8,32,71.2,85.1,-13.9,False,False,False
+2023,Erik,Justin Herbert,QB,4,3,241.2,282.7,-41.5,False,False,False
+2023,Erik,Cooper Kupp,WR,3,14,80.7,132.7,-52.0,False,False,True
+2023,Erik,Greg Dulcich,TE,9,10,0.0,55.6,-55.6,False,False,False
+2023,Erik,Samaje Perine,RB,9,37,10.2,71.2,-61.0,False,False,False
+2023,Erik,Travis Homer,RB,9,37,0.0,71.2,-71.2,False,False,False
+2023,Erik,Darius Slayton,WR,9,36,0.0,85.2,-85.2,False,False,False
+2023,Erik,Corey Davis,WR,9,36,0.0,85.2,-85.2,False,False,False
+2023,Erik,Aaron Jones Sr.,RB,2,11,57.4,148.1,-90.7,False,False,False
+2023,Erik,JuJu Smith-Schuster,WR,6,22,0.0,112.7,-112.7,False,False,False
+2023,Gucker,Deebo Samuel,WR,8,33,150.0,87.4,62.6,False,True,False
+2023,Gucker,D'Andre Swift,RB,4,20,135.0,134.3,0.7,False,True,False
+2023,Gucker,Jaylen Waddle,WR,5,19,105.2,115.7,-10.5,True,False,False
+2023,Gucker,Saquon Barkley,RB,2,11,136.6,148.1,-11.5,True,False,False
+2023,Gucker,Gabe Davis,WR,6,22,99.3,112.7,-13.4,False,False,False
+2023,Gucker,James Robinson,RB,11,44,0.0,36.2,-36.2,False,False,False
+2023,Gucker,Jameson Williams,WR,9,36,39.8,85.2,-45.4,False,False,False
+2023,Gucker,Kyle Pitts Sr.,TE,3,3,64.3,113.9,-49.6,False,False,False
+2023,Gucker,Gerald Everett,TE,9,10,3.9,55.6,-51.7,False,False,False
+2023,Gucker,Jamaal Williams,RB,9,37,14.5,71.2,-56.7,False,False,False
+2023,Gucker,Kirk Cousins,QB,9,11,108.7,166.2,-57.5,False,False,False
+2023,Gucker,Nick Chubb,RB,1,7,21.1,157.5,-136.4,False,False,False
+2023,Gucker,Tom Brady,QB,9,11,0.0,166.2,-166.2,False,False,False
+2023,Jacob,Christian McCaffrey,RB,1,7,269.4,157.5,111.9,True,True,False
+2023,Jacob,Kenneth Walker III,RB,10,39,128.0,60.5,67.5,False,True,False
+2023,Jacob,Jalen Hurts,QB,5,7,297.7,231.4,66.3,True,False,False
+2023,Jacob,George Kittle,TE,6,7,121.3,75.0,46.3,False,False,False
+2023,Jacob,Chris Godwin Jr.,WR,8,33,85.2,87.4,-2.2,False,False,False
+2023,Jacob,Christian Watson,WR,9,36,43.7,85.2,-41.5,False,False,False
+2023,Jacob,Treylon Burks,WR,11,44,10.8,57.6,-46.8,False,False,False
+2023,Jacob,Jonathan Taylor,RB,2,11,85.1,148.1,-63.0,False,False,True
+2023,Jacob,Tony Jones,RB,9,37,5.2,71.2,-66.0,False,False,False
+2023,Jacob,Cordarrelle Patterson,RB,9,37,0.0,71.2,-71.2,False,False,False
+2023,Jacob,Jerick McKinnon,RB,9,37,0.0,71.2,-71.2,False,False,False
+2023,Jacob,Michael Gallup,WR,9,36,0.0,85.2,-85.2,False,False,False
+2023,Jacob,Mike Williams,WR,3,14,33.2,132.7,-99.5,False,False,False
+2023,Jacob,Allen Robinson,WR,4,18,0.0,123.8,-123.8,False,False,False
+2023,John Stockton,Tua Tagovailoa,QB,9,11,231.4,166.2,65.2,False,True,False
+2023,John Stockton,Ja'Marr Chase,WR,7,27,160.3,102.0,58.3,True,True,False
+2023,John Stockton,Rhamondre Stevenson,RB,9,37,107.7,71.2,36.5,True,False,False
+2023,John Stockton,David Montgomery,RB,4,20,153.6,134.3,19.3,False,False,False
+2023,John Stockton,Khalil Herbert,RB,12,46,52.2,35.3,16.9,False,False,False
+2023,John Stockton,Justin Fields,QB,9,11,166.2,166.2,0.0,False,False,False
+2023,John Stockton,DK Metcalf,WR,3,14,132.4,132.7,-0.3,False,False,False
+2023,John Stockton,Alvin Kamara,RB,1,7,138.6,157.5,-18.9,False,False,False
+2023,John Stockton,Dalton Schultz,TE,9,10,35.5,55.6,-20.1,False,False,False
+2023,John Stockton,Allen Lazard,WR,10,40,4.6,71.8,-67.2,False,False,False
+2023,John Stockton,Zay Jones,WR,9,36,0.0,85.2,-85.2,False,False,False
+2023,John Stockton,Damien Harris,RB,6,26,1.9,107.8,-105.9,False,False,False
+2023,John Stockton,Taysom Hill,QB,9,11,38.4,166.2,-127.8,False,False,False
+2023,John Stockton,Leonard Fournette,RB,2,11,0.0,148.1,-148.1,False,False,False
+2023,John Stockton,Geno Smith,QB,9,11,13.8,166.2,-152.4,False,False,False
+2023,K&E,Kyren Williams,RB,9,37,167.0,71.2,95.8,True,True,False
+2023,K&E,Gus Edwards,RB,9,37,130.3,71.2,59.1,False,True,False
+2023,K&E,Christian Kirk,WR,10,40,97.3,71.8,25.5,False,False,False
+2023,K&E,James Conner,RB,9,37,94.7,71.2,23.5,False,False,False
+2023,K&E,Garrett Wilson,WR,9,36,104.2,85.2,19.0,True,False,False
+2023,K&E,Amari Cooper,WR,8,33,103.6,87.4,16.2,False,False,False
+2023,K&E,Joe Mixon,RB,2,11,157.5,148.1,9.4,False,False,False
+2023,K&E,Dallas Goedert,TE,7,8,58.0,64.3,-6.3,False,False,False
+2023,K&E,Hunter Henry,TE,9,10,5.1,55.6,-50.5,False,False,False
+2023,K&E,Davante Adams,WR,1,5,112.7,168.0,-55.3,False,False,False
+2023,K&E,Devin Duvernay,WR,9,36,0.0,85.2,-85.2,False,False,False
+2023,K&E,Donovan Peoples-Jones,WR,9,36,0.0,85.2,-85.2,False,False,False
+2023,K&E,Kyler Murray,QB,5,7,71.2,231.4,-160.2,False,False,False
+2023,K&E,Jimmy Garoppolo,QB,9,11,0.0,166.2,-166.2,False,False,False
+2023,kevin mc,Travis Etienne Jr.,RB,9,37,184.9,71.2,113.7,True,True,False
+2023,kevin mc,Dak Prescott,QB,8,10,282.7,178.0,104.7,False,True,False
+2023,kevin mc,Amon-Ra St. Brown,WR,9,36,153.6,85.2,68.4,True,False,False
+2023,kevin mc,DeAndre Hopkins,WR,10,40,132.7,71.8,60.9,False,False,False
+2023,kevin mc,A.J. Brown,WR,3,14,179.8,132.7,47.1,False,False,False
+2023,kevin mc,Breece Hall,RB,7,29,140.0,97.4,42.6,False,False,False
+2023,kevin mc,Drake London,WR,11,44,93.4,57.6,35.8,False,False,False
+2023,kevin mc,AJ Dillon,RB,9,37,76.2,71.2,5.0,False,False,False
+2023,kevin mc,Javonte Williams,RB,5,24,103.0,116.1,-13.1,False,False,False
+2023,kevin mc,Michael Pittman Jr.,WR,2,10,132.4,150.4,-18.0,False,False,False
+2023,kevin mc,Foster Moreau,TE,9,10,0.0,55.6,-55.6,False,False,False
+2023,kevin mc,Elijah Mitchell,RB,9,37,14.8,71.2,-56.4,False,False,False
+2023,kevin mc,Diontae Johnson,WR,4,18,65.5,123.8,-58.3,False,False,False
+2023,kevin mc,Jeff Wilson Jr.,RB,9,37,0.4,71.2,-70.8,False,False,False
+2023,kevin mc,Michael Carter,RB,9,37,0.0,71.2,-71.2,False,False,False
+2024,Bennett,Chuba Hubbard,RB,9,34,171.2,65.5,105.7,False,True,False
+2024,Bennett,Zay Flowers,WR,11,45,122.7,67.8,54.9,False,True,False
+2024,Bennett,Mike Evans,WR,9,39,103.0,74.9,28.1,True,False,False
+2024,Bennett,Patrick Mahomes,QB,5,7,220.6,224.9,-4.3,False,False,False
+2024,Bennett,Tyreek Hill,WR,2,12,116.2,122.7,-6.5,True,False,False
+2024,Bennett,Evan Engram,TE,8,9,41.2,62.5,-21.3,False,False,False
+2024,Bennett,DeAndre Hopkins,WR,6,25,77.8,103.0,-25.2,False,False,False
+2024,Bennett,Justice Hill,RB,9,34,15.6,65.5,-49.9,False,False,False
+2024,Bennett,Stefon Diggs,WR,1,7,74.9,130.1,-55.2,False,False,False
+2024,Bennett,Dalton Schultz,TE,9,9,6.0,62.5,-56.5,False,False,False
+2024,Bennett,Darrell Henderson Jr.,RB,9,34,0.0,65.5,-65.5,False,False,False
+2024,Bennett,Tyler Boyd,WR,9,39,0.0,74.9,-74.9,False,False,False
+2024,Bennett,Deshaun Watson,QB,9,11,0.0,160.0,-160.0,False,False,False
+2024,Branden,Jared Goff,QB,13,15,230.0,81.3,148.7,False,True,False
+2024,Branden,Alvin Kamara,RB,8,31,190.3,98.9,91.4,False,True,False
+2024,Branden,Josh Jacobs,RB,5,22,207.3,136.2,71.1,False,False,False
+2024,Branden,Nico Collins,WR,11,45,115.2,67.8,47.4,False,False,False
+2024,Branden,Calvin Ridley,WR,9,39,101.0,74.9,26.1,False,False,False
+2024,Branden,Jahmyr Gibbs,RB,2,9,206.8,184.2,22.6,True,False,False
+2024,Branden,Dalton Kincaid,TE,12,12,47.6,47.6,0.0,False,False,False
+2024,Branden,A.J. Brown,WR,1,7,115.6,130.1,-14.5,False,False,False
+2024,Branden,Jonathan Taylor,RB,4,15,136.2,153.5,-17.3,True,False,False
+2024,Branden,Ezekiel Elliott,RB,9,34,35.1,65.5,-30.4,False,False,False
+2024,Branden,Deebo Samuel,WR,3,18,78.5,110.8,-32.3,False,False,False
+2024,Branden,Clyde Edwards-Helaire,RB,9,34,0.0,65.5,-65.5,False,False,False
+2024,Branden,Brandin Cooks,WR,9,39,0.0,74.9,-74.9,False,False,False
+2024,Branden,Isiah Pacheco,RB,6,23,35.9,131.3,-95.4,False,False,False
+2024,Derek,Kyler Murray,QB,9,11,224.9,160.0,64.9,False,True,False
+2024,Derek,Justin Jefferson,WR,1,7,168.2,130.1,38.1,True,True,False
+2024,Derek,Tony Pollard,RB,6,23,145.0,131.3,13.7,False,False,False
+2024,Derek,Alexander Mattison,RB,11,42,41.4,41.8,-0.4,False,False,False
+2024,Derek,Chris Godwin Jr.,WR,7,28,91.8,94.2,-2.4,False,False,False
+2024,Derek,Jerome Ford,RB,9,34,41.8,65.5,-23.7,False,False,False
+2024,Derek,Tee Higgins,WR,2,12,90.1,122.7,-32.6,False,False,False
+2024,Derek,Dak Prescott,QB,9,11,120.5,160.0,-39.5,False,False,False
+2024,Derek,Gus Edwards,RB,9,34,24.4,65.5,-41.1,False,False,False
+2024,Derek,Gerald Everett,TE,9,9,0.0,62.5,-62.5,False,False,False
+2024,Derek,Brandon Aiyuk,WR,4,19,39.4,109.5,-70.1,True,False,False
+2024,Derek,Gabe Davis,WR,8,33,0.0,86.2,-86.2,False,False,False
+2024,Derek,Darren Waller,TE,5,4,0.0,91.4,-91.4,False,False,False
+2024,Derek,Dameon Pierce,RB,3,12,15.3,167.4,-152.1,False,False,False
+2024,Endler,De'Von Achane,RB,13,50,167.4,24.4,143.0,True,True,False
+2024,Endler,Jayden Reed,WR,9,39,130.1,74.9,55.2,False,True,False
+2024,Endler,Terry McLaurin,WR,6,25,151.8,103.0,48.8,False,False,False
+2024,Endler,George Pickens,WR,8,33,104.4,86.2,18.2,False,False,False
+2024,Endler,Rachaad White,RB,7,27,129.1,119.6,9.5,True,False,False
+2024,Endler,Raheem Mostert,RB,11,42,43.3,41.8,1.5,False,False,False
+2024,Endler,DJ Moore,WR,4,19,110.8,109.5,1.3,False,False,False
+2024,Endler,Jakobi Meyers,WR,9,39,71.1,74.9,-3.8,False,False,False
+2024,Endler,Rashee Rice,WR,9,39,44.9,74.9,-30.0,False,False,False
+2024,Endler,Kenneth Walker III,RB,3,12,131.3,167.4,-36.1,False,False,False
+2024,Endler,Travis Kelce,TE,2,1,80.3,132.0,-51.7,False,False,False
+2024,Endler,Keaton Mitchell,RB,9,34,0.0,65.5,-65.5,False,False,False
+2024,Endler,Austin Ekeler,RB,1,5,94.1,199.8,-105.7,False,False,False
+2024,Endler,Justin Herbert,QB,5,7,63.7,224.9,-161.2,False,False,False
+2024,Erik,Lamar Jackson,QB,4,6,327.4,230.0,97.4,False,True,False
+2024,Erik,Derrick Henry,RB,1,5,253.2,199.8,53.4,False,False,True
+2024,Erik,Zack Moss,RB,9,34,58.9,65.5,-6.6,True,True,False
+2024,Erik,Davante Adams,WR,2,12,94.2,122.7,-28.5,False,False,False
+2024,Erik,Diontae Johnson,WR,8,33,56.9,86.2,-29.3,True,False,False
+2024,Erik,T.J. Hockenson,TE,7,8,31.9,73.4,-41.5,False,False,False
+2024,Erik,Javonte Williams,RB,5,22,90.5,136.2,-45.7,False,False,False
+2024,Erik,Adam Thielen,WR,12,49,0.0,52.3,-52.3,False,False,False
+2024,Erik,Romeo Doubs,WR,9,39,19.4,74.9,-55.5,False,False,False
+2024,Erik,Christian Watson,WR,9,39,7.7,74.9,-67.2,False,False,False
+2024,Erik,Elijah Moore,WR,11,45,0.0,67.8,-67.8,False,False,False
+2024,Erik,Jahan Dotson,WR,10,42,0.0,69.8,-69.8,False,False,False
+2024,Erik,Derek Carr,QB,9,11,0.0,160.0,-160.0,False,False,False
+2024,Gucker,Saquon Barkley,RB,2,9,291.0,184.2,106.8,True,True,False
+2024,Gucker,Brian Robinson,RB,9,34,128.5,65.5,63.0,False,True,False
+2024,Gucker,Drake London,WR,9,39,124.3,74.9,49.4,False,False,False
+2024,Gucker,Kareem Hunt,RB,9,34,109.6,65.5,44.1,False,False,False
+2024,Gucker,Jordan Addison,WR,8,33,124.8,86.2,38.6,False,False,False
+2024,Gucker,Sam LaPorta,TE,13,13,74.5,41.2,33.3,True,False,False
+2024,Gucker,Taysom Hill,TE,9,9,81.3,62.5,18.8,False,False,False
+2024,Gucker,C.J. Stroud,QB,9,11,173.0,160.0,13.0,False,False,False
+2024,Gucker,Bijan Robinson,RB,1,5,199.8,199.8,0.0,False,False,False
+2024,Gucker,Jaylen Waddle,WR,5,21,90.6,106.3,-15.7,False,False,False
+2024,Gucker,DeVonta Smith,WR,3,18,85.3,110.8,-25.5,False,False,False
+2024,Gucker,Mike Williams,WR,7,28,0.0,94.2,-94.2,False,False,False
+2024,Gucker,Trevor Lawrence,QB,6,10,0.0,173.0,-173.0,False,False,False
+2024,Jacob,Jalen Hurts,QB,5,7,284.5,224.9,59.6,True,True,False
+2024,Jacob,George Kittle,TE,6,6,132.0,75.5,56.5,False,True,False
+2024,Jacob,Tyler Allgeier,RB,13,50,64.5,24.4,40.1,False,False,False
+2024,Jacob,Jerry Jeudy,WR,10,42,90.5,69.8,20.7,False,False,False
+2024,Jacob,James Cook III,RB,4,15,168.7,153.5,15.2,False,False,False
+2024,Jacob,Brock Purdy,QB,9,11,150.8,160.0,-9.2,False,False,False
+2024,Jacob,Cooper Kupp,WR,2,12,108.7,122.7,-14.0,False,False,False
+2024,Jacob,Michael Pittman Jr.,WR,8,33,69.0,86.2,-17.2,True,False,False
+2024,Jacob,Jake Ferguson,TE,9,9,34.9,62.5,-27.6,False,False,False
+2024,Jacob,Elijah Mitchell,RB,12,44,0.0,37.2,-37.2,False,False,False
+2024,Jacob,Amari Cooper,WR,3,18,66.1,110.8,-44.7,False,False,False
+2024,Jacob,Christian Kirk,WR,9,39,23.9,74.9,-51.0,False,False,False
+2024,Jacob,Hollywood Brown,WR,9,39,0.0,74.9,-74.9,False,False,False
+2024,Jacob,Christian McCaffrey,RB,1,5,32.8,199.8,-167.0,False,False,True
+2024,John Stockton,Ja'Marr Chase,WR,7,28,234.4,94.2,140.2,False,False,True
+2024,John Stockton,Rhamondre Stevenson,RB,9,34,125.0,65.5,59.5,False,False,True
+2024,John Stockton,David Montgomery,RB,4,15,184.2,153.5,30.7,False,True,False
+2024,John Stockton,CeeDee Lamb,WR,1,7,136.3,130.1,6.2,False,True,False
+2024,John Stockton,Kyle Pitts Sr.,TE,9,9,60.0,62.5,-2.5,False,False,False
+2024,John Stockton,Jaylen Warren,RB,9,34,62.1,65.5,-3.4,True,False,False
+2024,John Stockton,DK Metcalf,WR,3,18,101.2,110.8,-9.6,False,False,False
+2024,John Stockton,Dallas Goedert,TE,6,6,58.1,75.5,-17.4,False,False,False
+2024,John Stockton,Aaron Jones Sr.,RB,2,9,153.5,184.2,-30.7,False,False,False
+2024,John Stockton,AJ Dillon,RB,9,34,0.0,65.5,-65.5,False,False,False
+2024,John Stockton,Joshua Palmer,WR,9,39,3.4,74.9,-71.5,False,False,False
+2024,John Stockton,Khalil Herbert,RB,8,31,8.0,98.9,-90.9,False,False,False
+2024,John Stockton,Tua Tagovailoa,QB,10,13,26.1,120.5,-94.4,False,False,False
+2024,John Stockton,Justin Fields,QB,5,7,15.9,224.9,-208.9,False,False,False
+2024,K&E,Kyren Williams,RB,9,34,198.8,65.5,133.3,False,True,False
+2024,K&E,Puka Nacua,WR,14,53,106.3,39.4,66.9,True,True,False
+2024,K&E,Garrett Wilson,WR,10,42,126.2,69.8,56.4,False,False,False
+2024,K&E,D'Andre Swift,RB,8,31,139.7,98.9,40.8,False,False,False
+2024,K&E,James Conner,RB,5,22,165.6,136.2,29.4,False,False,False
+2024,K&E,David Njoku,TE,9,9,73.4,62.5,10.9,False,False,False
+2024,K&E,Josh Allen,QB,3,2,307.6,307.6,0.0,False,False,False
+2024,K&E,Tank Dell,WR,9,39,71.1,74.9,-3.8,False,False,False
+2024,K&E,Rashid Shaheed,WR,9,39,29.6,74.9,-45.3,False,False,False
+2024,K&E,Breece Hall,RB,1,5,147.3,199.8,-52.5,True,False,False
+2024,K&E,Isaiah Likely,TE,9,9,3.0,62.5,-59.5,False,False,False
+2024,K&E,Chris Olave,WR,2,12,46.7,122.7,-76.0,False,False,False
+2024,K&E,Tyler Lockett,WR,7,28,14.7,94.2,-79.5,False,False,False
+2024,K&E,Cam Akers,RB,4,15,14.2,153.5,-139.3,False,False,False
+2024,kevin mc,Amon-Ra St. Brown,WR,8,33,151.2,86.2,65.0,True,True,False
+2024,kevin mc,Zach Charbonnet,RB,9,34,116.3,65.5,50.8,False,True,False
+2024,kevin mc,Trey McBride,TE,9,9,101.3,62.5,38.8,False,False,False
+2024,kevin mc,Courtland Sutton,WR,9,39,112.7,74.9,37.8,False,False,False
+2024,kevin mc,Jaxon Smith-Njigba,WR,7,28,130.2,94.2,36.0,False,False,False
+2024,kevin mc,Jameson Williams,WR,10,42,104.6,69.8,34.8,False,False,False
+2024,kevin mc,Joe Mixon,RB,3,12,199.1,167.4,31.7,False,False,False
+2024,kevin mc,Jordan Love,QB,9,11,190.1,160.0,30.0,False,False,False
+2024,kevin mc,Devin Singletary,RB,9,34,59.6,65.5,-5.9,False,False,False
+2024,kevin mc,Cole Kmet,TE,9,9,32.8,62.5,-29.7,False,False,False
+2024,kevin mc,Keenan Allen,WR,4,19,77.1,109.5,-32.4,False,False,False
+2024,kevin mc,Najee Harris,RB,2,9,148.6,184.2,-35.6,False,False,False
+2024,kevin mc,Travis Etienne Jr.,RB,5,22,65.5,136.2,-70.7,True,False,False
+2025,Bennett,Dak Prescott,QB,6,7,262.7,194.3,68.4,False,True,False
+2025,Bennett,Brock Bowers,TE,8,9,104.1,52.6,51.5,False,True,False
+2025,Bennett,Davante Adams,WR,3,13,157.8,122.6,35.2,False,False,False
+2025,Bennett,Keenan Allen,WR,9,37,72.4,67.0,5.4,False,False,False
+2025,Bennett,CeeDee Lamb,WR,1,7,114.7,129.1,-14.4,True,False,False
+2025,Bennett,Mike Gesicki,TE,9,10,0.0,41.0,-41.0,False,False,False
+2025,Bennett,Mike Evans,WR,9,37,20.0,67.0,-47.0,False,False,False
+2025,Bennett,Alvin Kamara,RB,5,22,67.7,118.4,-50.7,True,False,False
+2025,Bennett,Ezekiel Elliott,RB,11,42,0.0,59.8,-59.8,False,False,False
+2025,Bennett,C.J. Stroud,QB,9,11,49.7,125.1,-75.4,False,False,False
+2025,Bennett,Alexander Mattison,RB,9,36,0.0,82.2,-82.2,False,False,False
+2025,Bennett,Tyreek Hill,WR,2,9,34.5,125.9,-91.4,False,False,True
+2025,Bennett,Devin Singletary,RB,7,28,7.3,103.5,-96.2,False,False,False
+2025,Branden,Jonathan Taylor,RB,4,19,286.0,130.9,155.1,False,True,False
+2025,Branden,Jahmyr Gibbs,RB,2,10,259.6,176.8,82.8,True,True,False
+2025,Branden,Chase Brown,RB,9,36,138.6,82.2,56.4,True,False,False
+2025,Branden,Jordan Addison,WR,12,51,74.6,34.5,40.1,False,False,False
+2025,Branden,Travis Kelce,TE,3,3,104.8,104.1,0.7,False,False,False
+2025,Branden,Jayden Daniels,QB,13,12,114.3,115.6,-1.3,False,False,False
+2025,Branden,Jordan Love,QB,7,9,125.1,175.1,-50.0,False,False,False
+2025,Branden,Rhamondre Stevenson,RB,5,22,67.8,118.4,-50.6,False,False,False
+2025,Branden,Terry McLaurin,WR,6,25,46.0,97.0,-51.0,False,False,False
+2025,Branden,Garrett Wilson,WR,1,7,63.5,129.1,-65.6,False,False,False
+2025,Branden,DeAndre Hopkins,WR,9,37,0.0,67.0,-67.0,False,False,False
+2025,Branden,Marquez Valdes-Scantling,WR,9,37,0.0,67.0,-67.0,False,False,False
+2025,Branden,Jayden Reed,WR,8,31,10.5,79.7,-69.2,False,False,False
+2025,Derek,Khalil Shakir,WR,9,37,79.7,67.0,12.7,False,True,False
+2025,Derek,Drake London,WR,2,9,127.0,125.9,1.1,True,True,False
+2025,Derek,Brian Thomas Jr.,WR,9,37,67.1,67.0,0.1,True,False,False
+2025,Derek,Hollywood Brown,WR,11,45,17.0,41.1,-24.1,False,False,False
+2025,Derek,Cade Otton,TE,9,10,12.3,41.0,-28.7,False,False,False
+2025,Derek,Justin Jefferson,WR,1,7,97.4,129.1,-31.7,False,False,False
+2025,Derek,Dalton Kincaid,TE,7,8,34.2,66.9,-32.7,False,False,False
+2025,Derek,Aaron Jones Sr.,RB,5,22,62.6,118.4,-55.8,False,False,False
+2025,Derek,Cedric Tillman,WR,9,37,0.0,67.0,-67.0,False,False,False
+2025,Derek,Brian Robinson,RB,8,33,9.9,85.9,-76.0,False,False,False
+2025,Derek,Tank Bigsby,RB,9,36,1.2,82.2,-81.0,False,False,False
+2025,Derek,Gus Edwards,RB,9,36,0.0,82.2,-82.2,False,False,False
+2025,Derek,Brandon Aiyuk,WR,4,16,0.0,114.7,-114.7,False,False,False
+2025,Derek,Joe Burrow,QB,6,7,58.5,194.3,-135.8,False,False,False
+2025,Derek,Joe Mixon,RB,3,14,0.0,147.3,-147.3,False,False,False
+2025,Endler,De'Von Achane,RB,13,51,224.9,26.8,198.1,True,True,False
+2025,Endler,Jared Goff,QB,10,11,222.9,125.1,97.7,False,True,False
+2025,Endler,Javonte Williams,RB,8,33,181.0,85.9,95.1,False,False,False
+2025,Endler,Justin Herbert,QB,9,11,209.2,125.1,84.1,False,False,False
+2025,Endler,Trey McBride,TE,4,3,145.7,104.1,41.6,False,False,False
+2025,Endler,Rashee Rice,WR,9,37,94.0,67.0,27.0,False,False,False
+2025,Endler,Jauan Jennings,WR,9,37,75.8,67.0,8.8,False,False,False
+2025,Endler,Jaylen Waddle,WR,3,13,121.6,122.6,-1.0,False,False,False
+2025,Endler,Rachaad White,RB,7,28,88.6,103.5,-14.9,False,False,False
+2025,Endler,Chris Olave,WR,2,9,110.8,125.9,-15.1,False,False,False
+2025,Endler,Tyrone Tracy Jr.,RB,9,36,53.2,82.2,-29.0,False,False,False
+2025,Endler,Derrick Henry,RB,1,5,181.5,221.5,-40.0,False,False,False
+2025,Endler,Jerry Jeudy,WR,9,37,25.7,67.0,-41.3,False,False,False
+2025,Endler,Darnell Mooney,WR,9,37,17.0,67.0,-50.0,False,False,False
+2025,Endler,Malik Nabers,WR,5,20,41.1,105.9,-64.8,True,False,False
+2025,Erik,George Pickens,WR,7,29,175.9,82.8,93.1,False,True,False
+2025,Erik,J.K. Dobbins,RB,13,51,108.9,26.8,82.1,False,True,False
+2025,Erik,Josh Allen,QB,2,3,316.0,262.7,53.4,True,False,False
+2025,Erik,Tucker Kraft,TE,9,10,89.2,41.0,48.2,False,False,False
+2025,Erik,Zay Flowers,WR,6,25,99.5,97.0,2.5,False,False,False
+2025,Erik,Bijan Robinson,RB,1,5,220.3,221.5,-1.2,True,False,False
+2025,Erik,DK Metcalf,WR,3,13,116.5,122.6,-6.1,False,False,False
+2025,Erik,Quentin Johnston,WR,9,37,43.2,67.0,-23.8,False,False,False
+2025,Erik,Mark Andrews,TE,4,3,52.6,104.1,-51.5,False,False,False
+2025,Erik,Austin Ekeler,RB,10,39,8.1,67.8,-59.7,False,False,False
+2025,Erik,Nick Westbrook-Ikhine,WR,9,37,0.0,67.0,-67.0,False,False,False
+2025,Erik,Jaleel McLaughlin,RB,9,36,0.0,82.2,-82.2,False,False,False
+2025,Erik,James Conner,RB,5,22,25.3,118.4,-93.1,False,False,False
+2025,Gucker,Rome Odunze,WR,9,37,106.1,67.0,39.1,False,True,False
+2025,Gucker,Ja'Marr Chase,WR,1,7,140.9,129.1,11.8,True,True,False
+2025,Gucker,Rashid Shaheed,WR,9,37,63.7,67.0,-3.3,False,False,False
+2025,Gucker,Saquon Barkley,RB,2,10,156.1,176.8,-20.7,False,False,True
+2025,Gucker,Nick Chubb,RB,8,33,59.8,85.9,-26.1,False,False,False
+2025,Gucker,Lamar Jackson,QB,4,6,175.1,209.2,-34.1,True,False,False
+2025,Gucker,Jonnu Smith,TE,9,10,0.0,41.0,-41.0,False,False,False
+2025,Gucker,Sam LaPorta,TE,13,1,66.9,145.7,-78.8,False,False,False
+2025,Gucker,Tank Dell,WR,7,29,0.0,82.8,-82.8,False,False,False
+2025,Gucker,Amari Cooper,WR,6,25,0.0,97.0,-97.0,False,False,False
+2025,Gucker,Sam Darnold,QB,9,11,25.0,125.1,-100.1,False,False,False
+2025,Gucker,Cooper Kupp,WR,3,13,16.2,122.6,-106.4,False,False,False
+2025,Gucker,Najee Harris,RB,5,22,7.6,118.4,-110.8,False,False,False
+2025,Jacob,Jaxon Smith-Njigba,WR,9,37,214.4,67.0,147.4,True,True,False
+2025,Jacob,James Cook III,RB,4,19,221.5,130.9,90.6,False,True,False
+2025,Jacob,Jordan Mason,RB,13,51,103.5,26.8,76.7,False,False,False
+2025,Jacob,Jalen Hurts,QB,5,7,249.9,194.3,55.6,False,False,True
+2025,Jacob,Zach Charbonnet,RB,12,44,105.0,53.2,51.8,False,False,False
+2025,Jacob,Michael Pittman Jr.,WR,8,31,98.6,79.7,18.9,False,False,False
+2025,Jacob,Kareem Hunt,RB,9,36,100.3,82.2,18.1,False,False,False
+2025,Jacob,Tony Pollard,RB,7,28,111.4,103.5,7.9,False,False,False
+2025,Jacob,George Kittle,TE,6,7,69.3,69.3,0.0,True,False,False
+2025,Jacob,Xavier Worthy,WR,10,40,60.2,63.5,-3.3,False,False,False
+2025,Jacob,DeVonta Smith,WR,3,13,105.9,122.6,-16.7,False,False,False
+2025,Jacob,Marvin Harrison Jr.,WR,1,7,85.4,129.1,-43.7,False,False,False
+2025,Jacob,Isaac Guerendo,RB,9,36,0.0,82.2,-82.2,False,False,False
+2025,Jacob,Isiah Pacheco,RB,2,10,55.5,176.8,-121.3,False,False,False
+2025,John Stockton,Courtland Sutton,WR,11,45,111.3,41.1,70.2,False,True,False
+2025,John Stockton,Jaylen Warren,RB,10,39,130.9,67.8,63.1,False,True,False
+2025,John Stockton,Jameson Williams,WR,9,37,123.4,67.0,56.4,True,False,False
+2025,John Stockton,D'Andre Swift,RB,7,28,147.3,103.5,43.8,False,False,False
+2025,John Stockton,Josh Jacobs,RB,3,14,176.8,147.3,29.5,True,False,False
+2025,John Stockton,Tee Higgins,WR,6,25,124.7,97.0,27.7,False,False,False
+2025,John Stockton,Christian McCaffrey,RB,1,5,247.5,221.5,26.0,False,False,False
+2025,John Stockton,Caleb Williams,QB,9,11,106.0,125.1,-19.1,False,False,False
+2025,John Stockton,Deebo Samuel,WR,2,9,97.0,125.9,-28.9,False,False,False
+2025,John Stockton,David Njoku,TE,9,10,6.5,41.0,-34.5,False,False,False
+2025,John Stockton,Blake Corum,RB,9,36,26.8,82.2,-55.4,False,False,False
+2025,John Stockton,Braelon Allen,RB,9,36,6.9,82.2,-75.3,False,False,False
+2025,John Stockton,Brock Purdy,QB,9,11,43.8,125.1,-81.4,False,False,False
+2025,John Stockton,Taysom Hill,QB,13,12,0.0,115.6,-115.6,False,False,False
+2025,John Stockton,Anthony Richardson Sr.,QB,9,11,0.0,125.1,-125.1,False,False,False
+2025,K&E,Puka Nacua,WR,14,53,173.9,32.3,141.6,True,True,False
+2025,K&E,Rico Dowdle,RB,13,51,146.0,26.8,119.2,False,True,False
+2025,K&E,Patrick Mahomes,QB,4,6,275.6,209.2,66.4,False,False,False
+2025,K&E,Baker Mayfield,QB,9,11,182.3,125.1,57.2,False,False,False
+2025,K&E,Chuba Hubbard,RB,11,42,86.7,59.8,26.9,True,False,False
+2025,K&E,Kyren Williams,RB,2,10,178.9,176.8,2.1,False,False,False
+2025,K&E,Kyle Pitts Sr.,TE,9,10,34.6,41.0,-6.4,False,False,False
+2025,K&E,Zach Ertz,TE,9,10,4.2,41.0,-36.8,False,False,False
+2025,K&E,DJ Moore,WR,3,13,82.6,122.6,-40.0,False,False,False
+2025,K&E,Calvin Ridley,WR,8,31,32.3,79.7,-47.4,False,False,False
+2025,K&E,Chris Godwin Jr.,WR,9,37,10.7,67.0,-56.3,False,False,False
+2025,K&E,Breece Hall,RB,1,5,148.8,221.5,-72.7,False,False,False
+2025,K&E,Zamir White,RB,6,25,0.0,107.9,-107.9,False,False,False
+2025,K&E,Raheem Mostert,RB,5,22,0.0,118.4,-118.4,False,False,False
+2025,kevin mc,Amon-Ra St. Brown,WR,8,31,158.5,79.7,78.8,False,False,True
+2025,kevin mc,Ladd McConkey,WR,12,51,103.5,34.5,69.0,True,True,False
+2025,kevin mc,Travis Etienne Jr.,RB,5,22,167.8,118.4,49.4,False,False,True
+2025,kevin mc,Jakobi Meyers,WR,9,37,82.8,67.0,15.8,False,True,False
+2025,kevin mc,Nico Collins,WR,2,9,129.1,125.9,3.2,False,False,False
+2025,kevin mc,Bucky Irving,RB,9,36,83.2,82.2,1.0,True,False,False
+2025,kevin mc,T.J. Hockenson,TE,9,10,41.0,41.0,0.0,False,False,False
+2025,kevin mc,A.J. Brown,WR,1,7,125.9,129.1,-3.2,False,False,False
+2025,kevin mc,David Montgomery,RB,4,19,124.8,130.9,-6.1,False,False,False
+2025,kevin mc,Kenneth Walker III,RB,3,14,119.6,147.3,-27.7,False,False,False
+2025,kevin mc,Jonathon Brooks,RB,11,42,0.0,59.8,-59.8,False,False,False
+2025,kevin mc,Sincere McCormick,RB,9,36,0.0,82.2,-82.2,False,False,False
+2025,kevin mc,Kyler Murray,QB,6,7,77.8,194.3,-116.5,False,False,False
