@@ -9,3 +9,4 @@ testing.ipynb
 !data/manager_keeper_era_df.csv
 !data/keeper_summary_df.csv
 !data/keeper_detail_df.csv
+.claude/
