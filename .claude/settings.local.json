@@ -26,7 +26,27 @@
       "Bash(\"C:\\\\Users\\\\kevin\\\\OneDrive\\\\Documents\\\\Git\\\\fantasy_fball\\\\.venv\\\\Scripts\\\\python.exe\" convert_to_df.py)",
       "Bash(\"C:\\\\Users\\\\kevin\\\\OneDrive\\\\Documents\\\\Git\\\\fantasy_fball\\\\.venv\\\\Scripts\\\\python.exe\" data_science.py)",
       "Bash(python data_science.py)",
-      "Bash(python -)"
+      "Bash(python -)",
+      "Bash(Select-String -Pattern \"error|Error|Traceback|exception\")",
+      "Bash(Select-Object -First 20)",
+      "PowerShell(cd \"c:\\\\Users\\\\kevin\\\\OneDrive\\\\Documents\\\\Git\\\\fantasy_fball\"; python data_science.py 2>&1 | Out-File -Encoding utf8 data\\\\keeper_analysis.txt; Write-Host \"Done. Lines: $\\(\\(Get-Content data\\\\keeper_analysis.txt\\).Count\\)\")",
+      "PowerShell(cd \"c:\\\\Users\\\\kevin\\\\OneDrive\\\\Documents\\\\Git\\\\fantasy_fball\"; $lines = Get-Content data\\\\keeper_analysis.txt; $start = \\($lines | Select-String \"2023 KEEPER ANALYSIS\"\\).LineNumber - 1; $block = $lines[$start..\\($start+120\\)]; $jStart = \\($block | Select-String \"Jacob\"\\).LineNumber - 1 + $start; $lines[$jStart..\\($jStart+18\\)])",
+      "PowerShell(cd \"c:\\\\Users\\\\kevin\\\\OneDrive\\\\Documents\\\\Git\\\\fantasy_fball\"; python data_science.py 2>&1 | Out-File -Encoding utf8 data\\\\keeper_analysis.txt; $lines = \\(Get-Content data\\\\keeper_analysis.txt\\).Count; Write-Host \"Lines: $lines\")",
+      "PowerShell(cd \"c:\\\\Users\\\\kevin\\\\OneDrive\\\\Documents\\\\Git\\\\fantasy_fball\"; python data_science.py 2>&1 | Out-File -Encoding utf8 data\\\\keeper_analysis.txt; Write-Host \"Exit: $LASTEXITCODE  Lines: $\\(\\(Get-Content data\\\\keeper_analysis.txt\\).Count\\)\")",
+      "Bash(python -c \"import convert_to_df; print\\('convert_to_df: OK'\\)\")",
+      "Bash(python -c \"import data_science; print\\('data_science: OK'\\)\")",
+      "Bash(python -c \"import predict_2026; print\\('predict_2026: OK'\\)\")",
+      "Bash(python -c \"import run; print\\('run: OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('dashboard.py'\\).read\\(\\)\\); print\\('Syntax OK'\\)\")",
+      "Bash(python -c \"import streamlit; print\\(f'streamlit {streamlit.__version__}'\\)\")",
+      "Bash(python -c \"import plotly; print\\(f'plotly {plotly.__version__}'\\)\")",
+      "Bash(python -c \"import streamlit; import plotly; print\\(f'streamlit {streamlit.__version__}, plotly {plotly.__version__}'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('data_science.py'\\).read\\(\\)\\); print\\('data_science.py: OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('dashboard.py'\\).read\\(\\)\\); print\\('dashboard.py: OK'\\)\")",
+      "Bash(grep \"\\\\.py$\")",
+      "Bash(git mv *)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('orchestrate_data.py'\\).read\\(\\)\\); print\\('orchestrate_data.py syntax: OK'\\)\")",
+      "Bash(python orchestrate_data.py --help)"
     ]
   }
 }

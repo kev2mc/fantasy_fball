@@ -37,7 +37,7 @@ from xgboost import XGBRegressor
 DATA_DIR     = Path('data')
 RANDOM_STATE = 42
 MIN_PRIOR_SEASONS = 1   # rows with fewer prior seasons are excluded
-KEEPER_START = 2019
+KEEPER_START = 2016
 
 
 # ---------------------------------------------------------------------------
@@ -112,6 +112,8 @@ def _feature_row(prior, recent3):
         'roll3_luck_wins':      gr3('luck_wins'),
         'roll3_moves':          gr3('number_of_moves'),
         'roll3_pts_left_bench': gr3('avg_pts_left_per_week'),
+        # keeper era
+        'keeper_era_seasons':   float((_scol(prior, 'season') >= KEEPER_START).sum()),
     }
 
 
@@ -127,6 +129,8 @@ FEATURE_COLS = [
     # 3-season rolling (5)
     'roll3_avg_pf', 'roll3_win_pct', 'roll3_luck_wins', 'roll3_moves',
     'roll3_pts_left_bench',
+    # keeper era (2)
+    'is_keeper_era', 'keeper_era_seasons',
 ]
 
 
@@ -144,6 +148,7 @@ def build_feature_matrix(df):
             feat = {'manager': manager, 'season': int(row['season']),
                     'points_for': float(row['points_for'])}
             feat.update(_feature_row(prior, recent3))
+            feat['is_keeper_era']  = float(int(row['season']) >= KEEPER_START)
             feat['draft_position'] = _safe(row, 'draft_position')
             records.append(feat)
     return pd.DataFrame(records)
@@ -160,6 +165,7 @@ def build_2026_rows(df):
         recent3 = grp.tail(3)
         feat = {'manager': manager, 'season': 2026}
         feat.update(_feature_row(grp, recent3))
+        feat['is_keeper_era'] = 1.0
         records.append(feat)
     return pd.DataFrame(records)
 
@@ -398,14 +404,15 @@ def find_optimal_features(feat_df, target='points_for'):
 # Main
 # ---------------------------------------------------------------------------
 
-if __name__ == '__main__':
+def run():
+    """Run the full prediction pipeline: load data, CV, feature selection, predict 2026."""
     pd.set_option('display.float_format', '{:.1f}'.format)
     pd.set_option('display.max_columns', None)
 
     print('Loading data...')
     df = load_season_df()
     print(f'  {len(df)} rows | {df["season"].nunique()} seasons '
-          f'({df["season"].min()}–{df["season"].max()}) | '
+          f'({df["season"].min()}-{df["season"].max()}) | '
           f'{df["manager"].nunique()} managers')
 
     print('\nBuilding feature matrix (no-leakage rolling features)...')
@@ -431,8 +438,6 @@ if __name__ == '__main__':
     print(f'{"="*54}')
     print(' RMSE / MAE in fantasy points  |  Spearman = rank correlation')
 
-    best_model = results_df.iloc[0]['model']
-
     print('\nFeature importances:')
     print_importance(feat_df, 'XGBoost')
     print_importance(feat_df, 'RandomForest')
@@ -453,24 +458,22 @@ if __name__ == '__main__':
     for name, s in sorted(sel.items(), key=lambda x: x[1]['rmse']):
         print(f'  {name} (n={s["n"]}, RMSE={s["rmse"]}): {s["features"]}')
 
-    # --- Final CV pass with optimal per-model features (full estimators) ---
     print('\nRunning final CV with optimal features per model (full estimators)...')
     opt_features = {name: s['features'] for name, s in sel.items()}
     opt_results_df, opt_pred_df = loso_cv(feat_df, model_features=opt_features)
 
-    w = 13
     print(f'\n{"="*54}')
     print(f' {"Model":<{w}} {"RMSE":>7}  {"MAE":>7}  {"Spearman":>9}  {"N feats":>7}')
     print(f'{"-"*54}')
     for _, row in opt_results_df.iterrows():
-        n = sel[row['model']]['n']
+        n    = sel[row['model']]['n']
         flag = ' <- best' if _ == 0 else ''
         print(f' {row["model"]:<{w}} {row["rmse"]:>7.1f}  {row["mae"]:>7.1f}'
               f'  {row["spearman"]:>9.3f}  {n:>7}{flag}')
     print(f'{"="*54}')
     print(' RMSE / MAE in fantasy points  |  Spearman = rank correlation')
 
-    best_opt_model = opt_results_df.iloc[0]['model']
+    best_opt_model    = opt_results_df.iloc[0]['model']
     best_opt_features = sel[best_opt_model]['features']
 
     print(f'\n{"="*54}')
@@ -490,3 +493,9 @@ if __name__ == '__main__':
     if not opt_pred_df.empty:
         opt_pred_df.to_csv(DATA_DIR / 'loso_predictions.csv', index=False)
     print('\nSaved: model_comparison.csv, predictions_2026.csv, loso_predictions.csv')
+
+    return preds_2026
+
+
+if __name__ == '__main__':
+    run()

@@ -60,24 +60,182 @@ def _make_manager_key(nickname, manager_id):
 
 
 # ---------------------------------------------------------------------------
-# Load
+# Analytics (moved from convert_to_df)
 # ---------------------------------------------------------------------------
 
-def load_data():
-    standings  = pd.read_csv(DATA_DIR / 'standings_df.csv')
-    matchups   = pd.read_csv(DATA_DIR / 'matchups_df.csv')
+def compute_draft_overperformance(draft_results_df, weekly_rosters_df):
+    """Compare drafted players' actual season points to the average for each pick slot.
 
-    def _optional(name):
-        p = DATA_DIR / name
-        return pd.read_csv(p) if p.exists() else pd.DataFrame()
+    expected_pts for a pick slot = mean actual points across all players ever
+    drafted at that slot in the dataset (own historical data as benchmark).
+    Returns: season, team_key, total_draft_pts, expected_draft_pts,
+             draft_overperformance (actual - expected, per team per season)
+    """
+    if draft_results_df.empty or weekly_rosters_df.empty:
+        return pd.DataFrame()
+    player_pts = (
+        weekly_rosters_df
+        .groupby(['season', 'player_key'])['player_points']
+        .sum().reset_index(name='season_points')
+    )
+    player_pts['season'] = pd.to_numeric(player_pts['season']).astype(int)
+    draft = draft_results_df.copy()
+    draft['season'] = pd.to_numeric(draft['season']).astype(int)
+    draft['pick']   = pd.to_numeric(draft['pick'], errors='coerce')
+    draft = draft.rename(columns={'team_id': 'team_key'})
+    draft = draft.merge(player_pts[['season', 'player_key', 'season_points']],
+                        on=['season', 'player_key'], how='left')
+    pick_avg = (
+        draft.dropna(subset=['season_points'])
+        .groupby('pick')['season_points']
+        .mean().reset_index(name='expected_pts')
+    )
+    draft = draft.merge(pick_avg, on='pick', how='left')
+    draft['pts_vs_expected'] = draft['season_points'] - draft['expected_pts']
+    result = (
+        draft.groupby(['season', 'team_key'])
+        .agg(total_draft_pts       =('season_points',   'sum'),
+             expected_draft_pts    =('expected_pts',    'sum'),
+             draft_overperformance =('pts_vs_expected', 'sum'))
+        .reset_index()
+    )
+    for col in ('total_draft_pts', 'expected_draft_pts', 'draft_overperformance'):
+        result[col] = result[col].round(1)
+    return result
 
-    sb_totals        = _optional('scoreboard_totals_df.csv')
-    scoreboard       = _optional('scoreboard_df.csv')
-    optimal_lineup   = _optional('optimal_lineup_df.csv')
-    draft_overpf     = _optional('draft_overperf_df.csv')
-    trade_value      = _optional('trade_value_df.csv')
 
-    return standings, matchups, sb_totals, scoreboard, optimal_lineup, draft_overpf, trade_value
+def compute_optimal_lineup_stats(weekly_rosters_df):
+    """Per team per season: actual starter score, optimal lineup score, pts left on bench.
+
+    For each team-week, solves the optimal assignment of players to starting slots
+    using the Hungarian algorithm (scipy.optimize.linear_sum_assignment).
+    pts_left_on_bench = optimal_score - actual_score.
+
+    Returns: season, team_key, total_pts_left_on_bench, avg_pts_left_per_week
+    """
+    if weekly_rosters_df.empty:
+        return pd.DataFrame()
+
+    try:
+        from scipy.optimize import linear_sum_assignment
+    except ImportError:
+        print('  Warning: scipy not installed; skipping optimal lineup stats.')
+        return pd.DataFrame()
+
+    FLEX_ELIGIBLE = {
+        'W/R/T':   {'WR', 'RB', 'TE'},
+        'W/T':     {'WR', 'TE'},
+        'W/R':     {'WR', 'RB'},
+        'Q/W/R/T': {'QB', 'WR', 'RB', 'TE'},
+        'FLEX':    {'WR', 'RB', 'TE'},
+        'UT':      {'QB', 'WR', 'RB', 'TE', 'K', 'DEF'},
+    }
+
+    def _week_scores(players):
+        active = [p for p in players if p.get('selected_position') != 'IR']
+        starter_slots = [
+            p['selected_position'] for p in active
+            if p.get('selected_position') not in ('BN', 'IR', '')
+        ]
+        if not starter_slots:
+            return None, None
+        actual = sum(
+            float(p.get('player_points') or 0)
+            for p in active
+            if p.get('selected_position') not in ('BN', 'IR', '')
+        )
+        benefit = np.zeros((len(starter_slots), len(active)))
+        for i, slot in enumerate(starter_slots):
+            for j, player in enumerate(active):
+                pts = float(player.get('player_points') or 0)
+                if pts <= 0:
+                    continue
+                pos    = player.get('position', '')
+                ep_str = player.get('eligible_positions', pos)
+                ep     = set(ep_str.split(',')) if ep_str else {pos}
+                if slot in FLEX_ELIGIBLE:
+                    eligible = pos in FLEX_ELIGIBLE[slot]
+                else:
+                    eligible = (slot in ep) or (slot == pos)
+                if eligible:
+                    benefit[i, j] = pts
+        row_ind, col_ind = linear_sum_assignment(benefit, maximize=True)
+        optimal = float(benefit[row_ind, col_ind].sum())
+        return round(actual, 2), round(optimal, 2)
+
+    week_records = []
+    for (season, team_key, week), grp in weekly_rosters_df.groupby(['season', 'team_key', 'week']):
+        actual, optimal = _week_scores(grp.to_dict('records'))
+        if actual is not None:
+            week_records.append({
+                'season':            season,
+                'team_key':          team_key,
+                'week':              week,
+                'actual_score':      actual,
+                'optimal_score':     optimal,
+                'pts_left_on_bench': round(optimal - actual, 2),
+            })
+
+    if not week_records:
+        return pd.DataFrame()
+
+    week_df = pd.DataFrame(week_records)
+    result = (
+        week_df.groupby(['season', 'team_key'])
+        .agg(
+            total_pts_left_on_bench = ('pts_left_on_bench', 'sum'),
+            avg_pts_left_per_week   = ('pts_left_on_bench', 'mean'),
+        )
+        .reset_index()
+    )
+    result[['total_pts_left_on_bench', 'avg_pts_left_per_week']] = \
+        result[['total_pts_left_on_bench', 'avg_pts_left_per_week']].round(2)
+    result['season'] = pd.to_numeric(result['season']).astype(int)
+    return result
+
+
+def compute_trade_value(trades_df, weekly_rosters_df):
+    """Post-trade player production: points received vs points given away.
+
+    For each traded player, sums their points in weeks AFTER the trade week.
+    trade_value = post-trade points received - post-trade points given away.
+    Returns: season, team_key, trade_pts_received, trade_pts_given, trade_value
+    """
+    if trades_df.empty or weekly_rosters_df.empty:
+        return pd.DataFrame()
+    trades = trades_df[['season', 'transaction_key', 'player_key',
+                         'week', 'source_team_key', 'destination_team_key']].copy()
+    trades = trades.rename(columns={'week': 'trade_week'})
+    trades['season']     = pd.to_numeric(trades['season'])
+    trades['trade_week'] = pd.to_numeric(trades['trade_week'], errors='coerce').fillna(0)
+    rosters = weekly_rosters_df[['season', 'player_key', 'week', 'player_points']].copy()
+    rosters = rosters.rename(columns={'week': 'roster_week'})
+    rosters['season']      = pd.to_numeric(rosters['season'])
+    rosters['roster_week'] = pd.to_numeric(rosters['roster_week'])
+    merged = trades.merge(rosters, on=['season', 'player_key'], how='left')
+    post   = merged[merged['roster_week'] > merged['trade_week']].copy()
+    if post.empty:
+        return pd.DataFrame()
+    player_post = (
+        post.groupby(['season', 'player_key', 'destination_team_key', 'source_team_key'])
+        ['player_points'].sum().reset_index(name='post_trade_pts')
+    )
+    received = (
+        player_post.groupby(['season', 'destination_team_key'])['post_trade_pts']
+        .sum().reset_index()
+        .rename(columns={'destination_team_key': 'team_key', 'post_trade_pts': 'trade_pts_received'})
+    )
+    given = (
+        player_post.groupby(['season', 'source_team_key'])['post_trade_pts']
+        .sum().reset_index()
+        .rename(columns={'source_team_key': 'team_key', 'post_trade_pts': 'trade_pts_given'})
+    )
+    tv = received.merge(given, on=['season', 'team_key'], how='outer').fillna(0)
+    tv['trade_value'] = (tv['trade_pts_received'] - tv['trade_pts_given']).round(1)
+    tv[['trade_pts_received', 'trade_pts_given']] = \
+        tv[['trade_pts_received', 'trade_pts_given']].round(1)
+    tv['season'] = tv['season'].astype(int)
+    return tv
 
 
 # ---------------------------------------------------------------------------
@@ -791,6 +949,53 @@ def _compute_round_benchmarks(draft_results_df, season_totals):
     return bench
 
 
+def _compute_positional_rank_benchmarks(draft_results_df, season_totals, weekly_rosters_df):
+    """Return two dicts for positional-rank keeper benchmarking.
+
+    pos_draft_count[(year, pos, round)]:
+        Number of pos-position players drafted in rounds 1..round in year N.
+        The keeper's positional rank is this count + 1.
+
+    pos_pts_rank[(year, pos, K)]:
+        Season pts of the Kth-highest-scoring pos-position player in year N,
+        across ALL rostered players (not just drafted) for a fair benchmark.
+    """
+    # --- pos_draft_count: drafted players only (determines positional rank K) ---
+    dr = draft_results_df.copy()
+    dr['pid'] = dr['player_key'].apply(_normalize_pid)
+    dr['season'] = pd.to_numeric(dr['season']).astype(int)
+    dr['round'] = pd.to_numeric(dr['round'], errors='coerce')
+    dr = dr[~dr['player_position'].isin(['DEF', 'K'])].dropna(subset=['round'])
+    dr['round'] = dr['round'].astype(int)
+    dr['pos'] = dr['player_position'].replace({'FB': 'RB'})
+
+    pos_draft_count = {}
+    for (year, pos), grp in dr.groupby(['season', 'pos']):
+        rounds = grp['round'].tolist()
+        max_rd = max(rounds)
+        for r in range(1, max_rd + 1):
+            pos_draft_count[(year, pos, r)] = sum(1 for rd in rounds if rd <= r)
+
+    # --- pos_pts_rank: all rostered players (broader, fairer benchmark pool) ---
+    wr = weekly_rosters_df.copy()
+    wr['pid'] = wr['player_key'].apply(_normalize_pid)
+    wr['season'] = pd.to_numeric(wr['season']).astype(int)
+    wr['pos'] = wr['position'].replace({'FB': 'RB'})
+    wr = wr[~wr['pos'].isin(['DEF', 'K', ''])]
+    pid_pos = (wr.groupby(['season', 'pid'])['pos']
+               .first().reset_index()
+               .rename(columns={'season': 'seas'}))
+
+    all_pts = season_totals.merge(pid_pos, on=['seas', 'pid'], how='inner')
+
+    pos_pts_rank = {}
+    for (year, pos), grp in all_pts.groupby(['seas', 'pos']):
+        for k, pts in enumerate(sorted(grp['pts'].tolist(), reverse=True), 1):
+            pos_pts_rank[(year, pos, k)] = pts
+
+    return pos_draft_count, pos_pts_rank
+
+
 def analyze_keeper_decisions(standings_df, weekly_rosters_df, draft_results_df,
                               max_keepers=2):
     """For each keeper year and manager, show the full eligible roster ranked by
@@ -801,11 +1006,12 @@ def analyze_keeper_decisions(standings_df, weekly_rosters_df, draft_results_df,
         standings_df, weekly_rosters_df, draft_results_df, max_keepers
     )
     if keeper_df.empty:
-        return
+        return pd.DataFrame(), pd.DataFrame()
 
     season_totals, pid_name = _compute_season_totals(weekly_rosters_df)
     round_bench = _compute_round_benchmarks(draft_results_df, season_totals)
     bench_lkp = round_bench.set_index(['season', 'round'])['avg_pts'].to_dict()
+    pos_draft_count, pos_pts_rank = _compute_positional_rank_benchmarks(draft_results_df, season_totals, weekly_rosters_df)
     st_lkp = season_totals.set_index(['seas', 'pid'])['pts'].to_dict()
 
     dr_all = draft_results_df.copy()
@@ -842,6 +1048,8 @@ def analyze_keeper_decisions(standings_df, weekly_rosters_df, draft_results_df,
         return m
 
     keeper_seasons = sorted(keeper_df['season'].unique())
+    summary_rows = []
+    detail_rows  = []
 
     for year in keeper_seasons:
         prev = year - 1
@@ -863,18 +1071,13 @@ def analyze_keeper_decisions(standings_df, weekly_rosters_df, draft_results_df,
 
         actual_year = keeper_df[keeper_df['season'] == year]
 
-        print(f'\n{"=" * 76}')
+        print(f'\n{"=" * 80}')
         print(f'  {year} KEEPER ANALYSIS  '
-              f'(value = player pts in {year} minus avg pts for keeper round in {year})')
-        print(f'{"=" * 76}')
-        rd_avgs = '  '.join(
-            f'Rd{r}={bench_lkp[(year, r)]:.0f}'
-            for r in range(1, 17) if (year, r) in bench_lkp
-        )
-        print(f'  Round avgs: {rd_avgs}\n')
+              f'(value = player pts minus Nth-best same-pos pts in {year}, where N = positional draft rank)')
+        print(f'{"=" * 80}')
 
-        hdr = f'  {"Player":<30} {"Rd":>3}  {"Pts":>6}  {"Avg":>6}  {"Value":>7}  Status'
-        sep = f'  {"-"*30}  {"-"*3}  {"-"*6}  {"-"*6}  {"-"*7}  {"-"*12}'
+        hdr = f'  {"Player":<30} {"Pos":>3}  {"Rd":>3}  {"PosRk":>5}  {"Pts":>6}  {"Benchmark":>9}  {"Value":>7}  Status'
+        sep = f'  {"-"*30}  {"-"*3}  {"-"*3}  {"-"*5}  {"-"*6}  {"-"*9}  {"-"*7}  {"-"*12}'
 
         for manager in sorted(curr_map.keys()):
             if manager not in prev_map:
@@ -884,7 +1087,7 @@ def analyze_keeper_decisions(standings_df, weekly_rosters_df, draft_results_df,
             ros = prev_roster[
                 (prev_roster['team_key'] == prev_tk) &
                 (~prev_roster['position'].isin(['DEF', 'K']))
-            ][['pid', 'name']].drop_duplicates('pid')
+            ][['pid', 'name', 'position']].drop_duplicates('pid')
             if ros.empty:
                 continue
 
@@ -895,14 +1098,19 @@ def analyze_keeper_decisions(standings_df, weekly_rosters_df, draft_results_df,
             rows = []
             for _, row in ros.iterrows():
                 pid, pname = row['pid'], row['name']
+                pos = str(row.get('position', '')).replace('FB', 'RB')
                 inelig = pname in mgr_ineligible
                 prev_rd = pid_to_prev_rd.get(pid)
                 k_rd = 9 if (prev_rd is None or pd.isna(prev_rd)) else int(prev_rd)
                 pts = st_lkp.get((year, pid), 0)
-                rd_avg = bench_lkp.get((year, k_rd), 0)
+                k_drafted = pos_draft_count.get((year, pos, k_rd), 0)
+                pos_rank = k_drafted + 1
+                pos_avg = pos_pts_rank.get((year, pos, pos_rank),
+                          bench_lkp.get((year, k_rd), 0))
                 rows.append({
-                    'name': pname, 'k_rd': k_rd, 'pts': pts,
-                    'rd_avg': rd_avg, 'value': pts - rd_avg,
+                    'name': pname, 'pos': pos, 'k_rd': k_rd, 'pts': pts,
+                    'pos_rank': pos_rank, 'pos_avg': pos_avg,
+                    'value': pts - pos_avg,
                     'ineligible': inelig,
                 })
 
@@ -927,6 +1135,17 @@ def analyze_keeper_decisions(standings_df, weekly_rosters_df, draft_results_df,
             gap = optimal_value - actual_value
             gap_str = f'+{gap:.1f}' if gap >= 0 else f'{gap:.1f}'
 
+            summary_rows.append({
+                'season':          year,
+                'manager':         manager,
+                'actual_value':    round(actual_value, 1),
+                'optimal_value':   round(float(optimal_value), 1),
+                'gap':             round(gap, 1),
+                'is_optimal':      optimal_names == actual_names,
+                'actual_keepers':  ', '.join(sorted(actual_names)),
+                'optimal_keepers': ', '.join(sorted(optimal_names)),
+            })
+
             verdict = 'OPTIMAL' if optimal_names == actual_names else f'gap {gap_str} vs optimal'
             print(f'  {manager}  [{verdict}]')
             print(hdr)
@@ -950,24 +1169,64 @@ def analyze_keeper_decisions(standings_df, weekly_rosters_df, draft_results_df,
                     status = ''
 
                 v_str = f'+{r["value"]:.1f}' if r['value'] >= 0 else f'{r["value"]:.1f}'
-                print(f'  {pname:<30} {r["k_rd"]:>3}  {r["pts"]:>6.1f}  '
-                      f'{r["rd_avg"]:>6.1f}  {v_str:>7}  {status}')
+                print(f'  {pname:<30} {r["pos"]:>3}  {r["k_rd"]:>3}  {r["pos_rank"]:>5}  '
+                      f'{r["pts"]:>6.1f}  {r["pos_avg"]:>9.1f}  {v_str:>7}  {status}')
+                detail_rows.append({
+                    'season':       year,
+                    'manager':      manager,
+                    'player':       pname,
+                    'pos':          r['pos'],
+                    'rd':           int(r['k_rd']),
+                    'pos_rank':     int(r['pos_rank']),
+                    'pts':          round(float(r['pts']), 1),
+                    'benchmark':    round(float(r['pos_avg']), 1),
+                    'value':        round(float(r['value']), 1),
+                    'is_kept':      bool(is_kept),
+                    'is_optimal':   bool(is_opt),
+                    'is_ineligible': bool(is_inelig),
+                })
             print()
+
+    return (
+        pd.DataFrame(summary_rows) if summary_rows else pd.DataFrame(),
+        pd.DataFrame(detail_rows)  if detail_rows  else pd.DataFrame(),
+    )
 
 
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
-if __name__ == '__main__':
+def run():
+    """Run the full analytics pipeline: load CSVs, compute metrics, build summaries."""
     from convert_to_df import (
+        load_all_csvs,
         load_standings as _load_standings_raw,
         load_weekly_rosters,
         load_draft_results,
+        load_trades,
     )
 
-    print('Loading data...')
-    standings, matchups, sb_totals, scoreboard, optimal_lineup, draft_overpf, trade_value = load_data()
+    print('Loading base CSVs...')
+    standings, matchups, sb_totals, scoreboard = load_all_csvs()
+
+    print('Loading raw data for analytics...')
+    weekly_rosters_df = load_weekly_rosters()
+    draft_results_df  = load_draft_results()
+    trades_df         = load_trades()
+
+    print('Computing analytics...')
+    optimal_lineup = compute_optimal_lineup_stats(weekly_rosters_df)
+    draft_overpf   = compute_draft_overperformance(draft_results_df, weekly_rosters_df)
+    trade_value    = compute_trade_value(trades_df, weekly_rosters_df)
+
+    for name, df in [
+        ('optimal_lineup_df', optimal_lineup),
+        ('draft_overperf_df', draft_overpf),
+        ('trade_value_df',    trade_value),
+    ]:
+        if not df.empty:
+            df.to_csv(DATA_DIR / f'{name}.csv', index=False)
 
     print('Building season summary...')
     season_df = build_season_summary(standings, matchups, sb_totals, scoreboard,
@@ -997,10 +1256,18 @@ if __name__ == '__main__':
     keeper_era_df.to_csv(DATA_DIR / 'manager_keeper_era_df.csv', index=False)
     print('\nSaved manager_season_df.csv, manager_career_df.csv, manager_keeper_era_df.csv')
 
-    print('\n\n=== Keepers By Year ===')
-    raw_standings    = _load_standings_raw()
-    weekly_rosters   = load_weekly_rosters()
-    draft_results    = load_draft_results()
-
+    raw_standings = _load_standings_raw()
     print('\n\n=== Keeper Decision Analysis ===')
-    analyze_keeper_decisions(raw_standings, weekly_rosters, draft_results)
+    keeper_summary_df, keeper_detail_df = analyze_keeper_decisions(
+        raw_standings, weekly_rosters_df, draft_results_df
+    )
+    if not keeper_summary_df.empty:
+        keeper_summary_df.to_csv(DATA_DIR / 'keeper_summary_df.csv', index=False)
+        keeper_detail_df.to_csv(DATA_DIR / 'keeper_detail_df.csv', index=False)
+        print('Saved keeper_summary_df.csv, keeper_detail_df.csv')
+
+    return season_df, career_df, keeper_era_df
+
+
+if __name__ == '__main__':
+    run()

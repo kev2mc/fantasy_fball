@@ -4,3 +4,8 @@ data/
 .vscode/
 .env
 testing.ipynb
+!data/manager_season_df.csv
+!data/manager_career_df.csv
+!data/manager_keeper_era_df.csv
+!data/keeper_summary_df.csv
+!data/keeper_detail_df.csv
