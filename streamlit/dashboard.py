@@ -123,16 +123,14 @@ with tab_overview:
 
     tbl.index = tbl.index + 1
 
-    st.dataframe(
-        tbl.style.format({
-            'Win%':       '{:.1%}',
-            'Avg PPW':    '{:.1f}',
-            'Avg Finish': '{:.1f}',
-            'Luck W':     '{:+.1f}',
-            'Draft +/-':  '{:+.0f}',
-        }, na_rep='-'),
-        use_container_width=True,
-    )
+    tbl_disp = tbl.copy()
+    for col, fmt in {
+        'Win%': '{:.1%}', 'Avg PPW': '{:.1f}', 'Avg Finish': '{:.1f}',
+        'Luck W': '{:+.1f}', 'Draft +/-': '{:+.0f}',
+    }.items():
+        if col in tbl_disp.columns:
+            tbl_disp[col] = tbl_disp[col].map(lambda x, f=fmt: f.format(x) if pd.notna(x) else '-')
+    st.dataframe(tbl_disp, use_container_width=True)
 
     st.divider()
 
@@ -448,17 +446,15 @@ with tab_profile:
     disp  = mgr_seasons[avail].reset_index(drop=True)
     disp.index = disp.index + 1
 
-    st.dataframe(
-        disp.style.format({
-            'points_for':          '{:.1f}',
-            'avg_pts_per_week':    '{:.1f}',
-            'luck_wins':           '{:+.0f}',
-            'draft_overperformance': '{:+.0f}',
-            'trade_value':         '{:+.0f}',
-            'avg_pts_left_per_week': '{:.1f}',
-        }, na_rep='-'),
-        use_container_width=True,
-    )
+    disp_show = disp.copy()
+    for col, fmt in {
+        'points_for': '{:.1f}', 'avg_pts_per_week': '{:.1f}',
+        'luck_wins': '{:+.0f}', 'draft_overperformance': '{:+.0f}',
+        'trade_value': '{:+.0f}', 'avg_pts_left_per_week': '{:.1f}',
+    }.items():
+        if col in disp_show.columns:
+            disp_show[col] = disp_show[col].map(lambda x, f=fmt: f.format(x) if pd.notna(x) else '-')
+    st.dataframe(disp_show, use_container_width=True)
 
 
 # ===========================================================================
@@ -544,16 +540,12 @@ with tab_keeper:
             'avg_pts_left_per_week': 'Bench Waste',
         }).sort_values(['manager', 'era'])
 
-        st.dataframe(
-            era_tbl.style.format({
-                'Win%':        '{:.1%}',
-                'Avg PPW':     '{:.1f}',
-                'Luck W':      '{:+.1f}',
-                'Bench Waste': '{:.1f}',
-            }, na_rep='-'),
-            use_container_width=True,
-            hide_index=True,
-        )
+        for col, fmt in {
+            'Win%': '{:.1%}', 'Avg PPW': '{:.1f}', 'Luck W': '{:+.1f}', 'Bench Waste': '{:.1f}',
+        }.items():
+            if col in era_tbl.columns:
+                era_tbl[col] = era_tbl[col].map(lambda x, f=fmt: f.format(x) if pd.notna(x) else '-')
+        st.dataframe(era_tbl, use_container_width=True, hide_index=True)
 
 
 # ===========================================================================
@@ -620,24 +612,22 @@ with tab_keeper_perf:
             fig.update_layout(coloraxis_showscale=False, yaxis_title='')
             st.plotly_chart(fig, use_container_width=True)
 
-        st.dataframe(
-            career_ks.rename(columns={
-                'manager':        'Manager',
-                'total_actual':   'Actual Value',
-                'total_optimal':  'Optimal Value',
-                'total_gap':      'Total Gap',
-                'optimal_seasons':'Optimal Seasons',
-                'seasons':        'Seasons',
-                'opt_rate':       'Opt Rate',
-            }).style.format({
-                'Actual Value':   '{:+.1f}',
-                'Optimal Value':  '{:+.1f}',
-                'Total Gap':      '{:+.1f}',
-                'Opt Rate':       '{:.0%}',
-            }),
-            use_container_width=True,
-            hide_index=True,
-        )
+        ks_career_disp = career_ks.rename(columns={
+            'manager':        'Manager',
+            'total_actual':   'Actual Value',
+            'total_optimal':  'Optimal Value',
+            'total_gap':      'Total Gap',
+            'optimal_seasons':'Optimal Seasons',
+            'seasons':        'Seasons',
+            'opt_rate':       'Opt Rate',
+        })
+        for col, fmt in {
+            'Actual Value': '{:+.1f}', 'Optimal Value': '{:+.1f}',
+            'Total Gap': '{:+.1f}', 'Opt Rate': '{:.0%}',
+        }.items():
+            if col in ks_career_disp.columns:
+                ks_career_disp[col] = ks_career_disp[col].map(lambda x, f=fmt: f.format(x) if pd.notna(x) else '-')
+        st.dataframe(ks_career_disp, use_container_width=True, hide_index=True)
 
         st.divider()
 
@@ -692,26 +682,20 @@ with tab_keeper_perf:
         st.plotly_chart(fig, use_container_width=True)
 
         # Season summary table
-        st.dataframe(
-            ks_yr[['manager', 'actual_keepers', 'actual_value',
-                   'optimal_keepers', 'optimal_value', 'gap', 'is_optimal']]
-            .rename(columns={
-                'manager':         'Manager',
-                'actual_keepers':  'Kept',
-                'actual_value':    'Actual Val',
-                'optimal_keepers': 'Should Have Kept',
-                'optimal_value':   'Optimal Val',
-                'gap':             'Gap',
-                'is_optimal':      'Optimal?',
-            })
-            .style.format({
-                'Actual Val':  '{:+.1f}',
-                'Optimal Val': '{:+.1f}',
-                'Gap':         '{:+.1f}',
-            }),
-            use_container_width=True,
-            hide_index=True,
-        )
+        ks_yr_disp = ks_yr[['manager', 'actual_keepers', 'actual_value',
+                             'optimal_keepers', 'optimal_value', 'gap', 'is_optimal']].rename(columns={
+            'manager':         'Manager',
+            'actual_keepers':  'Kept',
+            'actual_value':    'Actual Val',
+            'optimal_keepers': 'Should Have Kept',
+            'optimal_value':   'Optimal Val',
+            'gap':             'Gap',
+            'is_optimal':      'Optimal?',
+        })
+        for col, fmt in {'Actual Val': '{:+.1f}', 'Optimal Val': '{:+.1f}', 'Gap': '{:+.1f}'}.items():
+            if col in ks_yr_disp.columns:
+                ks_yr_disp[col] = ks_yr_disp[col].map(lambda x, f=fmt: f.format(x) if pd.notna(x) else '-')
+        st.dataframe(ks_yr_disp, use_container_width=True, hide_index=True)
 
         st.divider()
 
@@ -739,42 +723,42 @@ with tab_keeper_perf:
                 f'**{verdict}**'
             )
 
-        # Color-code rows
-        def _row_style(row):
+        def _status(row):
             if row['is_ineligible']:
-                return ['color: gray'] * len(row)
+                return 'Ineligible'
             if row['is_kept'] and row['is_optimal']:
-                return ['background-color: #d4edda'] * len(row)  # green
+                return 'Kept + Optimal'
             if row['is_kept']:
-                return ['background-color: #fff3cd'] * len(row)  # yellow
+                return 'Kept (not optimal)'
             if row['is_optimal']:
-                return ['background-color: #cce5ff'] * len(row)  # blue
-            return [''] * len(row)
+                return 'Should have kept'
+            return ''
 
         display_drill = drill[[
             'player', 'pos', 'rd', 'pos_rank', 'pts', 'benchmark', 'value',
             'is_kept', 'is_optimal', 'is_ineligible',
+        ]].copy()
+        display_drill['status'] = display_drill.apply(_status, axis=1)
+        display_drill = display_drill[[
+            'player', 'pos', 'rd', 'pos_rank', 'pts', 'benchmark', 'value', 'status',
         ]].rename(columns={
-            'player':       'Player',
-            'pos':          'Pos',
-            'rd':           'Rd',
-            'pos_rank':     'PosRk',
-            'pts':          'Pts',
-            'benchmark':    'Benchmark',
-            'value':        'Value',
-            'is_kept':      'Kept',
-            'is_optimal':   'Optimal',
-            'is_ineligible': 'Ineligible',
+            'player':    'Player',
+            'pos':       'Pos',
+            'rd':        'Rd',
+            'pos_rank':  'PosRk',
+            'pts':       'Pts',
+            'benchmark': 'Benchmark',
+            'value':     'Value',
+            'status':    'Status',
         }).reset_index(drop=True)
+        display_drill['Pts']       = display_drill['Pts'].map('{:.1f}'.format)
+        display_drill['Benchmark'] = display_drill['Benchmark'].map('{:.1f}'.format)
+        display_drill['Value']     = display_drill['Value'].map('{:+.1f}'.format)
 
-        st.dataframe(
-            display_drill.style
-            .apply(_row_style, axis=1)
-            .format({'Pts': '{:.1f}', 'Benchmark': '{:.1f}', 'Value': '{:+.1f}'}),
-            use_container_width=True,
-            hide_index=True,
-        )
+        st.dataframe(display_drill, use_container_width=True, hide_index=True)
         st.caption(
-            'Green = kept + optimal  |  Yellow = kept but not optimal  '
-            '|  Blue = optimal but not kept  |  Gray = ineligible (kept 2 years running)'
+            'Kept + Optimal = correct choice  |  '
+            'Kept (not optimal) = sub-optimal keep  |  '
+            'Should have kept = missed optimal  |  '
+            'Ineligible = kept 2 years running'
         )
